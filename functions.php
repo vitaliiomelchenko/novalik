@@ -22,3 +22,8 @@ function woocommerce_clear_cart_url() {
         $woocommerce->cart->empty_cart();
     }
 }
+
+add_action( 'wp_enqueue_scripts', 'novalik_child_scripts' );
+function novalik_child_scripts(){
+	wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
+}

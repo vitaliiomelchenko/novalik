@@ -20,6 +20,13 @@ global $woocommerce;
 				<h2 class="card-title"><a class="accordion-toggle" data-toggle="collapse" href="#panel-cart-total"><?php esc_html_e( 'Cart totals', 'woocommerce' ); ?></a></h2>
 			</div>
 			<div id="panel-cart-total" class="accordion-body collapse show"><div class="card-body">
+                <div class="coupon_input_wrapper">
+                    <div class="coupon">
+                        <div class="coupon_input_title"><?php _e( 'Промокод' ); ?></div>
+                        <input type="text" placeholder="Промокод">
+                        <div class="submit_button"><?php _e('Застосувати'); ?></div>
+                    </div>
+                </div>
 				<table class="responsive cart-total" cellspacing="0">
 					<tr class="cart-subtotal">
 						<th><?php echo $woocommerce->cart->cart_contents_count; ?> <?php if($woocommerce->cart->cart_contents_count == 1){ _e('товар'); }elseif($woocommerce->cart->cart_contents_count >= 2 && $woocommerce->cart->cart_contents_count <= 4){ _e('товара'); }elseif( $woocommerce->cart->cart_contents_count > 4 ){ _e('товаров'); } ?></th>
@@ -90,3 +97,13 @@ global $woocommerce;
 		<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 	</div>
 </div>
+<script>
+jQuery('.coupon_input_wrapper .coupon .submit_button').click( function(){
+    jQuery('.coupon .input-text').val(jQuery(this).parent().find('input').val());
+    jQuery('.coupon button').click();
+    function reload(){
+        location.reload();    
+    }
+    window.setTimeout( reload, 1000 );
+});
+</script>
