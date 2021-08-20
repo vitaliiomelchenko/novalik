@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $porto_woo_version = porto_get_woo_version_number();
 ?>
 <div class="cart_container">
-	<h2 class="heading-primary m-b-md font-weight-normal clearfix">
+	<h2 class="heading-primary font-weight-normal clearfix">
 		<span><?php esc_html_e( 'Cart', 'woocommerce' ); ?></span>
 		<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="btn btn-primary pull-right proceed-to-checkout"><?php esc_html_e( 'Checkout', 'woocommerce' ); ?></a>
 	</h2>

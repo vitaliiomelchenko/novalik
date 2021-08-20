@@ -27,6 +27,8 @@
                 position: relative
                 .cart_table_wrapper
                     & > .featured-box 
+                        margin-top: 0
+                        margin-bottom: 0
                         background-color: #FFFFFFFF
                         border-radius: 3px 
                         border: 0
@@ -50,8 +52,10 @@
                                         text-decoration: underline
                                         font-family: Rubik
                                         background: transparent
-                                        line-height: 1
+                                        line-height: 1.2
                                         text-transform: none
+                                        padding: 0
+                                        height: auto
                                     a 
                                         padding: 0
                                         margin: 0
@@ -61,7 +65,7 @@
                                         font-family: Rubik
                                         text-transform: none
                                         display: block
-                                        line-height: 1
+                                        line-height: 1.2
                                         outline: none
                                         & > span 
                                             font-weight: 900
@@ -328,6 +332,7 @@
                                                 border-radius: 3px 
                                                 margin-bottom: 0
                                                 font-family: Rubik
+                                                width: 100%
                                                 &::after 
                                                     content: none
             &.empty_cart_container 
@@ -376,7 +381,7 @@
                 .row 
                     position: relative
                     .cart_table_wrapper
-                        & > .featured-box 
+                        & > .featured-box
                             .box-content
                                 form.woocommerce-cart-form
                                     .cart-actions

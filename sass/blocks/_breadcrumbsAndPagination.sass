@@ -1,0 +1,82 @@
+.breadcrumbs
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  padding-top: 10px
+
+  li
+    margin-right: 24px
+    font-size: 12px
+    font-weight: 400
+    color: #242424
+    position: relative
+
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      right: -15px
+      top: 50%
+      -webkit-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      transform: translateY(-50%)
+      width: 5px
+      height: 5px
+      background-color: #8d8d8f
+      border-radius: 50%
+
+    &:last-child::after
+      display: none
+
+    a
+      font-size: 12px
+      font-weight: 400
+      color: #8d8d8f
+
+.pagination
+  display: flex
+  align-items: center
+  justify-content: center
+
+  .nav-links
+    display: flex
+    align-items: center
+    justify-content: center
+
+  .page-numbers
+    width: 30px !important
+    height: 30px !important
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    background-color: transparent
+    font-size: 14px
+    font-weight: 400
+    color: #1E3F6D
+    transition: linear .2s
+    border-radius: 3px !important
+
+    &:hover
+      background-color: #B8D6ED
+
+  .nav-links .current
+    background-color: #1E3F6D
+
+  .next, .prev
+    background-color: transparent !important
+    background-position: center 8px
+    background-repeat: no-repeat
+    background-size: 30%
+
+  .next
+    background-image: url(../porto/images/next-p.svg)
+
+  .prev
+    background-image: url(../porto/images/prev-p.svg)
+
+  .next svg, .prev svg
+    display: none

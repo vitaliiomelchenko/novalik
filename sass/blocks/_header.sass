@@ -1,0 +1,393 @@
+.header
+  padding: 10px 0px
+
+.header-categories
+  margin-left: 10px
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  font-size: 16px
+  font-weight: 700
+  color: #242424
+  cursor: pointer
+  position: relative
+
+  img
+    margin-right: 15px
+
+  &.categories-active .header-categories__list
+    visibility: visible
+    opacity: 1
+
+.header-categories__list
+  background-color: #fff
+  position: absolute
+  left: 0
+  top: 46px
+  padding: 15px
+  min-width: 280px
+  border-radius: 3px
+  -webkit-transition: linear .3s
+  -o-transition: linear .3s
+  transition: linear .3s
+  visibility: hidden
+  opacity: 0
+  z-index: 22
+
+  a
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    margin-bottom: 15px
+    font-size: 14px
+    font-weight: 400
+    color: #242424
+    line-height: 1.4
+
+    &:last-child
+      margin-bottom: 0
+
+    img
+      margin-right: 15px
+
+.nav-list
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+
+.menu-item
+  margin-right: 50px
+
+  &:last-child
+    margin-right: 0
+
+  a
+    font-size: 14px
+    font-weight: 700
+    color: #242424
+    -webkit-transition: linear .2s
+    -o-transition: linear .2s
+    transition: linear .2s
+    position: relative
+    border-bottom: none !important
+
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      left: 0
+      bottom: -8px
+      width: 100%
+      height: 1px
+      background-color: #B8D6ED
+      opacity: 0
+      -webkit-transition: linear .2s
+      -o-transition: linear .2s
+      transition: linear .2s
+      border-radius: 2px
+
+    &:hover
+      &::after
+        opacity: 1
+
+      color: #242424
+
+.phone
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+
+.phone-number
+  font-size: 18px
+  font-weight: 700
+  color: #242424
+  margin-bottom: 5px
+
+.phone .call-me
+  color: #8d8d8f
+  font-size: 12px
+  font-weight: 400
+  text-decoration: underline
+
+.lang-switcher
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: end
+  -ms-flex-pack: end
+  justify-content: flex-end
+  color: #1E3F6D
+  text-transform: uppercase
+  font-size: 16px
+  font-weight: 700
+  margin-left: auto
+
+  img
+    margin-left: 5px
+
+.top-bar
+  width: 100%
+  padding: 13px 0px
+  border-top: 1px solid #B8D6ED
+  border-bottom: 1px solid #B8D6ED
+
+.top-bar__search form
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+
+  input
+    width: 80%
+    border: none
+    font-size: 12px
+    color: #242424
+    padding: 14px 10px
+    background-color: #fff
+    padding-left: 37px
+    -webkit-box-shadow: inset 0px 0px 4px rgba(30, 63, 109, 0.15)
+    box-shadow: inset 0px 0px 4px rgba(30, 63, 109, 0.15)
+    border-radius: 3px
+    background-image: url("../porto/images/search-i.svg")
+    background-repeat: no-repeat
+    background-position: center left 10px
+
+    &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder, &::placeholder
+      color: #d3d3d3
+
+  button
+    width: 20%
+    border: none
+    background-color: #1E3F6D
+    color: #fff
+    font-size: 14px
+    font-weight: 400
+    padding: 11px 18px
+    border-top-right-radius: 3px
+    border-bottom-right-radius: 3px
+    cursor: pointer
+
+.user-block
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: end
+  -ms-flex-pack: end
+  justify-content: flex-end
+
+  .user-item
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    font-size: 14px
+    font-weight: 400
+    color: #242424
+    margin-right: 61px
+
+    &:last-child
+      margin-right: 0
+
+    img
+      margin-right: 15px
+
+.mobile-btn
+  margin-right: 15px
+
+.mobile-menu
+  padding: 10px 0px
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background-color: #F5F7F9
+  display: none
+  z-index: 50
+
+.mobile-menu__top
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+  border-bottom: 1px solid #B8D6ED
+  padding-bottom: 10px
+
+  .close
+    margin-right: 15px
+
+.mobile-menu
+  .header-categories
+    margin-left: 0
+    padding: 15px 0px
+    padding-left: 15px
+    border-top: 1px solid #B8D6ED
+    border-bottom: 1px solid #B8D6ED
+
+    .arrow
+      margin-left: auto
+
+  .user-block
+    padding-top: 15px
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-pack: start
+    -ms-flex-pack: start
+    justify-content: flex-start
+    -webkit-box-align: start
+    -ms-flex-align: start
+    align-items: flex-start
+    margin-left: 15px
+
+    .user-item
+      margin-bottom: 15px
+
+  .nav-list
+    padding: 15px 0px
+    padding-left: 15px
+    border-bottom: 1px solid #B8D6ED
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-pack: start
+    -ms-flex-pack: start
+    justify-content: flex-start
+    -webkit-box-align: start
+    -ms-flex-align: start
+    align-items: flex-start
+
+  .menu-item
+    margin-right: 0
+    margin-bottom: 10px
+
+    &:last-child
+      margin-bottom: 0
+
+    a
+      font-weight: 400
+
+  .languages
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    -webkit-box-pack: start
+    -ms-flex-pack: start
+    justify-content: flex-start
+    padding-top: 18px
+    padding-bottom: 18px
+    padding-left: 15px
+
+  .languages_current
+    border: 1px solid #B8D6ED
+    border-radius: 3px
+
+  .languages p
+    font-size: 14px
+    font-weight: 400
+    color: #242424
+    margin-right: 40px
+
+  .languages-list
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+
+    li
+      margin-right: 28px
+      position: relative
+
+      &::after
+        content: ''
+        display: block
+        position: absolute
+        right: -14px
+        width: 1px
+        height: 100%
+        background-color: #B8D6ED
+        top: 50%
+        -webkit-transform: translateY(-50%)
+        -ms-transform: translateY(-50%)
+        transform: translateY(-50%)
+
+      &:last-child
+        margin-right: 0
+
+        &::after
+          display: none
+
+      a
+        padding: 6px
+        font-size: 14px
+        font-weight: 400
+        color: #242424
+        text-transform: uppercase
+
+@media only screen and (min-width: 320px) and (max-width: 768px)
+  .header .logo
+    width: 60px
+    height: 60px
+    margin-left: 15px
+
+    img
+      max-width: 100%
+
+  .top-bar__search form
+    position: relative
+
+    button
+      width: 29%
+      position: absolute
+      right: 0
+      top: 50%
+      -webkit-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      transform: translateY(-50%)
