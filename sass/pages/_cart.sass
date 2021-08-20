@@ -398,8 +398,8 @@
                                         justify-content: space-between 
                                         align-items: center
                                         margin-top: 0
-                                        padding-top: 10px 
-                                        padding-bottom: 12px 
+                                        padding-top: 14px 
+                                        padding-bottom: 16px 
                                         a,
                                         button
                                             font-size: 10px 
@@ -448,18 +448,35 @@
                                                             padding-left: 5px 
                                                             padding-right: 10px
                                                             justify-content: flex-end
+                                                            span.woocommerce-Price-amount
+                                                                font-size: 12px 
                                                         &.product-name
                                                             order: 3
                                                             padding-right: 5px 
                                                             padding-left: 10px 
+                                                            a 
+                                                                font-size: 12px 
                                                         &.product-subtotal 
                                                             order: 4 
                                                             padding-left: 5px 
                                                             padding-right: 10px
                                                             justify-content: flex-end
+                                                            margin: 0
+                                                            padding-top: 10px
+                                                            padding-bottom: 10px 
+                                                            span.woocommerce-Price-amount
+                                                                font-size: 12px 
+                                                                span.woocommerce-Price-currencySymbol
+                                                                    font-size: 12px 
                                                         &.product-quantity 
                                                             order: 5
                                                             padding-left: 10px 
+                                                            .quantity
+                                                                width: 82px 
+                                                                button,
+                                                                input 
+                                                                    width: 28px 
+                                                                    height: 28px 
                                                         &.product-remove
                                                             order: 6
                                                             position: static
@@ -474,10 +491,38 @@
                                 .coupon 
                                     input              
                                         width: calc( 100% - 90px)
+                                        height: 35px 
                                     .submit_button
                                         width: 100px 
                                         font-size: 10px
-                &.empty_cart_container 
+                            .cart_totals_toggle
+                                .card
+                                    .accordion-body
+                                        .card-body
+                                            .wc-proceed-to-checkout
+                                                a 
+                                                    font-size: 12px 
+                                            .cart-total 
+                                                tbody 
+                                                    tr
+                                                        &.cart-subtotal,
+                                                        &.cart-discount
+                                                            th,
+                                                            td 
+                                                                font-size: 12px
+                                                        &.order-total
+                                                            th
+                                                                font-size: 14px
+                                                                font-weight: 700
+                                                                font-family: Rubik
+                                                                text-transform: none
+                                                                padding-top: 16px
+                                                            td 
+                                                                padding-top: 16px 
+                                                                span 
+                                                                    font-weight: 700 
+                                                                    font-size: 14px 
+                &.empty_cart    _container 
                     h2
                         text-align: center
                         margin-bottom: 10px 
