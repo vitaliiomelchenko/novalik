@@ -330,6 +330,30 @@
                                                 font-family: Rubik
                                                 &::after 
                                                     content: none
+            &.empty_cart_container 
+                & > .row 
+                    margin-left: 0
+                    margin-right: 0
+                    justify-content: space-between
+                    margin-top: 40px
+                    .empty_cart_label
+                        p 
+                            margin-top: 10px
+                            margin-bottom: 0
+                            font-family: Rubik
+                    .return-to-shop
+                        a 
+                            font-size: 14px 
+                            font-weight: 700
+                            font-family: Rubik
+                            padding: 10px 18px 11px 
+                            border: 1px solid #0088CC
+                            color: #0088CC !important
+                            border-radius: 3px 
+                            line-height: 1.25
+                            display: block
+                            &::after 
+                                content: none
 @media(max-width: 1280px)
     .woocommerce-cart  
         .woocommerce
@@ -443,5 +467,23 @@
                                     .submit_button
                                         width: 100px 
                                         font-size: 10px
-
-                        
+                &.empty_cart_container 
+                    h2
+                        text-align: center
+                        margin-bottom: 10px 
+                    & > .row 
+                        margin-bottom: 48px 
+                        margin-top: 0
+                        justify-content: center
+                        .empty_cart_label
+                            margin: 0 6px 
+                            margin-bottom: 20px 
+                        .return-to-shop
+                            margin: 0 6px
+    @media(min-width: 465px)
+        .woocommerce-cart  
+            .woocommerce 
+                .cart_container 
+                    &.empty_cart_container 
+                        h2 
+                            margin-bottom: 30px 
