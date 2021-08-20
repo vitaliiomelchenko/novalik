@@ -1,7 +1,8 @@
 <?php if(isset($_GET['exportorders']) && current_user_can('administrator')){
 	custom_export_orders();
 	die();
-} ?>
+} 
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
