@@ -27,3 +27,39 @@ add_action( 'wp_enqueue_scripts', 'novalik_child_scripts' );
 function novalik_child_scripts(){
 	wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
 }
+
+//Woocommerce product page 
+add_action( 'product_title', 'woocommerce_template_single_title' );
+add_action( 'product_price', 'woocommerce_template_single_price' );
+add_action( 'product_add_to_cart', 'woocommerce_template_single_add_to_cart' );
+add_action( 'product_rating', 'woocommerce_template_single_rating');
+add_action( 'product_desc', 'woocommerce_template_single_excerpt');
+add_action( 'product_add_to_cart', 'woocommerce_template_single_add_to_cart' );
+add_action( 'product_price', 'woocommerce_template_single_price' );
+
+
+
+
+add_filter( 'woocommerce_product_tabs', 'sb_woo_move_description_tab', 98);
+function sb_woo_move_description_tab($tabs) {
+    $tabs['reviews']['priority'] = 50;
+    return $tabs;
+}
+
+
+add_filter( 'woocommerce_product_tabs', 'misha_rename_additional_info_tab' );
+
+function misha_rename_additional_info_tab( $tabs ) {
+
+	$tabs['reviews']['title'] = 'Відгуки';
+
+	return $tabs;
+
+}
+
+
+add_filter( 'get_comment_date', 'wpse_comment_date_18350375' );    
+function wpse_comment_date_18350375( $date ) {
+  $date = date("d F Y");   
+  return $date;
+}

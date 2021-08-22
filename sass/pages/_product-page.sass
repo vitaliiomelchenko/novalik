@@ -1,0 +1,465 @@
+.single-product
+    .container 
+        &.product_page_container
+            max-width: 1316px 
+            padding-right: 50px !important
+            padding-left: 50px !important
+            * 
+                font-family: Rubik
+            .product
+                .product-summary-wrap
+                    .row 
+                        flex-wrap: nowrap
+                        .summary-before
+                            max-width: 33.227%
+                            flex: 0 0 33.227%
+                            .product-images 
+                                justify-content: flex-start
+                                margin-bottom: 0
+                        .entry-summary
+                            max-width: calc( 66.337% - 27px )
+                            flex: 0 0 calc( 66.337% - 27px )
+                            margin-left: 17px 
+                            margin-right: 15px 
+                            padding-left: 25px
+                            padding-top: 24px
+                            padding-right: 30px 
+                            padding-bottom: 24px 
+                            background-color: #fff
+                            .product_rating 
+                                position: absolute
+                                top: 23px
+                                right: 30px 
+                                .woocommerce-product-rating
+                                    margin-bottom: 0 
+                                .review-link
+                                    display: none
+                                .star-rating
+                                    font-family: 'Font Awesome 5 Free'
+                                    font-size: 20px 
+                                    margin-right: 0
+                                    &::before 
+                                        color: rgba( 36, 36, 36, .1) !important
+                                    span 
+                                        font-family: 'Font Awesome 5 Free'
+                                        &::before 
+                                            color: #FFD90E !important
+                            .product_title 
+                                font-size: 18px
+                                font-weight: 700
+                                margin-bottom: 16px
+                                line-height: 1.2
+                            .product_stock  
+                                margin-bottom: 16px 
+                                font-size: 14px 
+                                line-height: 1.25
+                                &.instock 
+                                    color: #B8D958
+                            .product_desc
+                                margin-bottom: 30px
+                            .product_price_wrapper
+                                display: flex 
+                                .product_price 
+                                    margin-right: 20px 
+                                    display: flex 
+                                    align-items: center
+                                    p.price 
+                                        margin-bottom: 0
+                                    span 
+                                        font-size: 18px 
+                                        font-weight: 700
+                                        color: #242424
+                                .product_add_to_cart
+                                    a 
+                                        background: #0088CC
+                                        border-radius: 3px 
+                                        font-size: 14px
+                                        color: #fff !important
+                                        line-height: 1.3
+                                        height: auto !important
+                                        padding: 15px 26px 
+                                        font-weight: 700 
+                                        width: auto 
+                                    .shipping-free-notice
+                                        display: none
+                                    .cart
+                                        margin-bottom: 0
+                                        .quantity
+                                            margin-top: 6px 
+                                            margin-right: 20px
+                                            border: 1px solid rgba( 30, 63, 109, .05 )
+                                            border-radius: 3px 
+                                            width: 100px 
+                                            overflow: hidden
+                                            button 
+                                                width: 34px 
+                                                height: 34px 
+                                                border: 0
+                                                background-color: rgba( 184, 214, 237, .15)
+                                                transition: .3s
+                                                &:hover 
+                                                    background-color: rgba( 184, 214, 237, 1)
+                                                &.minus 
+                                                    border-radius: 3px 0 0 3px 
+                                                    margin-left: -2px
+                                                &.plus 
+                                                    border-radius: 0 3px 3px 0
+                                                    margin-right: -2px
+                                            input.input-text.qty
+                                                width: 34px 
+                                                height: 34px
+                                                border: 0 
+                &.sale 
+                    .product-summary-wrap
+                        .row 
+                            .entry-summary
+                                .product_price 
+                                    p.price 
+                                        display: flex 
+                                        flex-direction: column 
+                                        align-items: flex-start
+                                        del
+                                            color: #242424 
+                                            opacity: .3 
+                                            span 
+                                                text-decoration: line-through
+                                            &,
+                                            & span 
+                                                font-size: 12px
+                                                font-weight: 700
+                                                line-height: 1.2
+                                                display: inline-block
+                                        ins 
+                                            margin-top: 12px 
+                                            &,
+                                            & span 
+                                                font-size: 18px 
+                                                color: #242424
+                                            span 
+                                                display: inline-block
+                                                line-height: 1.2
+                .woocommerce-tabs
+                    .resp-tabs-list
+                        border-bottom: 0
+                        &::before 
+                            content: none
+                        li.resp-tab-item
+                            background-color: rgba( 255, 255, 255, .5) !important
+                            width: 186px 
+                            padding: 12px 
+                            font-size: 14px 
+                            font-weight: 700
+                            border-bottom: 0 !important
+                            text-align: center
+                            margin-right: 0
+                            border-radius: 5px 5px 0 0
+                            &.resp-tab-active
+                                position: relative
+                                background-color: #fff !important
+                                &::after 
+                                    content: ""
+                                    position: absolute
+                                    bottom: 0
+                                    left: 0
+                                    right: 0
+                                    height: 2px 
+                                    background-color: #B8D6ED
+                                    box-shadow: 0 0 15px rgba( 111, 111, 111, .1 )
+                    .resp-tabs-container 
+                        background-color: #fff
+                        .tab-content 
+                            padding: 30px 46px 43px 30px 
+                            .woocommerce-Reviews
+                                #comments 
+                                    .woocommerce-Reviews-title
+                                        font-weight: 700
+                                        margin-bottom: 30px 
+                                        font-size: 18px 
+                                        line-height: 1.2
+                                    .commentlist
+                                        .comment 
+                                            padding-left: 0
+                                            margin-bottom: 15px 
+                                            &:last-of-type
+                                                margin-bottom: 30px 
+                                            .comment-text
+                                                background: #fff 
+                                                border: 1px solid rgba(36, 36, 36, 0.1)
+                                                border-radius: 5px 
+                                                padding: 15px 
+                                                padding-right: 30px 
+                                                .comment_meta_wrapper
+                                                    display: flex 
+                                                    flex-direction: row-reverse
+                                                    justify-content: flex-end
+                                                    margin-bottom: 12px 
+                                                    .star-rating
+                                                        font-family: 'Font Awesome 5 Free'
+                                                        font-size: 20px 
+                                                        &::before 
+                                                            color: rgba( 36, 36, 36, .1)
+                                                        &::before,
+                                                        & > span::before 
+                                                            font-family: 'Font Awesome 5 Free'
+                                                        & > span::before 
+                                                            color: #ffd90e!important
+                                                    .meta
+                                                        .woocommerce-review__dash
+                                                            display: none
+                                                        .woocommerce-review__author
+                                                            font-weight: 700
+                                                            font-size: 14px
+                                                            margin-right: 22px 
+                                                            line-height: 1.25
+                                                            padding-bottom: 0
+                                                            padding-top: 5px 
+                                                        .woocommerce-review__published-date
+                                                            margin-right: 20px 
+                                                            padding-top: 5px 
+                                                            font-size: 12px 
+                                                            line-height: 1.2
+                                                .description
+                                                    p 
+                                                        font-size: 14px 
+                                                        line-height: 1.25
+                                                &::before 
+                                                    content: none
+                                #review_form_wrapper 
+                                    #review_form
+                                        #reply-title 
+                                            font-weight: 700
+                                            margin-bottom: 30px 
+                                            display: inline-block
+                                        form 
+                                            padding: 0
+                                            background-color: #fff 
+                                            
+
+    .porto-related-products
+        background-color: #F5F7F9
+        padding-top: 0
+        * 
+            font-family: Rubik
+        .container
+            max-width: 1316px 
+            padding-right: 50px !important
+            padding-left: 50px !important 
+            .related.products 
+                .row-title-without-above-title
+                    margin-bottom: 35px
+                    text-align: left
+                    font-size: 18px 
+                    z-index: 0
+                    &::before 
+                        content: none
+                    &::after 
+                        content: none
+                .slider-wrapper 
+                    z-index: 3
+                    margin-right: -16px 
+                    margin-left: -16px 
+                    .products 
+                        .owl-nav
+                            top: -35px 
+                            right: 17px 
+                            button 
+                                width: 29px 
+                                height: 30px 
+                                padding: 8px 11px 
+                                background-color: #B8D6ED !important
+                                &::before 
+                                    height: 14px 
+                                    width: 8px 
+                                    background-size: contain
+                                    background-repeat: no-repeat
+                                    content: ""
+                                    background-image: url('../assets/img/product_page_slider_arrow.svg')
+                                    position: absolute
+                                    top: 8px 
+                                    left: 11.5px 
+                                &.disabled 
+                                    opacity: .5
+                                &.owl-prev
+                                    right: 29px 
+                                    left: auto
+                                    &::before 
+                                        transform: rotate( -180deg )
+                                        top: 7px 
+                                &.owl-next
+                                    right: 0
+                                    &::before 
+                                        right: 10.5px 
+                                        left: auto
+                        .owl-stage
+                            display: flex 
+                            align-items: stretch
+                        .owl-item
+                            padding-right: 16px 
+                            padding-left: 16px
+                            
+@media(max-width: 992px)
+    @media(min-width: 769px)
+        .single-product
+            .container 
+                &.product_page_container
+                    padding-right: 25px !important
+                    padding-left: 25px !important
+                    .product
+                        .product-summary-wrap
+                            .entry-summary
+                                margin-bottom: 60px 
+                                .product_price_wrapper
+                                    flex-direction: column
+                                    .product_price
+                                        margin-bottom: 18px 
+            .porto-related-products
+                &.wooc-slider-row 
+                    .container
+                        padding-left: 30px !important
+                        padding-right: 30px !important
+                        .related.products 
+                            .slider-wrapper 
+                                .products 
+                                    .owl-nav 
+                                        button
+                                            &.owl-prev
+                                                right: 2px 
+                                            &.owl-next
+                                                right: -27px
+@media(max-width: 768px)
+    .single-product
+        .container 
+            &.product_page_container
+                padding-right: 15px !important
+                padding-left: 15px !important
+                .product
+                    .product-summary-wrap
+                        .row 
+                            flex-wrap: wrap
+                            .entry-summary
+                                width: calc( 100% - 30px ) 
+                                max-width: calc( 100% - 30px ) 
+                                flex: 0 0 calc( 100% - 30px )
+                                margin-left: 15px 
+                                display: flex 
+                                flex-direction: column
+                                padding: 20px 
+                                .product_rating
+                                    position: static
+                                    order: 3
+                                    margin-bottom: 24px 
+                                    .woocommerce-product-rating
+                                        text-align: left
+                                        .star-rating
+                                            font-size: 12px
+                                .product_title
+                                    text-align: left
+                                    order: 1
+                                    h2 
+                                        margin-bottom: 0
+                                .product_stock 
+                                    text-align: left
+                                    order: 2
+                                    margin-bottom: 10px 
+                                .product_desc
+                                    order: 4
+                                    margin-bottom: 24px 
+                                    .description 
+                                        margin-bottom: 0
+                                    p,
+                                    a,
+                                    span,
+                                    li
+                                        font-size: 12px
+                                        text-align: left
+                                .product_price_wrapper
+                                    order: 5
+                                    flex-direction: column
+                                    align-items: flex-start
+                                    .product_price
+                                        margin-right: 0
+                                        p.price
+                                            margin-bottom: 10px 
+                                            span 
+                                                font-size: 14px 
+                                    .product_add_to_cart
+                                        width: 100%
+                                        .cart 
+                                            display: flex 
+                                            align-items: flex-start
+                                            flex-wrap: wrap
+                                            justify-content: space-between
+                                            .added_to_cart
+                                                width: 100% 
+                                                margin-top: 10px 
+                                            .quantity
+                                                width: 82px 
+                                                margin-top: 0
+                                                margin-right: 18px
+                                                button,
+                                                input.input-text.qty
+                                                    width: 28px 
+                                                    height: 28px 
+                                            & > a 
+                                                padding: 8px 15px 
+                                                font-size: 10px 
+                                    .quantity
+                                        margin-right: 0
+                            .summary-before 
+                                margin-right: 15px 
+                                margin-left: 15px 
+                                width: calc( 100% - 30px ) 
+                                max-width: calc( 100% - 30px ) 
+                                flex: 0 0 calc( 100% - 30px )
+                                padding-left: 0
+                                padding-right: 0
+                                .product-images 
+                                    margin-right: 0
+                                    margin-left: 0
+                                    max-width: 100%
+                                    .img-thumbnail 
+                                        .inner 
+                                            margin-right: auto
+                                            margin-left: auto
+                    .woocommerce-tabs 
+                        .resp-tabs-list
+                            li.resp-tab-item
+                                width: 80px 
+                                font-size: 10px
+                        .resp-tabs-container 
+                            .tab-content 
+                                padding: 20px 
+                                p,
+                                a,
+                                span,
+                                li
+                                    font-size: 12px  
+                                .woocommerce-Reviews 
+                                    #comments 
+                                        .commentlist 
+                                            .comment
+                                                .comment_container
+                                                    padding: 0
+                                                    .comment-text
+                                                        .comment_meta_wrapper
+                                                            .star-rating
+                                                                font-size: 12px 
+                                                            .meta 
+                                                                .woocommerce-review__author
+                                                                    padding-top: 0
+        .porto-related-products
+            .container
+                padding-right: 15px !important
+                padding-left: 15px !important 
+                .related.products 
+                    .slider-title
+                        text-transform: none
+                        border: 0
+                        padding-bottom: 0
+                    .slider-wrapper 
+                        .products 
+                            .owl-nav
+                                top: -21px 
+                                button 
+                                    span 
+                                        display: none
