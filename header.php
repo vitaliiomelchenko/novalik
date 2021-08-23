@@ -243,10 +243,12 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            </a>
 			        </div>
 			        <div class="header-categories">
-			            <img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
-			            КАТЕГОРІЇ ТОВАРІВ
-			            <div class="arrow">
-			                <img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt="">
+			            <div class="d-flex align-items-center justify-content-center" style="width: 100%;">
+			            	<img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
+			            	КАТЕГОРІЇ ТОВАРІВ
+			            	<div class="arrow">
+			            	    <img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt="">
+			            	</div>
 			            </div>
 			        </div>
 			        <ul class="menu nav-list">

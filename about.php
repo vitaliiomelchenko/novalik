@@ -273,7 +273,24 @@ Template Name: About Page
 	            </div>
 	        </div>
 	        <div class="aboutCertificates__slider">
-	            
+	            <div class="aboutCertificates__slide">
+	            	<img src="<?php echo get_template_directory_uri() ?>/images/cert-1.png" alt="">
+	            </div>
+	            <div class="aboutCertificates__slide">
+	            	<img src="<?php echo get_template_directory_uri() ?>/images/cert-2.png" alt="">
+	            </div>
+	            <div class="aboutCertificates__slide">
+	            	<img src="<?php echo get_template_directory_uri() ?>/images/cert-1.png" alt="">
+	            </div>
+	            <div class="aboutCertificates__slide">
+	            	<img src="<?php echo get_template_directory_uri() ?>/images/cert-2.png" alt="">
+	            </div>
+	            <div class="aboutCertificates__slide">
+	            	<img src="<?php echo get_template_directory_uri() ?>/images/cert-1.png" alt="">
+	            </div>
+	            <div class="aboutCertificates__slide">
+	            	<img src="<?php echo get_template_directory_uri() ?>/images/cert-2.png" alt="">
+	            </div>
 	        </div>
 	    </div>
 	</section>

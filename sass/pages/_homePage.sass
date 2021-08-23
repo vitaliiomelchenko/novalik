@@ -1,0 +1,351 @@
+.homeOffer 
+	background-color: $white
+	padding: 0
+	box-shadow: 0px 4px 15px rgba(184, 214, 237, 0.2)
+	&__categories 
+		padding: 15px
+		position: relative
+		padding-bottom: 0
+		&_wrapper 
+			max-height: 433px
+			overflow: hidden
+			transition: linear .2s
+		
+		a 
+			display: flex 
+			align-items: center
+			margin-bottom: 15px
+			transition: linear .2s
+			&:hover 
+				color: #0088CC
+			
+			&:last-child 
+				margin-bottom: 0
+			
+			img 
+				margin-right: 16px
+			
+			font-size: 14px
+			font-weight: 400
+			color: $text
+		
+		.categori-list-show 
+			max-height: unset!important
+			padding-bottom: 15px
+		
+		.more-categories 
+			width: 30px
+			height: 30px
+			overflow: hidden
+			border-radius: 50%
+			cursor: pointer
+			img 
+				width: 100%
+				height: 100%
+			
+			position: absolute
+			bottom: -27px
+			left: 50%
+			transform: translateX(-50%)
+			transition: linear .2s
+			&:hover 
+				transform: translateX(-50%) scale(1.1)
+			
+			&.categori-show 
+				transform: translateX(-50%) rotate(180deg)
+				bottom: -15px
+			
+		
+	
+	.cat-open 
+		height: unset
+	
+	&__slider 
+		height: 100%
+		position: relative
+		.slick-slider 
+			margin-bottom: 0
+		
+		.slick-arrow 
+			display: none!important
+		
+		.slick-dots 
+			display: flex 
+			align-items: center
+			position: absolute
+			bottom: 41px
+			left: 70px
+			li 
+				margin-right: 6px
+				&:last-child 
+					margin-right: 0
+				
+			
+			button 
+				padding: 0
+				display: flex 
+				align-items: center
+				justify-content: center
+				color: transparent
+				font-size: 0px
+				width: 9px
+				height: 9px
+				border-radius: 50%
+				background-color: $white
+				border: none
+				
+			
+			.slick-active 
+				button 
+					background-color: #0088CC
+				
+			
+		
+	
+	&__slide 
+		padding-top: 82px
+		position: relative
+		padding-bottom: 128px
+		z-index: 1
+		padding-left: 70px
+		display: flex 
+		justify-content: center
+		flex-direction: column
+		background-size: cover
+		&::before 
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			background: linear-gradient(90deg, #B8D6ED 38.02%, rgba(184, 214, 237, 0) 100%)
+			z-index: -1
+		
+		.text 
+			max-width: 40%
+			transition: linear .2s
+			* 
+				color: $white
+				transition: linear .2s
+			
+			.pre 
+				text-transform: uppercase
+				font-size: 14px
+				font-weight: 800
+				margin-bottom: 29px
+			
+			h2 
+				font-size: 24px
+				font-weight: 800
+				text-transform: uppercase
+				min-height: 84px
+			
+			p 
+				margin-bottom: 46px
+			
+			a 
+				font-size: 12px
+				font-weight: 800
+				text-decoration: underline
+			
+		
+	
+
+@media only screen and (min-width: 320px) and (max-width: 768px) 
+	.homeOffer 
+		padding-bottom: 45px
+		background-color: unset
+		&__slider 
+			.slick-dots 
+				left: 50%
+				transform: translateX(-50%)
+				bottom: -24px
+			
+		
+		&__slide 
+			padding: 16px 23px
+			.text 
+				width: 100%
+				max-width: 100%
+				.pre 
+					display: none
+				
+				h2 
+					font-size: 18px
+					min-height: unset
+				
+				p 
+					margin-bottom: 0
+				
+				a 
+					display: none
+				
+			
+		
+	
+
+.home 
+	.header 
+		padding-bottom: 0
+		&-categories 
+			pointer-events: none
+			&__list 
+				display: none!important
+			
+		
+	
+
+.mobile-categories 
+	.header-categories 
+		padding: 15px 15px
+		border-radius: 5px
+		border: 1px solid #cbcecd
+		margin: 0
+	
+	.header-categories__list 
+		left: unset!important
+	
+
+@media only screen and (min-width: 320px) and (max-width: 768px) 
+	.home 
+		.hidden 
+			.header-categories__list 
+				display: block!important
+				min-width: 100%
+				width: 100%
+				margin-top: 15px
+			
+		
+		.header 
+			.logo 
+				width: 60px
+				height: 60px
+				margin-left: 15px
+				img 
+					max-width: 100%
+				
+			
+			&-categories 
+				.head 
+					width: 100%
+				
+				display: flex
+				flex-direction: column
+				pointer-events: all!important
+				&__list 
+					position: relative
+					left: -15px
+					width: 100%
+					top: unset
+					opacity: 1
+					visibility: visible
+					z-index: 22
+					display: none!important
+				
+			
+		
+	
+
+.homeFeatures 
+	padding-top: 50px
+	padding-bottom: 25px
+	&__item 
+		display: flex 
+		align-items: flex-start
+		.icon 
+			margin-right: 20px
+			img 
+				max-width: unset
+				height: unset
+			
+		
+		.text 
+			font-size: 12px
+			color: $text
+			h3 
+				line-height: unset
+				margin-bottom: 15px
+			
+		
+	
+
+@media only screen and (min-width: 320px) and (max-width: 768px) 
+	.homeFeatures 
+		padding-top: 40px
+		padding-bottom: 0px
+		&__item 
+			margin-bottom: 15px
+			.icon 
+				margin-right: 14px
+			
+			.text 
+				font-size: 12px
+				h3 
+					font-size: 12px
+					margin-bottom: 10px
+				
+				p 
+					font-size: 12px
+				
+			
+		
+	
+
+.homeStock 
+	padding-top: 25px
+	padding-bottom: 25px
+	.head 
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin-bottom: 30px
+		h2 
+			font-size: 24px
+		
+		.view-more 
+			font-size: 12px
+			font-weight: 400
+			color: $text
+			text-decoration: underline
+			margin-left: auto
+			margin-right: 23px
+		
+	
+	&__slider 
+		.slick-list 
+			margin: 0px -15px
+		
+		.slick-slide 
+			margin: 0px 15px
+		
+	
+	&__slide 
+		img 
+			width: 100%
+		
+	
+
+
+
+.homeText 
+	padding: 25px 0px
+	&__content 
+		padding: 28px 37px
+		border: 1px solid #B8D6ED
+		border-radius: 5px
+		p 
+			span 
+				font-weight: 700
+			
+		
+	
+
+@media only screen and (min-width: 320px) and (max-width: 768px) 
+	.homeText 
+		&__content 
+			padding: 17px 17px
+		
+		
+	
