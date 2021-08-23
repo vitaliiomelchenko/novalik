@@ -6,20 +6,20 @@ Template Name: About Page
 
 <?php get_header(); ?>
 <?php 
-    $aboutBlocktitle = get_sub_field('aboutBlocktitle');
-    $aboutBlocktextLeft = get_sub_field('aboutBlocktextLeft');
-    $aboutBlocktextRight = get_sub_field('aboutBlocktextRight');
-    $aboutBlocklogo = get_sub_field('aboutBlocklogo');
-	$aboutMissiontitle = get_sub_field('aboutMissiontitle');
-    $aboutMissioncontent = get_sub_field('aboutMissioncontent');
-    $aboutMissionimage = get_sub_field('aboutMissionimage');
-    $aboutFeaturestitle = get_sub_field('aboutFeaturestitle');
-	$aboutPersonaltitle = get_sub_field('aboutPersonaltitle');
-    $aboutPersonalcontent = get_sub_field('aboutPersonalcontent');
-    $aboutPersonalimage = get_sub_field('aboutPersonalimage');
-	$aboutCertificatestitle = get_sub_field('aboutCertificatestitle');
-	$aboutDirectionstitle = get_sub_field('aboutDirectionstitle');
-    ?>
+	$aboutBlocktitle = get_field('aboutBlocktitle');
+	$aboutBlocktextLeft = get_field('aboutBlocktextLeft');
+	$aboutBlocktextRight = get_field('aboutBlocktextRight');
+	$aboutBlocklogo = get_field('aboutBlocklogo');
+	$aboutMissiontitle = get_field('aboutMissiontitle');
+	$aboutMissioncontent = get_field('aboutMissioncontent');
+	$aboutMissionimage = get_field('aboutMissionimage');
+	$aboutFeaturestitle = get_field('aboutFeaturestitle');
+	$aboutPersonaltitle = get_field('aboutPersonaltitle');
+	$aboutPersonalcontent = get_field('aboutPersonalcontent');
+	$aboutPersonalimage = get_field('aboutPersonalimage');
+	$aboutCertificatestitle = get_field('aboutCertificatestitle');
+	$aboutDirectionstitle = get_field('aboutDirectionstitle');
+	?>
 <section class="aboutBlock">
 	    <div class="container">
 	        <div class="row justify-content-between align-items-center">

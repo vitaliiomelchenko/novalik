@@ -172,81 +172,49 @@ Template Name: Home Page
  	        </div>
  	    </div>
  	</div>
+<?php if( have_rows('homeFeatures') ): ?>
  	<section class="homeFeatures"> 
  	    <div class="container"> 
- 	        <div class="row">   
+ 	        <div class="row">
+				 <?php while( have_rows('repeater_field_name') ) : the_row();
+				 	$homeFeaturesTitle = get_sub_field('homeFeaturesTitle');
+					$homeFeaturesContent = get_sub_field('homeFeaturesContent');
+					$homeFeaturesIcon = get_sub_field('homeFeaturesIcon');
+				 ?>   
  	            <div class="col-lg-3">
  	                <div class="homeFeatures__item">
- 	                    <div class="icon">
- 	                        <img src="<?php echo get_template_directory_uri() ?>/images/ft-1.svg" alt="">
- 	                    </div>
+                    	<?php if( !empty( $homeFeaturesIcon ) ): ?>
+							<div class="icon">
+								<img src="<?php echo file_get_contents(esc_url(wp_get_original_image_path($homeFeaturesIcon['id']))); ?>" alt="">
+							</div>
+						<?php endif; ?>								
  	                    <div class="text">
- 	                        <h3>
- 	                            ПЕРША УКРАЇНСЬКА КОМПАНІЯ
- 	                        </h3>
- 	                        <p>
- 	                            яка вивела на Європейський фармацевтичний ринок продукт на основі β-ситостеролу
- 	                        </p>
+							<?php if( $homeFeaturesTitle ); ?>
+								<h3>
+									<?php echo $homeFeaturesTitle ?>
+								</h3>
+							<?php endif; ?>
+							<?php if( $homeFeaturesContent ); ?>
+								<p>
+									<?php echo $homeFeaturesContent ?>
+								</p>
+							 <?php endif; ?>
  	                    </div>
  	                </div>
  	            </div>
- 	            <div class="col-lg-3">
- 	                <div class="homeFeatures__item">
- 	                    <div class="icon">
- 	                        <img src="<?php echo get_template_directory_uri() ?>/images/ft-2.svg" alt="">
- 	                    </div>
- 	                    <div class="text">
- 	                        <h3>
- 	                            35+
- 	                            ПРОДУКТІВ
- 	                        </h3>
- 	                        <p>
- 	                            для здоров’я та краси в асортименті
- 	                        </p>
- 	                    </div>
- 	                </div>
- 	            </div>
- 	            <div class="col-lg-3">
- 	                <div class="homeFeatures__item">
- 	                    <div class="icon">
- 	                        <img src="<?php echo get_template_directory_uri() ?>/images/ft-3.svg" alt="">
- 	                    </div>
- 	                    <div class="text">
- 	                        <h3>
- 	                           500+
- 	                           ПАРТНЕРІВ
- 	                        </h3>
- 	                        <p>
- 	                            в обличчі аптечних мереж, лікарів, клінік та дистриб’юторів України і світу
- 	                        </p>
- 	                    </div>
- 	                </div>
- 	            </div>
- 	            <div class="col-lg-3">
- 	                <div class="homeFeatures__item">
- 	                    <div class="icon">
- 	                        <img src="<?php echo get_template_directory_uri() ?>/images/ft-4.svg" alt="">
- 	                    </div>
- 	                    <div class="text">
- 	                        <h3>
- 	                            25 000+
- 	                            СПОЖИВАЧІВ
- 	                        </h3>
- 	                        <p>
- 	                            щомісяця обирають наші товари
- 	                        </p>
- 	                    </div>
- 	                </div>
- 	            </div>
+				<?php endwhile; ?>
  	        </div>  
  	    </div>  
- 	</section>  
+ 	</section>
+<?php endif; ?>  
  	<section class="homeStock">
  	    <div class="container">
+		 <?php if( $homeStockTitle ); ?>
  	        <div class="head">
- 	            <h2>
- 	                Акції
- 	            </h2>
+				<h2>
+					<?php echo $homeStockTitle ?>
+				</h2>
+		<?php endif; ?>
  	            <a href="#" class="view-more">
  	                Показати всі
  	            </a>
@@ -255,41 +223,31 @@ Template Name: Home Page
  	                <div class="control homeStock-a-next"><img src="<?php echo get_template_directory_uri() ?>/images/next-slide.svg" alt=""></div>
  	            </div>
  	        </div>
- 	        <div class="homeStock__slider">
- 	            <div class="homeStock__slide">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/stock-1.png" alt="">
- 	            </div>
- 	            <div class="homeStock__slide">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/stock-1.png" alt="">
- 	            </div>
- 	            <div class="homeStock__slide">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/stock-1.png" alt="">
- 	            </div>
- 	            <div class="homeStock__slide">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/stock-1.png" alt="">
- 	            </div>
- 	            <div class="homeStock__slide">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/stock-1.png" alt="">
- 	            </div>
- 	            <div class="homeStock__slide">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/stock-1.png" alt="">
- 	            </div>
+			 <?php if( have_rows('homeStock__slider') ): ?>
+ 	        	<div class="homeStock__slider">
+					<?php while( have_rows('homeStock__slider') ) : the_row();
+						$homeStock__slide = get_sub_field('homeStock__slide');
+					?>
+					<?php if( !empty( $image ) ): ?>
+						<div class="homeStock__slide">
+							<img src="<?php echo esc_url($homeStock__slide['url']); ?>" alt="<?php echo esc_attr($homeStock__slide['alt']); ?>" />
+						</div>
+				<?php endif; ?>
  	        </div>
  	    </div>
  	</section>
- 	<section class="homeText">
- 	    <div class="container">
- 	        <div class="homeText__content">
- 	            <p>
- 	                <span>Новалік</span> – це сучасне фармацевтичне підприємство, яке спеціалізується на розробці, виробництві та імпорті як власної, так і зарубіжної інноваційної та в той же час доступної для споживачів фармацевтичної продукції: лікарських препаратів, біологічно активних добавок, косметичних та гігієнічних засобів.
- 	                <br><br>
- 	                У виробництві фармацевтичної продукції компанія «Новалік» використовує новітні наукові розробки в галузі фармації та медицини, досвід світових лідерів фармацевтичної галузі та сучасні технології, а також якісні субстанції та стандартизовані екстракти здебільшого європейських компаній.
- 	                <br><br>
- 	                Виробничі потужності, які використовує компанія, мають національні та міжнародні сертифікати відповідності стандартам ISO та GMP (належної виробничої практики), що дає змогу гарантувати високу якість продукції, що випускається. Наш персонал – це мотивована і згуртована команда, що пройшла серйозну професійну підготовку і яка підтвердила високу кваліфікацію в ході реалізації різних міжнародних проектів. Ось чому продукції «Новалік» довіряють мільйони споживачів не лише в Україні, а й далеко за її межами.
- 	                <br><br>
- 	                <span>Наша місія</span> – це турбота про здоров’я, якість і тривалість життя людей внаслідок вироблення та виведення на ринок сучасних ефективних і доступних продуктів для здоров’я в суворій відповідності до європейських стандартів.
- 	            </p>
- 	        </div>
- 	    </div>
- 	</section>
+	 <?php 
+	 	$homeTextContent = get_field('homeTextContent')
+	 ?>
+	<?php if( $homeTextContent ); ?>
+		<section class="homeText">
+			<div class="container">
+				<div class="homeText__content">
+					<p>
+					<?php echo $homeTextContent ?>
+					</p>
+				</div>
+			</div>
+		</section>
+	 <?php endif; ?>
  <?php get_footer(); ?>
