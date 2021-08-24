@@ -1,0 +1,392 @@
+.post-type-archive-product,
+.tax-product_cat
+    * 
+        font-family: Rubik
+    .header
+        .container
+            max-width: 1316px 
+            margin-right: auto
+            margin-left: auto
+            padding-left: 50px !important
+            padding-right: 50px !important
+    .shop_page_container
+        max-width: 1316px 
+        padding-left: 50px 
+        padding-right: 50px 
+        margin-right: auto
+        margin-left: auto
+        .row 
+            & > img,
+            & > .term-description
+                display: none
+            flex-wrap: nowrap
+            .sidebar 
+                padding: 0
+                padding-left: 15px 
+                .product-categories
+                    padding-right: 55px
+                .cat-item
+                    position: relative
+                    padding-left: 40px 
+                    margin-bottom: 20px 
+                    &.cat-item-181,
+                    &.cat-item-183,
+                    &.cat-item-15
+                        display: none
+                    a
+                        padding-top: 3px
+                        padding-bottom: 4px 
+                        font-size: 14px 
+                        display: inline-block
+                        line-height: 1.25
+                        margin-bottom: 0px 
+                        font-family: Rubik
+                        font-weight: 400
+                        &:hover
+                            color: #242424 !important
+                            text-decoration: none
+                    &::before
+                        width: 24px
+                        height: 24px
+                        background-size: contain
+                        backgrpund-repeat: no-repeat
+                        position: absolute
+                        top: 0
+                        left: 0
+                        content: ""
+                .sidebar-content
+                    .woocommerce-widget-layered-nav
+                        display: none
+                    .widget_text,
+                    .widget#woocommerce_layered_nav-2
+                        display: none
+                    .widget_product_categories
+                        padding: 0
+                        border: 0
+                        .widget-title
+                            display: none
+                        .product-categories
+                            .cat-item 
+                                span 
+                                    display: none
+            .archive-products-wrapper
+                .misha_loadmore
+                    background-color: #fff 
+                    border-radius: 5px 
+                    font-size: 14px 
+                    padding-top: 18px 
+                    padding-bottom: 17px 
+                    padding-left: 20px
+                    padding-right: 20px 
+                    width: 100%
+                    text-align: center
+                    cursor: pointer
+                    margin-top: 2px
+                    span
+                        position: relative
+                        &::before 
+                            content: ""
+                            background-image: url('../assets/img/loadMore_button_icon.svg')
+                            background-size: contain
+                            background-repeat: no-repeat
+                            width: 18px
+                            height: 22.2px 
+                            position: absolute
+                            top: 50% 
+                            transform: translateY(-50%)
+                            left: -29px 
+                            transition: .3s
+                    &:hover 
+                        span 
+                            &::before 
+                                transform: translateY(-50%) rotate(-360deg)
+                .navigation
+                    width: 100% 
+                    display: block
+                    margin-bottom: 109px 
+                    margin-top: 57px 
+                    .nav-links 
+                        display: flex
+                        justify-content: center
+                        span 
+                            background-color: #1E3F6D
+                            color: #fff
+                        span,
+                        a
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            width: 30px 
+                            height: 30px 
+                            font-size: 14px 
+                            line-height: 1.25
+                            margin: 0
+                            border: 0
+                            border-radius: 3px
+                            font-weight: 400
+                            font-family: Rubik
+                        a 
+                            background-color: transparent
+                            color: #1E3F6D !important
+                            transition: .3s
+                            &:hover 
+                                background-color: #B8D6ED
+                                text-decoration: none
+                            &.next,
+                            &.prev
+                                width: 5px 
+                                height: 10px
+                                padding: 0
+                                margin-left: 13px 
+                                &::before 
+                                    top: 50% 
+                                    transform: translateY(-50%)
+                                    background-image: url('../assets/img/pagination_arrow.svg')
+                                    background-size: contain
+                                    width: 5px 
+                                    height: 10px 
+                                    content: ""
+                                    background-repeat: no-repeat
+                            &.prev
+                                width: 5px !important
+                                height: 10px !important
+                                margin-left: 0
+                                margin-right: 13px 
+                                &::before 
+                                    transform: translateY(-50%) rotate(180deg)
+                .product_orderby_wrapper
+                    display: flex 
+                    align-items: flex-start
+                    position: relative
+                    .product_orderby
+                        display: 
+                        position: absolute
+                        left: 0
+                        top: 52px 
+                        border: 1px solid rgba( 36, 36, 36, .3)
+                        background-color: #F5F7F9 
+                        border-radius: 3px 
+                        z-index: 111
+                        min-width: 220px 
+                        display: none
+                        li 
+                            a 
+                                display: block
+                                line-height: 1
+                                color: rgba( 36, 36, 36, .3) !important
+                                padding: 11px 17px 
+                                font-size: 14px 
+                                &:hover 
+                                    text-decoration: none
+                    .orderby_title
+                        padding: 11px 17px 
+                        padding-right: 55px 
+                        font-size: 14px 
+                        color: rgba( 36, 36, 36, .3)
+                        border: 1px solid rgba( 36, 36, 36, .3)
+                        width: auto
+                        border-radius: 3px 
+                        position: relative
+                        line-height: 1.3
+                        min-width: 220px 
+                        cursor: pointer
+                        &::after
+                            content: ""
+                            position: absolute
+                            top: 50%
+                            transform: translateY(-50%)
+                            right: 14px
+                            opacity: .3
+                            width: 24px 
+                            height: 20px 
+                            background-position: center
+                            background-image: url('../assets/img/chevrons-down.svg')
+                            background-size: contain
+                            background-repeat: no-repeat
+                .shop-loop-before
+                    margin-bottom: 30px 
+                    .gridlist-toggle,
+                    .woocommerce-pagination
+                        display: none
+                    .woocommerce-ordering
+                        position: relative
+                        margin-bottom: 0
+
+                        label 
+                            display: none
+                        select
+                            margin-left: 0
+                            height: 42px 
+                            border-radius: 3px 
+                            background-color: transparent 
+                            font-size: 14px 
+                            font-weight: 400
+                            border: 1px solid rgba( 36, 36, 36, .1)
+                            color: rgba( 36, 36, 36, .1)
+                            padding: 0 17px 
+                            padding-right: 45px 
+                            box-sizing: content-box
+                            -webkit-appearance: none
+                            -moz-appearance: none
+                            -webkit-appearance: none
+                .archive-products
+                    .product_wrapper
+                        padding: 0 16px
+                        margin-bottom: 32px 
+                        .product
+                            .category-list 
+                                line-height: 1
+                                display: flex 
+                                a 
+                                    font-size: 12px
+                                    display: block
+                                    line-height: 1.2
+@media(max-width: 1280px)
+    .post-type-archive-product,
+    .tax-product_cat
+        .shop_page_container
+            .row 
+                .sidebar 
+                    max-width: 25% 
+                    flex: 0 0 25%
+                    .product-categories
+                        padding-right: 25px
+                        display: block !important
+                .archive-products-wrapper
+                    .products
+                        .product_wrapper 
+                            max-width: 50% 
+                            flex: 0 0 50%
+@media(max-width: 991px )
+    .post-type-archive-product,
+    .tax-product_cat
+        .shop_page_container
+            .row 
+                flex-wrap: wrap
+                .sidebar
+                    order: -1
+                    max-width: 100% 
+                    flex: 0 0 100%
+                    padding-left:  15px 
+                    padding-right: 15px
+                    margin-bottom: 15px
+                    .sidebar-content
+                        padding-left: 17px
+                        padding-right: 16px
+                        margin-top: 0 
+                        position: absolute
+                        top: 52px 
+                        left: 15px
+                        right: 15px 
+                        background: #F5F7F9
+                        padding-top: 20px 
+                        padding-bottom: 20px 
+                        border: 1px solid rgba( 36, 36, 36, .2)
+                        border-radius: 3px 
+                        display: none
+
+                    .mobile_categories_opener 
+                        position: relative
+                        width: 100%
+                        padding-left: 56px 
+                        padding-top: 11px 
+                        padding-bottom: 12px 
+                        padding-right: 20px
+                        font-weight: 700
+                        line-height: 1.2
+                        border: 1px solid rgba( 36, 36, 36, .2)
+                        border-radius: 3px 
+                        font-family: Rubik 
+                        font-size: 16px 
+                        position: relative
+                        &::after 
+                            content: ""
+                            position: absolute
+                            background-image: url('../assets/img/open_menu_arrow.svg')
+                            width: 12px 
+                            height: 6px 
+                            top: 50%
+                            transform: translateY(-50%)
+                            right: 16px 
+                            background-size: contain
+                        &::before
+                            content: ""
+                            position: absolute
+                            background-image: url('../assets/img/product_category_opener_icon.svg')
+                            background-size: contain
+                            width: 24px
+                            height: 24px 
+                            background-repeat: no-repeat
+                            background-position: center
+                            top: 9px 
+                            left: 17px 
+                .archive-products-wrapper
+                    .shop-loop-before
+                        .product_orderby_wrapper
+                            .orderby_title
+                                border: 1px solid #0088CC
+                                color: #242424
+                                &::after 
+                                    opacity: 1
+                            .product_orderby
+                                padding-top: 4.5px 
+                                padding-bottom: 9.5px
+                                li 
+                                    a 
+                                        color: #242424 !important
+                                        padding: 7.5px 17px 
+                                        line-height: 1.45
+                                    &.active
+                                        a
+                                            color: #0088CC !important
+                            .product_orderby 
+                                background: #fff 
+                                border: 0
+                                box-shadow: 0px 2.09274px 10.4637px rgba(184, 214, 237, 0.5)
+                            .orderby_title,
+                            .product_orderby 
+                                width: 100%
+@media(max-width: 768px)
+    .post-type-archive-product,
+    .tax-product_cat
+        .header 
+            & > .container 
+                padding-left: 16px !important
+        .shop_page_container
+            padding-left: 16px !important
+            padding-right: 16px !important
+            .row 
+                .sidebar
+                    margin-top: 4px
+                    .sidebar-content
+                        z-index: 10
+                        left: 16px 
+                        right: 16px 
+                        z-index: 10
+                .archive-products-wrapper
+                    padding-right: 16px 
+                    padding-left: 16px 
+                    .misha_loadmore
+                        line-height: 1.45 
+                        display: inline-block
+                    .navigation
+                        margin-top: 30px 
+                        margin-bottom: 70px
+                    .shop-loop-before 
+                        margin-bottom: 15px 
+                        .product_orderby_wrapper
+                    .products
+                        .product_wrapper 
+                            max-width: 100% 
+                            flex: 0 0 100%
+                            margin-bottom: 15px 
+@media(min-width: 992px)
+    .post-type-archive-product,
+    .tax-product_cat 
+        .shop_page_container 
+            .row 
+                .sidebar 
+                    .mobile_categories_opener
+                        display: none
+                .archive-products-wrapper
+                    margin-top: -16px

@@ -1,3 +1,4 @@
+//Product page slider
 jQuery(document).ready(function(){
     jQuery(".owl-carousel").owlCarousel({
         margin: 0,
@@ -19,3 +20,26 @@ jQuery(document).ready(function(){
         }
     });
 });
+
+
+//Shop page
+
+
+//Sort By
+var $ = jQuery;
+$(document).ready(function(){
+  var selectedOrder = $('.woocommerce-ordering select').find('option[selected="selected"]');
+  var selectedOrderClass = $(selectedOrder).attr('value');
+  $('.' + selectedOrderClass).addClass('active');  
+  var selectedOrderName = $('.' + selectedOrderClass + ' a').html();
+  $('.orderby_title').html(selectedOrderName);
+});
+
+
+
+jQuery(document).ready(function(){
+    var productCount = jQuery('.product_wrapper').length;
+    if(productCount <= 12){
+        $('.misha_loadmore').remove();
+    }
+})

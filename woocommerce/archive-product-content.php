@@ -15,6 +15,8 @@ if ( $porto_settings['category-ajax'] ) {
 	wp_enqueue_script( 'wc-price-slider' );
 }
 ?>
+<div class="shop_page_container">
+	<div class="row">
 
 <?php
 	/**
@@ -24,14 +26,10 @@ if ( $porto_settings['category-ajax'] ) {
 	 * @hooked woocommerce_breadcrumb - 20
 	 * @hooked WC_Structured_Data::generate_website_data() - 30
 	 */
-	do_action( 'woocommerce_before_main_content' );
+	//do_action( 'woocommerce_before_main_content' );
 ?>
 
-<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-	<h2 class="page-title"><?php woocommerce_page_title(); ?></h2>
-
-<?php endif; ?>
 
 <?php
 	/**
@@ -44,7 +42,8 @@ if ( $porto_settings['category-ajax'] ) {
 ?>
 
 <?php if ( ( function_exists( 'woocommerce_product_loop' ) && woocommerce_product_loop() ) || ( ! function_exists( 'woocommerce_product_loop' ) && have_posts() ) ) { ?>
-
+	<?php do_action( 'woocommerce_sidebar' ); ?>
+	<div class="col-lg-9 col-12 archive-products-wrapper">
 	<?php
 		/**
 		 * Hook: woocommerce_before_shop_loop.
@@ -56,46 +55,18 @@ if ( $porto_settings['category-ajax'] ) {
 		do_action( 'woocommerce_before_shop_loop' );
 	?>
 
-	<?php
-		global $woocommerce_loop;
-
-	if ( ! ( isset( $woocommerce_loop['category-view'] ) && $woocommerce_loop['category-view'] ) ) {
-		$woocommerce_loop['category-view'] = isset( $porto_settings['category-view-mode'] ) ? $porto_settings['category-view-mode'] : '';
-
-		$term = get_queried_object();
-		if ( $term && isset( $term->taxonomy ) && isset( $term->term_id ) ) {
-			$cols = get_metadata( $term->taxonomy, $term->term_id, 'product_cols', true );
-			if ( ! $cols ) {
-				$cols = $porto_settings['product-cols'];
-			}
-
-			$addlinks_pos = get_metadata( $term->taxonomy, $term->term_id, 'addlinks_pos', true );
-			if ( ! $addlinks_pos ) {
-				$addlinks_pos = $porto_settings['category-addlinks-pos'];
-			}
-
-			$view_mode = get_metadata( $term->taxonomy, $term->term_id, 'view_mode', true );
-
-			$woocommerce_loop['columns']        = $cols;
-			$woocommerce_loop['columns_mobile'] = $porto_settings['product-cols-mobile'];
-			$woocommerce_loop['addlinks_pos']   = $addlinks_pos;
-			if ( $view_mode ) {
-				$woocommerce_loop['category-view'] = $view_mode;
-			}
-		}
-	}
-
-
-	if ( is_shop() && ! is_product_category() ) {
-		$woocommerce_loop['columns']        = $porto_settings['shop-product-cols'];
-		$woocommerce_loop['columns_mobile'] = $porto_settings['shop-product-cols-mobile'];
-	}
-	?>
+	
 
 	<div class="archive-products">
-
+		
 		<?php woocommerce_product_loop_start(); ?>
 		<?php
+		$query_args = array(
+			'posts_per_page'   => 12,
+    		'order'            => 'DESC',
+    		'orderby'          => 'post_views',  //required param
+		);
+		$query = new WP_Query( $query_args );
 		if ( ! function_exists( 'wc_get_loop_prop' ) || wc_get_loop_prop( 'total' ) ) {
 			while ( have_posts() ) {
 				the_post();
@@ -105,24 +76,40 @@ if ( $porto_settings['category-ajax'] ) {
 				 *
 				 * @hooked WC_Structured_Data::generate_product_data() - 10
 				 */
-				do_action( 'woocommerce_shop_loop' );
-
-				wc_get_template_part( 'content', 'product' );
+				do_action( 'woocommerce_shop_loop' );?>
+ 
+				<div class="product_wrapper col-lg-4 col-md-6 col-12"><?php wc_get_template_part( 'content', 'product' ); ?></div>
+				<?php
 			}
 		}
 		?>
 		<?php woocommerce_product_loop_end(); ?>
 
 	</div>
-
+	<div class="misha_loadmore"><span><?php _e('Показати ще товари'); ?></span></div>
 	<?php
 		/**
 		 * Hook: woocommerce_after_shop_loop.
 		 *
 		 * @hooked woocommerce_pagination - 10
 		 */
-		do_action( 'woocommerce_after_shop_loop' );
+		//do_action( 'woocommerce_after_shop_loop' );
+
+		$args = array(
+			'show_all'     => false, // показаны все страницы участвующие в пагинации
+			'end_size'     => 1,     // количество страниц на концах
+			'mid_size'     => 3,     // количество страниц вокруг текущей
+			'prev_next'    => true,  // выводить ли боковые ссылки "предыдущая/следующая страница".
+			'prev_text'    => __(''),
+			'next_text'    => __(''),
+			'add_args'     => false, // Массив аргументов (переменных запроса), которые нужно добавить к ссылкам.
+			'add_fragment' => '',     // Текст который добавиться ко всем ссылкам.
+			'screen_reader_text' => __( '' ),
+		);
+		the_posts_pagination( $args );
+		
 	?>
+	</div>
 
 	<?php
 } else {
@@ -155,14 +142,22 @@ if ( $porto_settings['category-ajax'] ) {
 	 *
 	 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 	 */
-	do_action( 'woocommerce_after_main_content' );
+	//do_action( 'woocommerce_after_main_content' );
 ?>
+</div>
+</div>
+<script>
+	jQuery(document).ready(function(){
+		jQuery('.archive-products .product .single_add_to_cart_button').html('Купити');
+	});
+	jQuery(document).ready(function(){
+		jQuery('.orderby_title').click(function(){
+			jQuery(this).parent().find('.product_orderby').slideToggle(200);
+		});
+		jQuery('.mobile_categories_opener').click(function(){
+			jQuery(this).parent().find('.sidebar-content').slideToggle();
+			console.log(123);
+		});
+	});
 
-<?php
-	/**
-	 * Hook: woocommerce_sidebar.
-	 *
-	 * @hooked woocommerce_get_sidebar - 10
-	 */
-	do_action( 'woocommerce_sidebar' );
-?>
+</script>
