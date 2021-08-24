@@ -6,6 +6,8 @@ function child_styles(){
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com' );
     wp_enqueue_style( 'gstatic', 'https://fonts.gstatic.com' );
     wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet' );
+    wp_enqueue_style( 'slick_slidere', get_stylesheet_directory_uri() . '/assets/libs/slick.css');
+    wp_enqueue_style( 'slick_slider_theme', get_stylesheet_directory_uri() . '/assets/libs/slick-theme.css');
 }
 
 
