@@ -189,12 +189,12 @@ Template Name: Home Page
 							</div>
 						<?php endif; ?>								
  	                    <div class="text">
-							<?php if( $homeFeaturesTitle ); ?>
+							<?php if( $homeFeaturesTitle ): ?>
 								<h3>
 									<?php echo $homeFeaturesTitle ?>
 								</h3>
 							<?php endif; ?>
-							<?php if( $homeFeaturesContent ); ?>
+							<?php if( $homeFeaturesContent ): ?>
 								<p>
 									<?php echo $homeFeaturesContent ?>
 								</p>
@@ -209,12 +209,12 @@ Template Name: Home Page
 <?php endif; ?>  
  	<section class="homeStock">
  	    <div class="container">
-		 <?php if( $homeStockTitle ); ?>
+		 <?php if( $homeStockTitle ): ?>
  	        <div class="head">
 				<h2>
 					<?php echo $homeStockTitle ?>
 				</h2>
-		<?php endif; ?>
+			<?php endif; ?>
  	            <a href="#" class="view-more">
  	                Показати всі
  	            </a>
@@ -227,27 +227,32 @@ Template Name: Home Page
  	        	<div class="homeStock__slider">
 					<?php while( have_rows('homeStock__slider') ) : the_row();
 						$homeStock__slide = get_sub_field('homeStock__slide');
+						
 					?>
 					<?php if( !empty( $image ) ): ?>
 						<div class="homeStock__slide">
 							<img src="<?php echo esc_url($homeStock__slide['url']); ?>" alt="<?php echo esc_attr($homeStock__slide['alt']); ?>" />
 						</div>
+					<?php endif; ?>
+
+				<?php endwhile; ?>
 				<?php endif; ?>
  	        </div>
  	    </div>
  	</section>
 	 <?php 
-	 	$homeTextContent = get_field('homeTextContent')
+	 	$homeTextContent = get_field('homeTextContent');
 	 ?>
-	<?php if( $homeTextContent ); ?>
+	<?php if( $homeTextContent ): ?>
 		<section class="homeText">
 			<div class="container">
 				<div class="homeText__content">
 					<p>
-					<?php echo $homeTextContent ?>
+					<?php echo $homeTextContent; ?>
 					</p>
 				</div>
 			</div>
 		</section>
 	 <?php endif; ?>
+ 
  <?php get_footer(); ?>
