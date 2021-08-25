@@ -277,6 +277,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            </ul>
 			        </div>
 			    </div>
+				<?php if(!is_front_page()): ?>
 			    <div class="container">
 			        <ul class="breadcrumbs">
 			            <li>
@@ -287,4 +288,5 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            </li>
 			        </ul>
 			    </div>
+				<?php endif; ?>
 			</header>
