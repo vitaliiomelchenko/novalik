@@ -26,8 +26,8 @@ jQuery(document).ready(function(){
 		jQuery('#mobileMenu').slideUp(200);
 	});
 	jQuery('.header-categories').click(function(){
-	  if(jQuery(this).hasClass('categories-active')){
-	    jQuery(this).removeClass('categories-active');
+	    if(jQuery(this).hasClass('categories-active')){
+	        jQuery(this).removeClass('categories-active');
 	    }else{
 	       jQuery(this).addClass('categories-active');
 	    }
