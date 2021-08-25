@@ -1,6 +1,6 @@
 <?php 
 /*
-Temaplate Name: Карьера
+Template Name: Карьера
 */ 
 ?>
 <?php 
