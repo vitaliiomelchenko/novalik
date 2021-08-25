@@ -158,10 +158,12 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                    </div>
 			                    <div class="col-lg-5">
 			                        <div class="top-bar__search">
-				                                <input type="search" class="top-bar__input" placeholder="Пошук">
+										<form action="">
+				                            <input type="search" class="top-bar__input" placeholder="Пошук">
 			                                <button type="submit" class="top-bar__btn">
 			                                    Знайти
 			                               </button>
+										</form>
 			                        </div>
 			                    </div>
 			                    <div class="d-none d-md-block col-lg-4">
