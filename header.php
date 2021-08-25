@@ -152,50 +152,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                            <img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
 			                            КАТЕГОРІЇ ТОВАРІВ
 			                            <div class="header-categories__list" style="display: block !important;">
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-1.svg" alt="">
-			                                    Акційні пропозиції
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-2.svg" alt="">
-			                                    Опорно-руховий апарат
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-3.svg" alt="">
-			                                    Протизастудні засоби / для імунітету
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-4.svg" alt="">
-			                                    Для чоловічого здоров'я
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-5.svg" alt="">
-			                                   Для жіночого здоров'я
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-6.svg" alt="">
-			                                    Для ШКТ (Печінка желчевод)
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-7.svg" alt="">
-			                                    Для дихальних шляхів
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-8.svg" alt="">
-			                                    Засоби від герпесу
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-9.svg" alt="">
-			                                    Засоби проти хропіння
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-10.svg" alt="">
-			                                    Для нервової системи
-			                                </a>
-			                                <a href="#">
-			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-11.svg" alt="">
-			                                    Для профілактики варикоза
-			                                </a>
+											<?php dynamic_sidebar( 'woo-category-filter-sidebar' ); ?>
 			                            </div>
 			                        </div>
 			                    </div>

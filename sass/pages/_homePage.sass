@@ -6,6 +6,41 @@
 			max-width: 1316px 
 			padding-right: 50px !important
 			padding-left: 50px !important
+.widget
+	&.widget_custom_html,
+	&.woocommerce-widget-layered-nav
+		display: none 
+	&.widget_product_categories 
+		.widget-title
+			display: none
+		.product-categories 
+			li.cat-item 
+				padding-left: 40px 
+				margin-bottom: 16px 
+				span
+					display: none
+				a
+					margin-bottom: 0
+					padding-top: 3px
+					padding-bottom: 4px
+					transition: .3s 
+					line-height: 1.25
+					&:hover 
+						color: #0088CC
+						text-decoration: none
+				&.cat-item-183,
+				&.cat-item-181,
+				&.cat-item-15 
+					display: none
+				&::before 
+					content: ""
+					width: 24px
+					height: 24px
+					background-size: contain
+					backgrpund-repeat: no-repeat
+					position: absolute
+					top: 0
+					left: 0
 .homeOffer 
 	background-color: #fff
 	padding: 0
