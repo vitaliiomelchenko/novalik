@@ -80,38 +80,39 @@ Template Name: Home Page
  	                    </div>
  	                </div>
  	            </div>
- 	            <div class="col-lg-9">
- 	                <div class="homeOffer__slider">
- 	                    <div class="homeOffer__slide" style="background-image: url(wp-content/themes/porto/images/offer-slider-img.png);">
- 	                        <div class="text">
- 	                            <div class="pre">
- 	                                Новинка
- 	                            </div>
- 	                            <h2>
- 	                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- 	                            </h2>
- 	                            <p>
- 	                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- 	                            </p>
- 	                            <a href="#">Детальніше</a>
- 	                        </div>
- 	                    </div>
- 	                    <div class="homeOffer__slide" style="background-image: url(wp-content/themes/porto/images/offer-slider-img.png);">
- 	                        <div class="text">
- 	                            <div class="pre">
- 	                                Новинка
- 	                            </div>
- 	                            <h2>
- 	                                slide 2
- 	                            </h2>
- 	                            <p>
- 	                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- 	                            </p>
- 	                            <a href="#">Детальніше</a>
- 	                        </div>
- 	                    </div>
- 	                </div>
- 	            </div>
+				<?php if( have_rows('homeOffer__slider') ):?>
+					<div class="col-lg-9">
+						<div class="homeOffer__slider">
+							<?php while( have_rows('homeOffer__slider') ) : the_row();
+								$homeOfferBackground = get_sub_field('homeOfferBackground');
+								$homeOfferPre = get_sub_field('homeOfferPre');
+								$homeOfferSlideTitle = get_sub_field('homeOfferSlideTitle');
+								$homeOfferSlideContent = get_sub_field('homeOfferSlideContent');
+							?>
+								<div class="homeOffer__slide" style="background-image: url(<?php echo $homeOfferBackground ?>);">
+									<div class="text">
+										<?php if( $homeOfferPre ); ?>
+											<div class="pre">
+												<?php echo $homeOfferPre ?>
+											</div>
+										<?php endif; ?>
+										<?php if( $homeOfferSlideTitle ); ?>
+											<h2>
+												<?php echo $homeOfferSlideTitle ?>
+											</h2>
+										<?php endif; ?>
+										<?php if( $homeOfferSlideContent ); ?>
+											<p>
+												<?php if( $homeOfferSlideContent ); ?>
+											</p>
+										<?php endif; ?>
+										<a href="#">Детальніше</a>
+									</div>
+								</div>
+							<?php endwhile; ?>
+						</div>
+					</div>
+				<?php endif; ?>
  	        </div>
  	    </div>
  	</section>
@@ -234,7 +235,7 @@ Template Name: Home Page
 					?>
 					<?php if( !empty( $homeStock__slide ) ): ?>
 						<div class="homeStock__slide">
-							<img src="<?php echo esc_url($homeStock__slide['url']); ?>" alt="<?php echo esc_attr($homeStock__slide['alt']); ?>" />
+							src="<?php echo esc_url($homeStock__slide['url']); ?>" alt="<?php echo esc_attr($homeStock__slide['alt']); ?>
 						</div>
 					<?php endif; ?>
 				<?php endwhile; ?>

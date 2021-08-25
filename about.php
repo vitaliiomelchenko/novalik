@@ -38,7 +38,7 @@ Template Name: About Page
                     <?php if( !empty( $aboutBlocklogo ) ): ?>
                         <div class="col-xl-6">
                             <div class="aboutBlock__img">
-                                <img src="<?php echo file_get_contents(esc_url(wp_get_original_image_path($aboutBlocklogo['id']))); ?>" alt="">
+                               <?php echo file_get_contents(esc_url(wp_get_original_image_path($aboutBlocklogo['id']))); ?>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@ Template Name: About Page
                             <div class="aboutFeatures__item">
                                 <?php if( !empty( $aboutFeaturesitemIcon ) ): ?>
                                     <div class="icon">
-                                        <img src="<?php echo file_get_contents(esc_url(wp_get_original_image_path($aboutFeaturesitemIcon['id']))); ?>" alt="">
+                                        <?php echo file_get_contents(esc_url(wp_get_original_image_path($aboutFeaturesitemIcon['id']))); ?>
                                     </div>
                                 <?php endif; ?>
                                 <?php if( $aboutFeaturesitemContent ); ?>
@@ -181,7 +181,7 @@ Template Name: About Page
                             <div class="aboutFeatures__item">
                                 <?php if( !empty( $aboutDirectionsitemIcon ) ): ?>
                                     <div class="icon">
-                                        <img src="<?php echo file_get_contents(esc_url(wp_get_original_image_path($aboutDirectionsitemIcon['id']))); ?>" alt="">
+                                        <?php echo file_get_contents(esc_url(wp_get_original_image_path($aboutDirectionsitemIcon['id']))); ?>
                                     </div>
                                 <?php endif; ?>
                                 <?php if( $aboutDirectionsitemContent ); ?>
