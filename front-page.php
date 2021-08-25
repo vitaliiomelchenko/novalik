@@ -232,7 +232,7 @@ Template Name: Home Page
 						$homeStock__slide = get_sub_field('homeStock__slide');
 						
 					?>
-					<?php if( !empty( $image ) ): ?>
+					<?php if( !empty( $homeStock__slide ) ): ?>
 						<div class="homeStock__slide">
 							<img src="<?php echo esc_url($homeStock__slide['url']); ?>" alt="<?php echo esc_attr($homeStock__slide['alt']); ?>" />
 						</div>
