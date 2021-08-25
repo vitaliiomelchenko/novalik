@@ -103,21 +103,22 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                    </div>
 			                </div>
 			                <div class="col-lg-5 d-none d-md-block">
+							<ul class="menu nav-list">
 							<?php wp_nav_menu( [
 											'theme_location'  => 'Main Menu',
 											'menu'            => 'main-menu',
-											'container'       => false,
+											'container'		 	=> false,
 											'menu_class'      => 'menu nav-list',
 											'echo'            => true,
 											'fallback_cb'     => 'wp_page_menu',
 											'items_wrap'      => '<li  class="menu-item" >%3$s</li>'
 										] );
 										?>
-			                    
+								</ul>
 			                </div>
 							<?php 
-								$headerPhone = get_field('headerPhone')
-								$headerQ = get_field('headerQ')
+								$headerPhone = get_field('headerPhone', 'option');
+								$headerQ = get_field('headerQ', 'option');
 							?>
 			                <div class="d-none d-md-block col-lg-3">
 			                    <div class="phone">
@@ -202,19 +203,18 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                        <div class="top-bar__search">
 			                            <form action="">
 			                                <?php echo do_shortcode( '[ivory-search id="4465" title="Default Search Form"]' ); ?>
-			                                <button type="submit" class="top-bar__btn">
 			                                    Знайти
-			                                </button>
+			                                
 			                            </form>
 			                        </div>
 			                    </div>
 			                    <div class="d-none d-md-block col-lg-4">
 			                        <div class="user-block">
-			                            <a href="<?php echo get_home_uri() . '/my-account/' ?>" class="user-item cart">
+			                            <a href="<?php echo get_home_url( null, 'my-account/', 'https' ); ?>" class="user-item cart">
 			                                <img src="<?php echo get_template_directory_uri() ?>/images/user-icon.svg" alt="">
 			                                Особистий кабінет
 			                            </a>
-			                            <a href="<?php echo get_home_uri() . '/cart/' ?> " class="user-item cart">
+			                            <a href="<?php echo get_home_url( null, 'cart/', 'https' ); ?>" class="user-item cart">
 			                                <img src="<?php echo get_template_directory_uri() ?>/images/cart.svg" alt="">
 			                                Кошик
 			                            </a>
@@ -234,11 +234,11 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            </div>
 			        </div>
 			        <div class="user-block">
-			            <a href="<?php echo get_home_uri() . '/my-account/' ?>" class="user-item cart">
+			            <a href="<?php echo get_home_url( null, 'my-account/', 'https' ); ?>" class="user-item cart">
 			                <img src="<?php echo get_template_directory_uri() ?>/images/user-icon.svg" alt="">
 			                Особистий кабінет
 			            </a>
-			            <a href="<?php echo get_home_uri() . '/cart/' ?>" class="user-item cart">
+			            <a href="<?php echo get_home_url( null, 'cart/', 'https' ); ?>" class="user-item cart">
 			                <img src="<?php echo get_template_directory_uri() ?>/images/cart.svg" alt="">
 			                Кошик
 			            </a>
@@ -288,5 +288,3 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			        </ul>
 			    </div>
 			</header>
-
-
