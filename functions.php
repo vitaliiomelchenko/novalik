@@ -29,6 +29,8 @@ add_action( 'wp_enqueue_scripts', 'novalik_child_scripts' );
 function novalik_child_scripts(){
 	wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
 	wp_enqueue_script( 'load-more-js', get_stylesheet_directory_uri() . '/assets/js/myloadmore.js');
+  wp_enqueue_script( 'slick-main_script', get_stylesheet_directory_uri() . '/assets/js/slick.min.js');
+  wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
 }
 
 //Woocommerce product page 
