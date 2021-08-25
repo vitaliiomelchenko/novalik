@@ -208,7 +208,7 @@ Template Name: Home Page
  	</section>
 <?php endif; ?>  
 <?php 
-	$homeStockTitle = get_sun_field('homeStockTitle')
+	$homeStockTitle = get_field('homeStockTitle')
 ?>
 <section class="homeStock">
  	<div class="container">
