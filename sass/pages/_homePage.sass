@@ -1,3 +1,11 @@
+.home 
+	.homeFeatures,
+	.homeStock,
+	.homeText
+		.container 
+			max-width: 1316px 
+			padding-right: 50px !important
+			padding-left: 50px !important
 .homeOffer 
 	background-color: #fff
 	padding: 0
@@ -181,7 +189,85 @@
 				font-size: 12px
 				font-weight: 800
 				text-decoration: underline
-			
+.home 
+	.popular_products_wrapper
+		font-family: Rubik
+		.popular_products_container
+			max-width: 1316px 
+			padding-left: 50px 
+			padding-right: 50px
+			margin-left: auto
+			margin-right: auto
+			.popular_products_slider_title_wrapper
+				display: flex 
+				padding-right: 81px 
+				justify-content: space-between
+				align-items: flex-start
+				.popular_products_slider_title
+					font-size: 24px 
+					font-weight: 700
+					margin-bottom: 31px 
+					line-height: 1.2
+				.show_all 
+					padding-top: 7px 
+					font-size: 12px 
+					text-decoration: underline
+			.popular_products_slider
+				position: relative
+				.owl-stage-outer
+					overflow: hidden
+					.owl-stage
+						display: flex 
+						.product 
+							* 
+								&:hover 
+									text-decoration: none
+							.category-list
+								font-size: 0
+								display: flex 
+								overflow: hidden
+								flex-wrap: nowrap
+								a 
+									white-space: nowrap
+				.owl-nav
+					position: absolute
+					right: 0
+					top: -60px
+					button 
+						width: 30px 
+						height: 30px 
+						border: 0
+						background-color: #B8D6ED
+						position: relative
+						cursor: pointer
+						span 
+							display: none
+						&.disabled
+							opacity: .5
+						&.owl-prev 
+							&::after 
+								content: ""
+								background-image: url('../assets/img/pagination_arrow.svg')
+								width: 6.8px
+								height: 14px
+								position: absolute
+								top: 7px
+								left: 11.6px
+								transform: rotate(-180deg)
+								background-repeat: no-repeat
+						&.owl-next 
+							&::after
+								content: ""
+								background-image: url('../assets/img/pagination_arrow.svg')
+								width: 6.8px
+								height: 14px
+								position: absolute
+								top: 9px
+								left: 11.6px  
+								background-repeat: no-repeat
+								
+
+
 		
 	
 
@@ -381,3 +467,23 @@
 		
 		
 	
+@media(max-width: 768px )
+	.home 
+		.popular_products_wrapper 
+			.popular_products_container 
+				padding-left: 16px 
+				padding-right: 79px 
+				.popular_products_slider_title_wrapper 
+					padding-right: 0
+					.popular_products_slider_title
+						text-transform: none
+					.show_all
+						display: none
+				.popular_products_slider 
+					.owl-stage-outer
+						overflow: visible
+					.owl-nav 
+						right: -63px 
+						button 
+							&.owl-prev 
+								margin-right: 10px 

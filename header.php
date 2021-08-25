@@ -148,10 +148,10 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            <div class="container">
 			                <div class="row align-items-center justify-content-between">
 			                    <div class="d-none d-md-block col-lg-3">
-			                        <div class="header-categories">
+			                        <div class="header-categories" style="pointer-events: all !important;">
 			                            <img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
 			                            КАТЕГОРІЇ ТОВАРІВ
-			                            <div class="header-categories__list">
+			                            <div class="header-categories__list" style="display: block !important;">
 			                                <a href="#">
 			                                    <img src="<?php echo get_template_directory_uri() ?>/images/cat-1.svg" alt="">
 			                                    Акційні пропозиції
@@ -242,7 +242,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                Кошик
 			            </a>
 			        </div>
-			        <div class="header-categories">
+			        <div class="header-categories" style="pointer-events:all;">
 			            <div class="d-flex align-items-center justify-content-center" style="width: 100%;">
 			            	<img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
 			            	КАТЕГОРІЇ ТОВАРІВ
