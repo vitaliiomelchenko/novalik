@@ -176,7 +176,7 @@ Template Name: Home Page
  	<section class="homeFeatures"> 
  	    <div class="container"> 
  	        <div class="row">
-				 <?php while( have_rows('repeater_field_name') ) : the_row();
+				 <?php while( have_rows('homeFeatures') ) : the_row();
 				 	$homeFeaturesTitle = get_sub_field('homeFeaturesTitle');
 					$homeFeaturesContent = get_sub_field('homeFeaturesContent');
 					$homeFeaturesIcon = get_sub_field('homeFeaturesIcon');
@@ -210,8 +210,8 @@ Template Name: Home Page
 <?php 
 	$homeStockTitle = get_sun_field('homeStockTitle')
 ?>
- 	<section class="homeStock">
- 	    <div class="container">
+<section class="homeStock">
+ 	<div class="container">
 		 <?php if( $homeStockTitle ): ?>
  	        <div class="head">
 				<h2>
@@ -237,12 +237,11 @@ Template Name: Home Page
 							<img src="<?php echo esc_url($homeStock__slide['url']); ?>" alt="<?php echo esc_attr($homeStock__slide['alt']); ?>" />
 						</div>
 					<?php endif; ?>
-
 				<?php endwhile; ?>
-				<?php endif; ?>
- 	        </div>
+			<?php endif; ?>
  	    </div>
- 	</section>
+ 	</div>
+</section>
 	 <?php 
 	 	$homeTextContent = get_field('homeTextContent');
 	 ?>
