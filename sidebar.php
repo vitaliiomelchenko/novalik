@@ -46,11 +46,6 @@ foreach($cats as $cat) {
     echo '
         <style>.cat-item-' . $cat->term_id .  '::before{background-image: url("' . $image . '");}</style>';
     ?>
-    <?php if(!empty($icon)): ?>
-            <div class="category-image">
-                <?php echo $icon ?>
-            </div>
-    <?php endif; ?>
 <?php 
 };
 ?>
