@@ -461,9 +461,18 @@
 		.popular_products_wrapper 
 			.popular_products_container 
 				padding-left: 16px 
-				padding-right: 0
+				padding-right: 79px 
+				.popular_products_slider_title_wrapper 
+					padding-right: 0
+					.popular_products_slider_title
+						text-transform: none
+					.show_all
+						display: none
 				.popular_products_slider 
-					overflow: hidden
 					.owl-stage-outer
-						max-width: calc( 100% - 63px )
 						overflow: visible
+					.owl-nav 
+						right: -63px 
+						button 
+							&.owl-prev 
+								margin-right: 10px 
