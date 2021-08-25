@@ -3,27 +3,32 @@
 Temaplate Name: Карьера
 */ 
 ?>
-
+<?php 
+    $careerTitle = get_field('careerTitle');
+    $careerContent = get_field('careerContent');
+    $careerDedicated = get_field('careerDedicated');
+    $careerForm = get_field('careerForm');
+?>
 <?php get_header();?>
     <section class="career">
         <div class="container">
-            <h1>Кар'єра</h1>
+            <?php if( $careerTitle ) : ?>
+                <h1><?php echo $careerTitle ?></h1>
+            <?php endif; ?>
             <div class="row">
                 <div class="col-lg-6 career__content">
-                    <p>
-                        Хочете приєднатися до команди професіоналів сучасної інноваційної фармацевтичної компанії?
-                    </p>
-                    <p>
-                        «Новалік» надає широкі можливості для самореалізації, особистісного розвитку та кар’єрного росту.
-                    </p>
-
+                    <?php if( $careerTitle ) : ?>
+                <?php echo $careerContent ?>
+            <?php endif; ?>
+                    <?php if( $careerDedicated ) : ?>
                     <div class="career__contentDedicated">
-                        Якщо ви амбіційний професіонал, упевнена в собі позитивна та цілеспрямована людина, яка бажає працювати в команді лідерів, надсилайте ваше резюме із зазначенням, посади, що вас цікавить, та рівня очікування по заробітній платі за допомогою електронної форми. Ми обов’язково розглянемо вашу пропозицію та надамо зворотний зв’язок.
+                       <?php echo $careerDedicated ?>
                     </div>
+                    <?php endif; ?>
                 </div>
                 <div class="career__formWrapper col-lg-6">
                     <div class="career__form">
-                        <h4>Надіслати резюме</h4>
+                        <?php echo $careerForm ?>
                     </div>
                 </div>
             </div>
