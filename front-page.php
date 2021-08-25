@@ -1,5 +1,5 @@
 <?php 
-	/*
+/*
 Template Name: Home Page
 */
  ?>
@@ -207,6 +207,9 @@ Template Name: Home Page
  	    </div>  
  	</section>
 <?php endif; ?>  
+<?php 
+	$homeStockTitle = get_sun_field('homeStockTitle')
+?>
  	<section class="homeStock">
  	    <div class="container">
 		 <?php if( $homeStockTitle ): ?>
