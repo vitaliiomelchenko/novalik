@@ -130,3 +130,13 @@ function custom_catalog_ordering_args( $orderby ) {
     $orderby = 'popularity'; 
     return $orderby; 
 }
+
+
+add_filter( 'woocommerce_checkout_fields' , 'quadlayers_remove_checkout_fields' );
+function quadlayers_remove_checkout_fields( $fields ) {
+
+  unset($fields['billing']['billing_last_name']); 
+  
+  return $fields; 
+  
+  }
