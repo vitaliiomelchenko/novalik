@@ -1,5 +1,5 @@
 <?php 
-	/*
+/*
 Template Name: About Page
 */
  ?>
@@ -23,18 +23,19 @@ Template Name: About Page
 <section class="aboutBlock">
 	    <div class="container">
 	        <div class="row justify-content-between align-items-center">
-                <?php if( $aboutBlocktitle || $aboutBlocktextLeft ) ;?>
+                <?php if( $aboutBlocktitle ) : ?>
 	            <div class="col-xl-6">
 	                <div class="aboutBlock__text">
 	                    <h1>
 	                        <?php echo $aboutBlocktitle ?>
-	                    </h1>
+	                    </h1> 
+						<?php endif; ?>
 	                    <p>
                             <?php echo $aboutBlocktextLeft ?>
 	                    </p>
 	                </div>
 	            </div>
-                <?php endif; ?>
+               
                     <?php if( !empty( $aboutBlocklogo ) ): ?>
                         <div class="col-xl-6">
                             <div class="aboutBlock__img">
@@ -48,16 +49,18 @@ Template Name: About Page
 	            <div class="aboutBlock__bottom">
 	                <div class="row justify-content-between align-items-center">
 	                    <div class="col-xl-6">
+							<div class="aboutBlock__images">
                             <?php while( have_rows('image_row') ) : the_row();
                                 $aboutBlockimage = get_sub_field('aboutBlockimage');
                             ?>
-                                <div class="aboutBlock__images">
+                                
 	                                <img src="<?php echo esc_url($aboutBlockimage['url']); ?>" alt="<?php echo esc_attr($aboutBlockimage['alt']); ?>">
-	                            </div>
+	                            
                             <?php endwhile; ?>
+							</div>
 	                    </div>
                     <?php endif; ?>
-                    <?php if( $aboutBlocktextRight ) ;?>
+                    <?php if( $aboutBlocktextRight ) : ?>
                         <div class="col-xl-6">
                             <div class="aboutBlock__description">
                                 <p>
@@ -72,7 +75,7 @@ Template Name: About Page
 	</section>
 	<section class="aboutFeatures">
 	<div class="container">
-        <?php if( $aboutFeaturestitle ); ?>
+        <?php if( $aboutFeaturestitle ) : ?>
             <h2 class="title-s">
                 <?php echo $aboutFeaturestitle ?>
             </h2>
@@ -91,7 +94,7 @@ Template Name: About Page
                                         <?php echo file_get_contents(esc_url(wp_get_original_image_path($aboutFeaturesitemIcon['id']))); ?>
                                     </div>
                                 <?php endif; ?>
-                                <?php if( $aboutFeaturesitemContent ); ?>
+                                <?php if( $aboutFeaturesitemContent ) : ?>
                                     <div class="text">
                                         <p>
                                             <?php echo $aboutFeaturesitemContent ?>
@@ -99,11 +102,12 @@ Template Name: About Page
                                     </div>
                                 <?php endif; ?>
                             </div>
-                        <?php endwhile; ?>
-	                </div>
-                <?php endif; ?>
-	        </div>
-	    </div>
+							 </div>
+                        <?php endwhile; ?>	
+							</div>
+	               
+			</div>
+        <?php endif; ?>
 	</div>
 </section>
 <section class="aboutMission">
@@ -111,25 +115,23 @@ Template Name: About Page
 	    <div class="row justify-content-between align-items-center">
 	        <div class="col-lg-5">
 	            <div class="aboutMission__text">
-                    <?php if( $aboutMissiontitle ); ?>
+                    <?php if( $aboutMissiontitle ) : ?>
                         <h2 class="title-s">
                             <?php echo $aboutMissiontitle ?>
                         </h2>
                     <?php endif; ?>
-                    <?php if( $aboutMissioncontent ); ?>
+                    <?php if( $aboutMissioncontent ) : ?>
                         <p>
                             <?php echo $aboutMissioncontent ?>
                         </p>
                     <?php endif; ?>
 	            </div>
 	        </div>
-            <?php if( !empty( $aboutMissionimage ) ): ?>
                 <div class="col-lg-7">
                     <div class="aboutMission__video">
-                        <img src="<?php echo esc_url($aboutMissionimage['url']); ?>" alt="<?php echo esc_attr($aboutMissionimage['alt']); ?>" />
+						  <img src="<?php echo get_template_directory_uri() ?>/images/video.jpg" alt="">
                     </div>
                 </div>
-	        <?php endif; ?>
 	    </div>
 	</div>
 </section>
@@ -145,12 +147,12 @@ Template Name: About Page
             <?php endif; ?>
 	        <div class="order-1 order-md-2 col-lg-6">
 	            <div class="aboutPersonal__text">
-                    <?php if( $aboutPersonaltitle ); ?>
+                    <?php if( $aboutPersonaltitle ) : ?>
                         <h2 class="title-s">
                             <?php echo $aboutPersonaltitle ?>
                         </h2>
                     <?php endif; ?>
-                    <?php if( $aboutPersonalcontent ); ?>
+                    <?php if( $aboutPersonalcontent ) : ?>
                         <p>
                             <?php echo $aboutPersonalcontent ?>
                         </p>
@@ -165,7 +167,7 @@ Template Name: About Page
 </section>
 	<section class="aboutDirections">
 	    <div class="container">
-        <?php if( $aboutDirectionstitle ); ?>
+        <?php if( $aboutDirectionstitle ) : ?>
             <h2 class="title-s">
                 <?php echo $aboutDirectionstitle ?>
             </h2>
@@ -184,37 +186,50 @@ Template Name: About Page
                                         <?php echo file_get_contents(esc_url(wp_get_original_image_path($aboutDirectionsitemIcon['id']))); ?>
                                     </div>
                                 <?php endif; ?>
-                                <?php if( $aboutDirectionsitemContent ); ?>
+                                <?php if( $aboutDirectionsitemContent ) : ?>
                                     <div class="text">
                                         <p>
                                             <?php echo $aboutDirectionsitemContent ?>
                                         </p>
                                     </div>
                                 <?php endif; ?>
-                            </div>
+                            </div></div>
                         <?php endwhile; ?>
-	                </div>
+	                </div></div>
                 <?php endif; ?>
-	            </div>
-	        </div>
+	            
+	        
 	    </div>
 	</section>
 	<section class="aboutCertificates">
 	    <div class="container">
 	        <div class="head">
-				<?php if( $aboutCertificatestitle ); ?>
+				<?php if( $aboutCertificatestitle ) : ?>
 					<h2 class="title-s">
 						<?php echo $aboutCertificatestitle ?>
 					</h2>
         		<?php endif ?>
+				<?php if( have_rows('aboutCertificates__row') ):?>
 	            <div class="slider-controls">
 	                <div class="control certificates-a-prev"><img src="<?php echo get_template_directory_uri() ?>/images/prev-slide.svg" alt=""></div>
 	                <div class="control certificates-a-next"><img src="<?php echo get_template_directory_uri() ?>/images/next-slide.svg" alt=""></div>
 	            </div>
 	        </div>
-	        <div class="aboutCertificates__slider">
 			
+	        <div class="aboutCertificates__slider">
+			<?php while( have_rows('aboutCertificates__row') ) : the_row(); 
+				$aboutCertificatesItem = get_sub_field('aboutCertificatesItem');
+			?>
+			<?php if( !empty( $aboutCertificatesItem ) ): ?>
+				<div class="col-lg-4 aboutCertificatesItemWrapper">
+					<div class="aboutCertificatesItemInner">
+					<img src="<?php echo esc_url($aboutCertificatesItem['url']); ?>" alt="<?php echo esc_attr($aboutCertificatesItem['alt']); ?>" />
+				</div>
+				</div>
+			<?php endif; ?>
+			<?php endwhile; ?>
 	        </div>
 	    </div>
 	</section>
+<?php endif; ?>
 <?php get_footer(); ?>
