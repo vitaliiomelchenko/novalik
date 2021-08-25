@@ -94,7 +94,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            <div class="row align-items-center justify-content-between">
 			                <div class="d-none d-md-block col-lg-1">
 			                    <div class="logo">
-			                        <img src="<?php echo get_template_directory_uri() ?>/images/logo.svg" alt="">
+			                        <a href="<?php echo get_home_url() ?>"><img src="<?php echo get_template_directory_uri() ?>/images/logo.svg" alt=""></a>
 			                    </div>
 			                </div>
 			                <div class="d-block d-md-none">
