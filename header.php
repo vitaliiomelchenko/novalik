@@ -35,7 +35,7 @@ if ( 'no' !== $loading_overlay && ( 'yes' === $loading_overlay || ( 'yes' !== $l
 }
 
 ?>
-<body <?php body_class( array( $body_class ) ); ?><?php echo ! $showing_overlay ? '' : ' data-loading-overlay'; ?>>
+<body <?php body_class( array( $body_class ) ); ?><?php echo ! $showing_overlay ? '' : ' data-loading-overlay'; ?> style="background-image: url('') !important;">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGHQTSJ"
