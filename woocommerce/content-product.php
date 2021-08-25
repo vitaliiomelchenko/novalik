@@ -8,6 +8,6 @@
 		<div class="product_price">
 			<?php do_action('product_price'); ?>
 		</div>
-		<div class="product_add_to_cart"><?php do_action('product_add_to_cart'); ?></div>
+		<div class="product_buy_button"><a href="<?php the_permalink(  ) ?>">Купить</a></div>
 	</div>
 </div>

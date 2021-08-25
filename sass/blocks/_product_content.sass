@@ -9,6 +9,8 @@
     border-radius: 5px 
     * 
         font-family: Rubik
+        &:hover 
+            text-decoration: none
     .product-image
         border: 0
         margin-top: 48px
@@ -24,7 +26,7 @@
         font-weight: 700
     .category-list 
         line-height: 1
-        margin-bottom: 40px 
+        margin-bottom: 0px 
         a 
             color: #242424
             opacity: .5
@@ -39,40 +41,20 @@
         align-items: flex-end
         justify-content: space-between
         margin-top: auto
-        .product_add_to_cart
-            .cart 
-                .single_add_to_cart_button
-                    border-radius: 3px 
-                    font-weight: 700
-                    text-transform: none 
-                    font-size: 14px
-                    padding: 15px 27px
-                    height: auto !important
-                    line-height: 1.1
-                .quantity
-                    display: none
-                & > a 
-                    height: auto !important
-                    color: #fff !important
-                    padding: 15px 27px 
-                    font-size: 14px 
-                    line-height: 1.25
-                    border-radius: 3px 
-                    font-weight: 700
-                    text-transform: none
-                    &:hover 
-                        background-color: #0088cc 
-                .added 
-                    display: none
-                .added_to_cart
-                    background-color: #0088cc
-                    border-color: #0088cc
-                    font-size: 10px 
-                    padding: 15px 10px 
-                    white-space: nowrap
-                    display: block
-            .shipping-free-notice
-                display: none
+        .product_buy_button
+            a
+                height: auto !important
+                color: #fff !important
+                padding: 15px 27px 
+                font-size: 14px 
+                line-height: 1.25
+                border-radius: 3px 
+                font-weight: 700
+                text-transform: none
+                background-color: #0088cc 
+                display: block
+                &:hover 
+                    background-color: #0088cc 
         .product_price 
             span 
                 font-size: 18px 

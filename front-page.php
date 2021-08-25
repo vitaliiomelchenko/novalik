@@ -197,8 +197,10 @@ Template Name: Home Page
 			) );
 
 			foreach( $posts as $post ){
-				setup_postdata($post);
-				wc_get_template_part( 'content', 'product' ); 
+				setup_postdata($post);?>
+				<?php wc_get_template_part( 'content', 'product' ); ?>
+
+			<?php
 			}
 
 			wp_reset_postdata(); // сброс
