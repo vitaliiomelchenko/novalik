@@ -191,15 +191,9 @@ Template Name: Home Page
 			<?php 
 				$posts = get_posts( array(
 				'numberposts' => 8,
-				'category'    => 0,
-				'orderby'     => 'date',
-				'order'       => 'DESC',
-				'include'     => array(),
-				'exclude'     => array(),
-				'meta_key'    => '',
-				'meta_value'  =>'',
+				'orderby' => 'popularity',
+				'order'   => 'ASC',
 				'post_type'   => 'product',
-				'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
 			) );
 
 			foreach( $posts as $post ){
