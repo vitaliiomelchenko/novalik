@@ -69,6 +69,7 @@
 
 .menu-item
   margin-right: 50px
+  flex: unset
 
   &:last-child
     margin-right: 0
@@ -391,3 +392,13 @@
       -webkit-transform: translateY(-50%)
       -ms-transform: translateY(-50%)
       transform: translateY(-50%)
+header .menu.nav-list .menu-item 
+  flex: none !important
+  a 
+    margin-right: 53px 
+    display: inline-block
+    font-weight: 700
+    padding: 0
+    font-family: Rubik
+    &::before 
+      content: none

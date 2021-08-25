@@ -6,6 +6,38 @@
 		padding: 15px
 		position: relative
 		padding-bottom: 0
+		.widget_product_categories 
+			.product-categories 
+				li.cat-item 
+					padding-left: 40px 
+					margin-bottom: 16px 
+					span
+						display: none
+					a
+						margin-bottom: 0
+						padding-top: 3px
+						padding-bottom: 4px
+						transition: .3s 
+						&:hover 
+							color: #0088CC
+							text-decoration: none
+					&.cat-item-183,
+					&.cat-item-181,
+					&.cat-item-15 
+						display: none
+					&::before 
+						content: ""
+						width: 24px
+						height: 24px
+						background-size: contain
+						backgrpund-repeat: no-repeat
+						position: absolute
+						top: 0
+						left: 0
+		.widget_custom_html
+			display: none
+		.widget-title
+			display: none
 		&_wrapper 
 			max-height: 433px
 			overflow: hidden
