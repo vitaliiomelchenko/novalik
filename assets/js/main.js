@@ -96,3 +96,26 @@ $(document).ready(function(){
 
 
 
+//Home page slider
+$(document).ready(function(){
+    $('.popular_products_slider').owlCarousel({
+        margin: 32,
+        nav: true,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 16,
+            },
+            768: {
+                items: 2,
+            },
+            993: {
+                items: 3,
+            },
+            1200: {
+                items: 4,
+            }
+        }
+    });
+});

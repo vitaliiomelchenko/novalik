@@ -5,33 +5,7 @@ Template Name: Home Page
  ?>
  <?php get_header(); ?>
 
-<?php 
 
-$args = array(
-    'taxonomy' 		=> 'product_cat',
-    'orderby' 		=> 'name',
-    'order'   		=> 'ASC',
-    'number'		=>	30,
-    'hide_empty' 	=> false,
-);
-
-$cats = get_categories($args);?>
-<?php
-foreach($cats as $cat) {
-    ?>
-    <?php 
-        $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
-        // get the image URL
-        $image = wp_get_attachment_url( $thumbnail_id ); 
-        // print the IMG HTML
-    ?>
-    <?php 
-    echo '
-        <style>.cat-item-' . $cat->term_id .  '::before{background-image: url("' . $image . '");}</style>';
-    ?>
-<?php 
-};
-?>
  	<section class="homeOffer">
  	    <div class="container">
  	        <div class="row justify-content-between">
@@ -199,7 +173,6 @@ foreach($cats as $cat) {
 					?>
 					<?php if( !empty( $homeStock__slide ) ): ?>
 						<div class="homeStock__slide">
-							<?php echo esc_url($homeStock__slide['url']); ?>
 							<img src="<?php echo esc_url($homeStock__slide['url']); ?>">
 						</div>
 					<?php endif; ?>
@@ -207,6 +180,37 @@ foreach($cats as $cat) {
 			<?php endif; ?>
  	    </div>
  	</div>
+</section>
+<section class="popular_products_wrapper">
+	<div class="popular_products_container">
+		<div class="popular_products_slider_title_wrapper">
+			<div class="popular_products_slider_title">ПОПУЛЯРНІ ТОВАРИ</div>
+			<a class="show_all" href="#">Показати всі</a>
+		</div>
+		<div class="popular_products_slider">
+			<?php 
+				$posts = get_posts( array(
+				'numberposts' => 8,
+				'category'    => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'include'     => array(),
+				'exclude'     => array(),
+				'meta_key'    => '',
+				'meta_value'  =>'',
+				'post_type'   => 'product',
+				'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+			) );
+
+			foreach( $posts as $post ){
+				setup_postdata($post);
+				wc_get_template_part( 'content', 'product' ); 
+			}
+
+			wp_reset_postdata(); // сброс
+			?>
+		</div>
+	</div>
 </section>
 	 <?php 
 	 	$homeTextContent = get_field('homeTextContent');
@@ -224,3 +228,8 @@ foreach($cats as $cat) {
 	 <?php endif; ?>
  
  <?php get_footer(); ?>
+<script>
+	jQuery(document).ready(function(){
+		jQuery('.popular_products_wrapper .add_to_cart_button').html('Купить');
+	});
+</script>
