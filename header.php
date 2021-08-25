@@ -103,31 +103,32 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                    </div>
 			                </div>
 			                <div class="col-lg-5 d-none d-md-block">
-			                    <ul class="menu nav-list">
-			                        <li class="menu-item">
-			                            <a href="#">Про нас</a>
-			                        </li>
-			                        <li class="menu-item">
-			                            <a href="#">Кар'єра</a>
-			                        </li>
-			                        <li class="menu-item">
-			                            <a href="#">Блог</a>
-			                        </li>
-			                        <li class="menu-item">
-			                            <a href="#">Контакти</a>
-			                        </li>
-			                    </ul>
+							<?php wp_nav_menu( [
+											'theme_location'  => 'Main Menu',
+											'menu'            => 'main-menu',
+											'container'       => false,
+											'menu_class'      => 'menu nav-list',
+											'echo'            => true,
+											'fallback_cb'     => 'wp_page_menu',
+											'items_wrap'      => '<li  class="menu-item" >%3$s</li>'
+										] );
+										?>
+			                    
 			                </div>
+							<?php 
+								$headerPhone = get_field('headerPhone')
+								$headerQ = get_field('headerQ')
+							?>
 			                <div class="d-none d-md-block col-lg-3">
 			                    <div class="phone">
-			                        <a href="tel:+38 (067) 445 91 50" class="phone-number">+38 (067) 445 91 50</a>
-			                        <a href="#" class="call-me">Зателефонувати Вам?</a>
+			                        <a href="tel:<?php echo $headerPhone ?>" class="phone-number"><?php echo $headerPhone ?></a>
+			                        <a href="#" class="call-me"><?php echo $headerQ ?></a>
 			                    </div>
 			                </div>
 			                <div class="d-block d-md-none">
 			                    <div class="phone">
-			                        <a href="tel:+38 (067) 445 91 50" class="phone-number">+38 (067) 445 91 50</a>
-			                        <a href="#" class="call-me">Зателефонувати Вам?</a>
+			                        <a href="tel:<?php echo $headerPhone ?>" class="phone-number"><?php echo $headerPhone ?></a>
+			                        <a href="#" class="call-me"><?php echo $headerQ ?></a>
 			                    </div>
 			                </div>
 			                <div class="col-lg-1 d-none d-md-block">
@@ -209,11 +210,11 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                    </div>
 			                    <div class="d-none d-md-block col-lg-4">
 			                        <div class="user-block">
-			                            <a href="#" class="user-item cart">
+			                            <a href="<?php echo get_home_uri() . '/my-account/' ?>" class="user-item cart">
 			                                <img src="<?php echo get_template_directory_uri() ?>/images/user-icon.svg" alt="">
 			                                Особистий кабінет
 			                            </a>
-			                            <a href="#" class="user-item cart">
+			                            <a href="<?php echo get_home_uri() . '/cart/' ?> " class="user-item cart">
 			                                <img src="<?php echo get_template_directory_uri() ?>/images/cart.svg" alt="">
 			                                Кошик
 			                            </a>
@@ -233,11 +234,11 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            </div>
 			        </div>
 			        <div class="user-block">
-			            <a href="#" class="user-item cart">
+			            <a href="<?php echo get_home_uri() . '/my-account/' ?>" class="user-item cart">
 			                <img src="<?php echo get_template_directory_uri() ?>/images/user-icon.svg" alt="">
 			                Особистий кабінет
 			            </a>
-			            <a href="#" class="user-item cart">
+			            <a href="<?php echo get_home_uri() . '/cart/' ?>" class="user-item cart">
 			                <img src="<?php echo get_template_directory_uri() ?>/images/cart.svg" alt="">
 			                Кошик
 			            </a>
@@ -251,20 +252,16 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            	</div>
 			            </div>
 			        </div>
-			        <ul class="menu nav-list">
-			            <li class="menu-item">
-			                <a href="#">Про нас</a>
-			            </li>
-			            <li class="menu-item">
-			                <a href="#">Кар'єра</a>
-			            </li>
-			            <li class="menu-item">
-			                <a href="#">Блог</a>
-			            </li>
-			            <li class="menu-item">
-			                <a href="#">Контакти</a>
-			            </li>
-			        </ul>
+					<?php wp_nav_menu( [
+											'theme_location'  => 'Main Menu',
+											'menu'            => 'main-menu',
+											'container'       => false,
+											'menu_class'      => 'menu nav-list',
+											'echo'            => true,
+											'fallback_cb'     => 'wp_page_menu',
+											'items_wrap'      => '<li  class="menu-item" >%3$s</li>'
+										] );
+										?>
 			        <div class="languages">
 			            <p>Мова</p>
 			            <ul class="languages-list">
