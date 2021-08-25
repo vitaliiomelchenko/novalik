@@ -201,11 +201,10 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                    </div>
 			                    <div class="col-lg-5">
 			                        <div class="top-bar__search">
-			                            <form action="">
-			                                <?php echo do_shortcode( '[ivory-search id="4465" title="Default Search Form"]' ); ?>
+				                                <input type="search" class="top-bar__input" placeholder="Пошук">
+			                                <button type="submit" class="top-bar__btn">
 			                                    Знайти
-			                                
-			                            </form>
+			                               </button>
 			                        </div>
 			                    </div>
 			                    <div class="d-none d-md-block col-lg-4">
