@@ -157,7 +157,7 @@ Template Name: About Page
                             <?php echo $aboutPersonalcontent ?>
                         </p>
                     <?php endif; ?>
-	                <a href="#" class="blue-btn">
+	                <a href="http://novalik.levelmedia.com.ua/ru/career/" class="blue-btn">
 	                    Приєднатися до команди
 	                </a>
 	            </div>
