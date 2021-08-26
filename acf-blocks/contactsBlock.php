@@ -17,7 +17,7 @@
 				        		<div class="item">
 				        			<?php if( !empty( $contacts_repeater_icon ) ): ?>
 				        				<div class="icon">
-				        					<img src="<?php echo esc_url($contacts_repeater_icon['url']); ?>" alt="">
+										<?php echo file_get_contents(esc_url(wp_get_original_image_path($contacts_repeater_icon['id']))); ?>
 				        				</div>
 				        			<?php else :?>
 				        			<?php endif; ?>
