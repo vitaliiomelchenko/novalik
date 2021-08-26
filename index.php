@@ -37,7 +37,11 @@ $post_layout = $porto_settings['post-layout'];
 				    							<?php the_date('j F Y'); ?>
 				    						</div>
 				    						<div class="image">
+											<?php if ( has_post_thumbnail()) { ?>
 				    							<?php the_post_thumbnail(); ?>
+												<?php else: ?>
+													<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/blog_placeholder.svg">
+											<?php } ?>
 				    						</div>
 				    						<div class="text">
 				    							<h3 style="min-height: 75px;">
