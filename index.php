@@ -9,7 +9,7 @@ $post_layout = $porto_settings['post-layout'];
 <div id="content" role="main">
 	<section class="blogPage">
 		<div class="container">
-			<h1><?php echo esc_html( get_the_title() ); ?></h1>
+			<h1><?php echo get_the_archive_title() ?></h1>
 			<div class="row justify-content-center justify-content-md-between">
 				<?php
 				$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
