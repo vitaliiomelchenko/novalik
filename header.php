@@ -210,6 +210,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            	</div>
 			            </div>
 			        </div>
+					<ul class="menu nav-list nav-list-mobile">
 					<?php wp_nav_menu( [
 											'theme_location'  => 'Main Menu',
 											'menu'            => 'main-menu',
@@ -220,6 +221,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 											'items_wrap'      => '<li  class="menu-item" >%3$s</li>'
 										] );
 										?>
+				</ul>
 			        <div class="languages">
 			            <p>Мова</p>
 			            <ul class="languages-list">
