@@ -71,12 +71,12 @@ jQuery(document).ready(function(){
         });
         jQuery('.certificates-a-prev').removeClass('slick-hidden');
         jQuery('.certificates-a-next').removeClass('slick-hidden');
-         jQuery('.homeOffer__slider').slick({
-               slidesToShow: 1,
-               dots: true,
-               nav: false,
-   
-          });
+        jQuery('.homeOffer__slider').slick({
+            slidesToShow: 1,
+            dots: true,
+            nav: false,
+               
+        });
         jQuery('.slick-active button').text('12');
 });
 

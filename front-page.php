@@ -9,7 +9,7 @@ Template Name: Home Page
  	<section class="homeOffer">
  	    <div class="container">
  	        <div class="row justify-content-between">
- 	            <div class="d-none d-md-block col-lg-3">
+ 	            <div class="d-none d-md-block col-lg-3 categories-col">
  	                <div class="homeOffer__categories">
  	                    <div class="more-categories">
  	                        <img src="<?php echo get_template_directory_uri() ?>/images/categories-open.svg" alt="">
@@ -21,7 +21,7 @@ Template Name: Home Page
  	            </div>
  	            <div class="col-lg-9">
  	                <div class="homeOffer__slider">
- 	                    <div class="homeOffer__slide" style="background-image: url(wp-content/themes/porto/images/offer-slider-img.png);">
+ 	                    <div class="homeOffer__slide" style="background-image: url('<?php echo get_stylesheet_directory_uri() . '/assets/img/devi_01 1.svg' ?>');">
  	                        <div class="text">
  	                            <div class="pre">
  	                                Новинка
@@ -35,7 +35,7 @@ Template Name: Home Page
  	                            <a href="#">Детальніше</a>
  	                        </div>
  	                    </div>
- 	                    <div class="homeOffer__slide" style="background-image: url(wp-content/themes/porto/images/offer-slider-img.png);">
+ 	                    <div class="homeOffer__slide" style="background-image: url('<?php echo get_stylesheet_directory_uri() . '/assets/img/devi_01 1.svg' ?>');">
  	                        <div class="text">
  	                            <div class="pre">
  	                                Новинка
@@ -120,7 +120,7 @@ Template Name: Home Page
 					$homeFeaturesContent = get_sub_field('homeFeaturesContent');
 					$homeFeaturesIcon = get_sub_field('homeFeaturesIcon');
 				 ?>   
- 	            <div class="col-lg-3">
+ 	            <div class="col-lg-3 homeFeatures__item_wrapper">
  	                <div class="homeFeatures__item">
                     	<?php if( !empty( $homeFeaturesIcon ) ): ?>
 							<div class="icon">
@@ -215,9 +215,7 @@ Template Name: Home Page
 		<section class="homeText">
 			<div class="container">
 				<div class="homeText__content">
-					<p>
 					<?php echo $homeTextContent; ?>
-					</p>
 				</div>
 			</div>
 		</section>

@@ -2,7 +2,7 @@
 add_action( 'wp_enqueue_scripts', 'child_styles' );
 
 function child_styles(){
-    wp_enqueue_style( 'main-css', get_stylesheet_directory_uri(  ) . '/dist/main.min.css' );
+    wp_enqueue_style( 'main-css', get_stylesheet_directory_uri(  ) . '/dist/main.min.css', 100 );
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com' );
     wp_enqueue_style( 'gstatic', 'https://fonts.gstatic.com' );
     wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet' );

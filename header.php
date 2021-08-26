@@ -148,10 +148,10 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            <div class="container">
 			                <div class="row align-items-center justify-content-between">
 			                    <div class="d-none d-md-block col-lg-3">
-			                        <div class="header-categories" style="pointer-events: all !important;">
+			                        <div class="header-categories">
 			                            <img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
 			                            КАТЕГОРІЇ ТОВАРІВ
-			                            <div class="header-categories__list" style="display: block !important;">
+			                            <div class="header-categories__list">
 											<?php dynamic_sidebar( 'woo-category-filter-sidebar' ); ?>
 			                            </div>
 			                        </div>
