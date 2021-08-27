@@ -102,26 +102,32 @@ $wrapper        = porto_get_wrapper_type();
 			            </div>
 			            <div class="col-12 col-sm-8 col-lg-3">
 			                <ul class="footer-col footer-nav">
-			                    <li>
-			                        <a href="#" class="footer-link">Про компанію</a>
-			                    </li>
-			                    <li>
-			                        <a href="#" class="footer-link">Кар'єра</a>
-			                    </li>
-			                    <li>
-			                        <a href="#" class="footer-link">Продукція</a>
-			                    </li>
-			                    <li>
-			                        <a href="#" class="footer-link">Блог</a>
-			                    </li>
-			                </ul>
+							<?php wp_nav_menu( [
+											'theme_location'  => 'Main Menu',
+											'menu'            => 'main-menu',
+											'container'       => false,
+											'menu_class'      => 'menu nav-list',
+											'echo'            => true,
+											'fallback_cb'     => 'wp_page_menu',
+											'items_wrap'      => '<li  class="footer-link %3$s" >%3$s</li>'
+										] );
+										?>
+								</ul>
 			            </div>
 			            <div class="col-12 col-sm-8 col-lg-3">
-			                <div class="footer-col footer-links">
-			                    <a href="#" class="footer-link">Договір публічної оферти</a>
-			                    <a href="#" class="footer-link">Політика конфіденційності</a>
-			                    <a href="#" class="footer-link">Правила та умови</a>
-			                </div>
+			                <ul class="footer-col footer-links footer-nav">
+								<?php wp_nav_menu( [
+												'theme_location'  => '',
+												'menu'            => 'footer-menu',
+												'container'       => false,
+												'menu_class'      => 'menu nav-list',
+												'echo'            => true,
+												'fallback_cb'     => 'wp_page_menu',
+												'items_wrap'      => '<li  class="footer-link" >%3$s</li>'
+											] );
+									?>
+								</ul>
+			                </ul>
 			            </div>
 			            <div class="col-12 col-sm-8 col-lg-2 d-block d-md-none">
 			                <div class="footer-socials">
@@ -159,14 +165,15 @@ $wrapper        = porto_get_wrapper_type();
 			                        </div>
 			                    </div>
 			                </div>
-			                <div class="col-12 col-sm-8 col-lg-2 d-none d-md-block">
-			                    <div class="footer-socials">
-			                        <a href="#"><img src="<?php echo get_template_directory_uri() ?>/images/soc-1.svg" alt="linkedin"></a>
-			                        <a href="#"><img src="<?php echo get_template_directory_uri() ?>/images/soc-2.svg" alt="fb"></a>
-			                        <a href="#"><img src="<?php echo get_template_directory_uri() ?>/images/soc-3.svg" alt="insta"></a>
-			                        <a href="#"><img src="<?php echo get_template_directory_uri() ?>/images/soc-4.svg" alt="youtube"></a>
-			                    </div>
-			                </div>
+							<?php if( have_rows('footer_social') ):?>
+								<div class="col-12 col-sm-8 col-lg-2 d-none d-md-block">
+									<div class="footer-socials">
+										<?php while( have_rows('footer_social') ) : the_row();?>
+											<a href="<?php echo $footerSocialLink?>"><?php echo file_get_contents(esc_url(wp_get_original_image_path($footerSocialLink['id']))); ?></a>
+										<?php endwhile ; ?>
+									</div>
+								</div>
+							<?php endif ; ?>
 			                <div class="col-12 col-sm-8 col-lg-2">
 			                    <div class="by">
 			                        by<a href="#" target="_blank">Level Media</a>
