@@ -27,7 +27,7 @@ $post_layout = $porto_settings['post-layout'];
 				        the_post();
 				        ?>
 				       
-				    		<div class="col-12 col-sm-8 col-lg-3 mb-3 mb-lg-5">
+					   <div class="col-12 col-sm-6 col-lg-3 mb-3 mb-lg-5 col-md-4">
 				    			<?php 
 				    			//должно находится внутри цикла
 				    			if( has_post_thumbnail() ) {
