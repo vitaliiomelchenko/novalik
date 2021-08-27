@@ -109,7 +109,7 @@ $wrapper        = porto_get_wrapper_type();
 											'menu_class'      => 'menu nav-list',
 											'echo'            => true,
 											'fallback_cb'     => 'wp_page_menu',
-											'items_wrap'      => '<li  class="footer-link %3$s" >%3$s</li>'
+											'items_wrap'      => '<li  class="footer-link" >%3$s</li>'
 										] );
 										?>
 								</ul>

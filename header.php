@@ -92,17 +92,17 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			    <nav class="nav">
 			        <div class="container">
 			            <div class="row align-items-center justify-content-between">
-			                <div class="d-none d-md-block col-lg-1">
+			                <div class="d-none d-lg-block col-lg-1">
 			                    <div class="logo">
 			                        <a href="<?php echo get_home_url() ?>"><img src="<?php echo get_template_directory_uri() ?>/images/logo.svg" alt=""></a>
 			                    </div>
 			                </div>
-			                <div class="d-block d-md-none">
+			                <div class="d-block d-lg-none">
 			                    <div class="logo">
 			                        <img src="<?php echo get_template_directory_uri() ?>/images/logo.svg" alt="">
 			                    </div>
 			                </div>
-			                <div class="col-lg-5 d-none d-md-block">
+			                <div class="col-lg-5 d-none d-lg-block">
 							<ul class="menu nav-list">
 							<?php wp_nav_menu( [
 											'theme_location'  => 'Main Menu',
@@ -120,24 +120,24 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 								$headerPhone = get_field('headerPhone', 'option');
 								$headerQ = get_field('headerQ', 'option');
 							?>
-			                <div class="d-none d-md-block col-lg-3">
+			                <div class="d-none d-lg-block col-lg-3">
 			                    <div class="phone">
 			                        <a href="tel:<?php echo $headerPhone ?>" class="phone-number"><?php echo $headerPhone ?></a>
 			                        <a href="#" class="call-me"><?php echo $headerQ ?></a>
 			                    </div>
 			                </div>
-			                <div class="d-block d-md-none">
+			                <div class="d-block d-lg-none">
 			                    <div class="phone">
 			                        <a href="tel:<?php echo $headerPhone ?>" class="phone-number"><?php echo $headerPhone ?></a>
 			                        <a href="#" class="call-me"><?php echo $headerQ ?></a>
 			                    </div>
 			                </div>
-			                <div class="col-lg-1 d-none d-md-block">
+			                <div class="col-lg-1 d-none d-lg-block">
 			                    <div class="lang-switcher">
 			                        UА <img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt="">
 			                    </div>
 			                </div>
-			                <div class="d-block d-md-none">
+			                <div class="d-block d-lg-none">
 			                    <div class="mobile-btn" id="openMenu">
 			                        <img src="<?php echo get_template_directory_uri() ?>/images/burger.svg" alt="">
 			                    </div>
@@ -147,7 +147,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			        <div class="top-bar">
 			            <div class="container">
 			                <div class="row align-items-center justify-content-between">
-			                    <div class="d-none d-md-block col-lg-3">
+			                    <div class="d-none d-lg-block col-lg-3">
 			                        <div class="header-categories">
 			                            <img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
 			                            КАТЕГОРІЇ ТОВАРІВ
@@ -166,7 +166,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 										</form>
 			                        </div>
 			                    </div>
-			                    <div class="d-none d-md-block col-lg-4">
+			                    <div class="d-none d-lg-block col-lg-4">
 			                        <div class="user-block">
 			                            <a href="<?php echo get_home_url( null, 'my-account/', 'https' ); ?>" class="user-item cart">
 			                                <img src="<?php echo get_template_directory_uri() ?>/images/user-icon.svg" alt="">
