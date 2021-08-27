@@ -9,7 +9,7 @@ Template Name: Home Page
  	<section class="homeOffer">
  	    <div class="container">
  	        <div class="row justify-content-between">
- 	            <div class="d-none d-md-block col-lg-3 categories-col">
+ 	            <div class="d-none d-md-block col-md-3 categories-col">
  	                <div class="homeOffer__categories">
  	                    <div class="more-categories">
  	                        <img src="<?php echo get_template_directory_uri() ?>/images/categories-open.svg" alt="">
@@ -19,7 +19,7 @@ Template Name: Home Page
  	                    </div>
  	                </div>
  	            </div>
- 	            <div class="col-lg-9">
+ 	            <div class="col-md-9 slider-col">
  	                <div class="homeOffer__slider">
  	                    <div class="homeOffer__slide" style="background-image: url('<?php echo get_stylesheet_directory_uri() . '/assets/img/devi_01 1.svg' ?>');">
  	                        <div class="text">
@@ -56,7 +56,7 @@ Template Name: Home Page
  	</section>
  	<div class="mobile-categories d-block d-md-none">
  	    <div class="header-categories">
- 	        <div class="head d-flex align-items-center justify-content-between">
+ 	        <div class="head d-flex">
  	            <img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
  	            КАТЕГОРІЇ ТОВАРІВ
  	            <div class="arrow">
@@ -64,50 +64,7 @@ Template Name: Home Page
  	            </div>
  	        </div>
  	        <div class="header-categories__list">
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-1.svg" alt="">
- 	                Акційні пропозиції
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-2.svg" alt="">
- 	                Опорно-руховий апарат
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-3.svg" alt="">
- 	                Протизастудні засоби / для імунітету
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-4.svg" alt="">
- 	                Для чоловічого здоров'я
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-5.svg" alt="">
- 	               Для жіночого здоров'я
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-6.svg" alt="">
- 	                Для ШКТ (Печінка желчевод)
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-7.svg" alt="">
- 	                Для дихальних шляхів
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-8.svg" alt="">
- 	                Засоби від герпесу
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-9.svg" alt="">
- 	                Засоби проти хропіння
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-10.svg" alt="">
- 	                Для нервової системи
- 	            </a>
- 	            <a href="#">
- 	                <img src="<?php echo get_template_directory_uri() ?>/images/cat-11.svg" alt="">
- 	                Для профілактики варикоза
- 	            </a>
+			 <?php dynamic_sidebar( 'woo-category-filter-sidebar' ); ?>
  	        </div>
  	    </div>
  	</div>
@@ -120,7 +77,7 @@ Template Name: Home Page
 					$homeFeaturesContent = get_sub_field('homeFeaturesContent');
 					$homeFeaturesIcon = get_sub_field('homeFeaturesIcon');
 				 ?>   
- 	            <div class="col-lg-3 homeFeatures__item_wrapper">
+ 	            <div class="col-md-6 homeFeatures__item_wrapper">
  	                <div class="homeFeatures__item">
                     	<?php if( !empty( $homeFeaturesIcon ) ): ?>
 							<div class="icon">
@@ -182,7 +139,7 @@ Template Name: Home Page
  	</div>
 </section>
 <section class="popular_products_wrapper">
-	<div class="popular_products_container">
+	<div class="popular_products_container container">
 		<div class="popular_products_slider_title_wrapper">
 			<div class="popular_products_slider_title">ПОПУЛЯРНІ ТОВАРИ</div>
 			<a class="show_all" href="#">Показати всі</a>
@@ -214,8 +171,14 @@ Template Name: Home Page
 	<?php if( $homeTextContent ): ?>
 		<section class="homeText">
 			<div class="container">
-				<div class="homeText__content">
-					<?php echo $homeTextContent; ?>
+				<div class="homeText__content_wrapper">
+					<div class="homeText__content">
+						<?php echo $homeTextContent; ?>
+						
+					</div>
+					<div class="read_more">
+						Читати більше
+					</div>
 				</div>
 			</div>
 		</section>
@@ -225,5 +188,8 @@ Template Name: Home Page
 <script>
 	jQuery(document).ready(function(){
 		jQuery('.popular_products_wrapper .add_to_cart_button').html('Купить');
+	});
+	jQuery('.read_more').click(function(){
+		jQuery('.homeText__content_wrapper').toggleClass('opened');
 	});
 </script>

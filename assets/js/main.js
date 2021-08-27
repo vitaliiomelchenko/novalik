@@ -25,17 +25,17 @@ jQuery(document).ready(function(){
 	jQuery('#closeMenu').click(function(){
 		jQuery('#mobileMenu').slideUp(200);
 	});
-	jQuery('.header-categories').click(function(){
-	    if(jQuery(this).hasClass('categories-active')){
-	        jQuery(this).removeClass('categories-active');
+	jQuery('.header-categories .head').click(function(){
+	    if(jQuery(this).parent().hasClass('categories-active')){
+	        jQuery(this).parent().removeClass('categories-active');
 	    }else{
-	       jQuery(this).addClass('categories-active');
+	       jQuery(this).parent().addClass('categories-active');
 	    }
-	    jQuery(this).toggleClass('hidden');
+	    jQuery(this).parent().toggleClass('hidden');
 	});
   	jQuery('.more-categories').click(function(){
-  		jQuery(this).toggleClass('categori-show');
-  		jQuery('.homeOffer__categories_wrapper').toggleClass('categori-list-show');
+  		jQuery(this).parent().toggleClass('category-show');
+  		jQuery('.homeOffer__categories_wrapper').toggleClass('category-list-show');
   		jQuery('.homeOffer__slider').toggleClass('cat-open');
   	});
   	jQuery('.homeStock__slider').slick({
@@ -44,13 +44,27 @@ jQuery(document).ready(function(){
   	  	nextArrow: jQuery('.homeStock-a-next'),
   	  	infinite: false,
   	  	responsive: [
+            {
+                breakpoint: 375,
+                settings: {
+                  arrows: false,
+                  slidesToShow: 1
+                }
+            },
   	  	    {
-  	  	      breakpoint: 768,
-  	  	      settings: {
-  	  	        arrows: false,
-  	  	        slidesToShow: 1
-  	  	      }
-  	  	    }
+  	  	        breakpoint: 768,
+  	  	        settings: {
+  	  	          arrows: false,
+  	  	          slidesToShow: 2,
+  	  	        }
+  	  	    },
+            {
+                breakpoint: 991,
+                settings: {
+                  arrows: false,
+                  slidesToShow: 3
+                }
+            },
   	  	  ],
   	 });
     jQuery('.aboutCertificates__slider').slick({
@@ -75,13 +89,19 @@ jQuery(document).ready(function(){
             slidesToShow: 1,
             dots: true,
             nav: false,
-               
         });
         jQuery('.slick-active button').text('12');
+    
 });
 
+jQuery('.homeText__content_wrapper .readMore').click(function(){
+    console.log(123);
 
-//Shop page
+});
+jQuery(document).ready(function(){
+    
+
+}); 
 
 
 //Sort By

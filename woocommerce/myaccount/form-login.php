@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <?php wc_print_notices(); ?>
-
+<div class="container">
 <div class="featured-box align-left porto-user-box">
 	<div class="box-content">
 		<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
@@ -67,9 +67,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</p>
 
 					<?php do_action( 'woocommerce_login_form_end' ); ?>
-
+					
 				</form>
-
+				<div class="under_form_text mobile">
+						* Обов'язкові поля
+					</div>
 		<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
 			</div>
@@ -118,4 +120,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_after_customer_login_form' ); ?>
 	</div>
 	<div class="under_form_text">* Обов'язкові поля</div>
+</div>
 </div>
