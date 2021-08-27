@@ -1,16 +1,5 @@
 .woocommerce-account
-    .container 
-        max-width: 1316px 
-        padding-right: 50px !important
-        padding-left: 50px !important
-        margin-right: auto 
-        margin-left: auto
     .woocommerce
-        max-width: 1316px 
-        padding-right: 50px
-        padding-left: 50px 
-        margin-right: auto 
-        margin-left: auto
         * 
             font-family: Rubik
         .under_form_text
@@ -23,6 +12,8 @@
             margin-bottom: 182px
             .box-content
                 padding-top: 0
+                #customer_login 
+                    margin: 0
                 h2 
                     margin-bottom: 23px
                     font-weight: 700
@@ -36,6 +27,9 @@
                     border-radius: 10px 
                     padding: 30px 30px 30px 31px 
                     border: 0
+                    #rememberme
+                        width: 18px 
+                        height: 18px 
                     .register_password + p,
                     .woocommerce-privacy-policy-text p,
                     .woocommerce-privacy-policy-text a
@@ -51,6 +45,7 @@
                         font-size: 16px 
                         font-weight: 700 
                         margin-bottom: 20px 
+                        line-height: 1.2
                     .woocommerce-Button
                         background: #0088CC
                         padding: 12px 20px 
@@ -101,3 +96,71 @@
                             font-size: 12px 
                             line-height: 1.2
                             color: rgba( 36, 36, 36, .5) !important
+                .register
+                    form 
+                        padding-bottom: 27px
+                        .form-row 
+                            input
+                                margin-bottom: 20px
+                        .woocommerce-Button
+                            margin-top: 2px
+                            line-height: 1.25
+@media(max-width: 1200px)
+    .woocommerce-account 
+        .woocommerce 
+            .featured-box 
+                .box-content
+                    #customer_login 
+                        display: flex 
+                        align-items: stretch
+                        .woocommerce-form-login
+                            height: calc( 100% - 46px )
+                            display: flex 
+                            justify-self: center
+                            flex-direction: column
+                            .woocommerce-LostPassword
+                                text-align: right
+@media(max-width: 991px)
+    .woocommerce-account 
+        .woocommerce 
+            .featured-box 
+                padding: 0
+                margin-bottom: 72px
+                .box-content
+                    #customer_login 
+                        display: block
+                        h2 
+                            text-align: left
+                        form 
+                            max-width: 100%
+                            &.woocommerce-form-login 
+                                margin-bottom: 20px  
+@media(max-width: 767px)
+    .woocommerce-account 
+        .woocommerce 
+            .featured-box 
+                margin-bottom: 150px
+                .box-content
+                    padding-bottom: 10px
+                    #customer_login 
+                        h2
+                            margin-bottom: 30px
+                        form,
+                        form.woocommerce-form-login
+                            display: block
+                            padding: 20px 
+                            .lost_password
+                                margin-right: 0
+                            .login_button_wrapper
+                                padding-bottom: 3px
+                        form.woocommerce-form-login
+                            margin-bottom: 15px 
+                        .register
+                            margin-top: 30px
+                            form 
+                                .form-row 
+                                    .woocommerce-Button
+                                        margin-top: 5px
+@media(min-width: 992px)
+    .under_form_text.mobile 
+        display: none
