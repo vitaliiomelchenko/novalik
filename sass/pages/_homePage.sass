@@ -129,9 +129,6 @@
 					background-position: center
 		.slick-slider 
 			margin-bottom: 0
-		.slick-arrow 
-			display: none!important
-		
 		.slick-dots 
 			display: flex 
 			align-items: center
@@ -220,6 +217,36 @@
 				text-decoration: underline
 				color: #fff !important
 .home 
+	.homeOffer 
+		.homeOffer__slider 
+			.slick-arrow 
+				bottom: 0
+				right: -1px 
+				top: auto
+				transform: none
+				width: 29px 
+				height: 30px 
+				left: auto 
+				z-index: 2
+				opacity: 1
+				opacity: .5
+				&::before 
+					content: ""
+					background-image: url('../assets/img/homePageSliderArrow.svg')
+					width: 29px 
+					height: 30px 
+					background-size: contain
+					background-repeat: no-repeat
+					position: absolute
+					top: 0
+					left: 0
+					opacity: 1
+				&.slick-prev 
+					transform: rotate( -180deg)
+					right: 27.8px 
+					bottom: -1px
+				&:hover 
+					opacity: 1
 	.popular_products_wrapper
 		padding-top: 26px 
 		font-family: Rubik
@@ -292,7 +319,6 @@
 								top: 9px
 								left: 11.6px  
 								background-repeat: no-repeat
-								
 
 
 		
