@@ -134,7 +134,21 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                </div>
 			                <div class="col-lg-1 d-none d-lg-block">
 			                    <div class="lang-switcher">
-			                        UА <img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt="">
+								<ul class="languages-list">
+			                <li>
+			                    <a href="#" class="languages_current">Укр<img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt=""></a>
+								<ul>
+									<li>
+			                    		<a href="#">Рус<img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt=""></a>
+			               		 	</li>
+			               			 <li>
+			                    		<a href="#">Eng<img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt=""></a>
+			                		</li>
+								</ul>
+			                </li>
+			            </ul>
+			                        
+						 
 			                    </div>
 			                </div>
 			                <div class="d-block d-lg-none">
@@ -227,12 +241,14 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			            <ul class="languages-list">
 			                <li>
 			                    <a href="#" class="languages_current">Укр</a>
-			                </li>
-			                <li>
-			                    <a href="#">Рус</a>
-			                </li>
-			                <li>
-			                    <a href="#">Eng</a>
+								<ul>
+									<li>
+			                    		<a href="#">Рус</a>
+			               		 	</li>
+			               			 <li>
+			                    		<a href="#">Eng</a>
+			                		</li>
+								</ul>
 			                </li>
 			            </ul>
 			        </div>
