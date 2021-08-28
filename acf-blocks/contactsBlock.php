@@ -11,14 +11,13 @@
 				if( have_rows('contacts_repeater') ):
 
 				    while ( have_rows('contacts_repeater') ) : the_row();
-						$contacts_repeater_icon = the_sub_field('contacts_repeater_icon');
+						$contacts_repeater_icon = get_sub_field('contacts_repeater_icon');
 				        ?>
 				        	<div class="mb-3 mb-lg-0 сol-12 col-sm-6 col-md-4 col-lg-3">
 				        		<div class="item">
 				        			<?php if( !empty( $contacts_repeater_icon ) ): ?>
 				        				<div class="icon">
-											<?php echo $contacts_repeater_icon['id']; ?>
-											<?php //echo file_get_contents(esc_url(wp_get_original_image_path())); ?>
+											<?php echo file_get_contents(esc_url(wp_get_original_image_path())); ?>
 				        				</div>
 				        			<?php endif; ?>
 				        			
@@ -30,8 +29,6 @@
 				        <?php
 
 				    endwhile;
-
-				else :
 
 				endif;
 

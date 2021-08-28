@@ -374,7 +374,7 @@
         color: #242424
         text-transform: uppercase
 
-@media only screen and (min-width: 320px) and (max-width: 768px)
+@media only screen and (min-width: 320px) and (max-width: 1100px)
   .header .logo
     width: 60px
     height: 60px
@@ -404,3 +404,20 @@ header .menu.nav-list .menu-item
     font-family: Rubik
     &::before 
       content: none
+header .menu.nav-list .menu-item a
+  @media only screen and (max-width: 1200px)
+    margin-right: 20px
+.languages_current:hover 
+  .language-list_subMenu
+    display: visiable
+.language-list_subMenu
+	display: none
+.wpcf7-form-control-wrap .tel-195
+  @media only screen and (max-width: 991px)
+    margin-bottom: 15px
+.contactPage__formTitle
+  font-weight: bold
+  font-size: 18px
+  line-height: 21px
+  color: #242424
+  margin-bottom: 18px
