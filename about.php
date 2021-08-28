@@ -19,6 +19,7 @@ Template Name: About Page
 	$aboutPersonalimage = get_field('aboutPersonalimage');
 	$aboutCertificatestitle = get_field('aboutCertificatestitle');
 	$aboutDirectionstitle = get_field('aboutDirectionstitle');
+    $aboutMissionVideo = get_field('aboutMissionVideo');
 	?>
 <section class="aboutBlock">
 	    <div class="container">
@@ -129,7 +130,7 @@ Template Name: About Page
 	        </div>
                 <div class="col-lg-7">
                     <div class="aboutMission__video">
-						  <img src="<?php echo get_template_directory_uri() ?>/images/video.jpg" alt="">
+						 <video src="<?php echo $aboutMissionVideo['url']; ?>" controls="controls" poster="<?php echo get_template_directory_uri() ?>/images/video.jpg" alt=""></video>
                     </div>
                 </div>
 	    </div>
