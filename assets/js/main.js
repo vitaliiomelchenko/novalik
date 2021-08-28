@@ -37,6 +37,7 @@ jQuery(document).ready(function(){
   		jQuery(this).parent().toggleClass('category-show');
   		jQuery('.homeOffer__categories_wrapper').toggleClass('category-list-show');
   		jQuery('.homeOffer__slider').toggleClass('cat-open');
+        jQuery('.homeOffer').toggleClass('opened_categories_list');
   	});
   	jQuery('.homeStock__slider').slick({
   	  	slidesToShow: 4,

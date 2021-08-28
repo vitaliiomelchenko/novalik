@@ -47,6 +47,10 @@
 	margin-top: -10px 
 	.container 
 		max-height: 455px 
+	&.opened_categories_list
+		height: auto
+		.container
+			max-height: 100%
 	.categories-col
 		padding-right: 17px 
 	&__categories 
@@ -57,16 +61,6 @@
 		background-color: rgba( 184, 214, 237, .05)
 		position: relative
 		z-index: 2
-		&::before 
-			content: ""
-			position: absolute
-			top: 0
-			bottom: 0
-			left: 0
-			right: 0
-			z-index: -1
-		&.category-show::before 
-			background-color: #fff
 		.widget_custom_html
 			display: none
 		.widget-title
@@ -75,7 +69,7 @@
 			height: 440px
 			transition: linear .2s
 			overflow: hidden
-			transition: .3s
+			transition: 0s
 		&.category-show
 			.homeOffer__categories_wrapper
 				height: 100%
@@ -198,7 +192,7 @@
 			z-index: -1
 		
 		.text 
-			max-width: 350%
+			max-width: 350px
 			transition: linear .2s
 			* 
 				color: #fff
@@ -355,6 +349,9 @@
 				min-width: 100%
 				width: 100%
 				margin-top: 15px
+				background: transparent
+				padding: 0 
+				margin-top: 20px 
 			
 		
 		.header 

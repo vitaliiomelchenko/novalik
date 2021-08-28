@@ -142,3 +142,10 @@ function quadlayers_remove_checkout_fields( $fields ) {
   return $fields; 
   
   }
+
+
+add_filter('woocommerce_save_account_details_required_fields', 'remove_required_fields');
+function remove_required_fields( $required_fields ) {
+	unset($required_fields['account_display_name']);
+	return $required_fields;
+}

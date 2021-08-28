@@ -17,9 +17,9 @@
 				        		<div class="item">
 				        			<?php if( !empty( $contacts_repeater_icon ) ): ?>
 				        				<div class="icon">
-										<?php echo file_get_contents(esc_url(wp_get_original_image_path($contacts_repeater_icon['id']))); ?>
+											<?php echo $contacts_repeater_icon['id']; ?>
+											<?php //echo file_get_contents(esc_url(wp_get_original_image_path())); ?>
 				        				</div>
-				        			<?php else :?>
 				        			<?php endif; ?>
 				        			
 				        			<div class="text">
