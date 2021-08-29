@@ -47,6 +47,10 @@
 	margin-top: -10px 
 	.container 
 		max-height: 455px 
+	&.opened_categories_list
+		height: auto
+		.container
+			max-height: 100%
 	.categories-col
 		padding-right: 17px 
 	&__categories 
@@ -57,16 +61,6 @@
 		background-color: rgba( 184, 214, 237, .05)
 		position: relative
 		z-index: 2
-		&::before 
-			content: ""
-			position: absolute
-			top: 0
-			bottom: 0
-			left: 0
-			right: 0
-			z-index: -1
-		&.category-show::before 
-			background-color: #fff
 		.widget_custom_html
 			display: none
 		.widget-title
@@ -75,7 +69,7 @@
 			height: 440px
 			transition: linear .2s
 			overflow: hidden
-			transition: .3s
+			transition: 0s
 		&.category-show
 			.homeOffer__categories_wrapper
 				height: 100%
@@ -103,6 +97,7 @@
 			overflow: hidden
 			border-radius: 50%
 			cursor: pointer
+			z-index: 2
 			img 
 				width: 100%
 				height: 100%
@@ -134,9 +129,6 @@
 					background-position: center
 		.slick-slider 
 			margin-bottom: 0
-		.slick-arrow 
-			display: none!important
-		
 		.slick-dots 
 			display: flex 
 			align-items: center
@@ -198,7 +190,7 @@
 			z-index: -1
 		
 		.text 
-			max-width: 350%
+			max-width: 350px
 			transition: linear .2s
 			* 
 				color: #fff
@@ -225,6 +217,36 @@
 				text-decoration: underline
 				color: #fff !important
 .home 
+	.homeOffer 
+		.homeOffer__slider 
+			.slick-arrow 
+				bottom: 0
+				right: -1px 
+				top: auto
+				transform: none
+				width: 29px 
+				height: 30px 
+				left: auto 
+				z-index: 2
+				opacity: 1
+				opacity: .5
+				&::before 
+					content: ""
+					background-image: url('../assets/img/homePageSliderArrow.svg')
+					width: 29px 
+					height: 30px 
+					background-size: contain
+					background-repeat: no-repeat
+					position: absolute
+					top: 0
+					left: 0
+					opacity: 1
+				&.slick-prev 
+					transform: rotate( -180deg)
+					right: 27.8px 
+					bottom: -1px
+				&:hover 
+					opacity: 1
 	.popular_products_wrapper
 		padding-top: 26px 
 		font-family: Rubik
@@ -297,7 +319,6 @@
 								top: 9px
 								left: 11.6px  
 								background-repeat: no-repeat
-								
 
 
 		
@@ -355,6 +376,9 @@
 				min-width: 100%
 				width: 100%
 				margin-top: 15px
+				background: transparent
+				padding: 0 
+				margin-top: 20px 
 			
 		
 		.header 

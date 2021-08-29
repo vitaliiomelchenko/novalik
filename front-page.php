@@ -77,7 +77,7 @@ Template Name: Home Page
 					$homeFeaturesContent = get_sub_field('homeFeaturesContent');
 					$homeFeaturesIcon = get_sub_field('homeFeaturesIcon');
 				 ?>   
- 	            <div class="col-md-6 homeFeatures__item_wrapper">
+ 	            <div class="col-md-6 col-lg-3 homeFeatures__item_wrapper">
  	                <div class="homeFeatures__item">
                     	<?php if( !empty( $homeFeaturesIcon ) ): ?>
 							<div class="icon">

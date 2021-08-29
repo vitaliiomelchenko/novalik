@@ -172,8 +172,19 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                    </div>
 			                    <div class="col-lg-5">
 			                        <div class="top-bar__search">
-										<form action="">
-				                            <input type="search" class="top-bar__input" placeholder="Пошук">
+										<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>"">
+											<?php 
+											if(qtranxf_getLanguage() == 'ua'){
+												$search_placeholder = 'Пошук';
+											}
+											if(qtranxf_getLanguage() == 'ru'){
+												$search_placeholder = 'Поиск';
+											}
+											if(qtranxf_getLanguage() == 'en'){
+												$search_placeholder = 'Search';
+											}
+											?>
+				                            <input type="search" class="search-field top-bar__input" placeholder="<?php echo $search_placeholder; ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>">
 			                                <button type="submit" class="top-bar__btn">
 			                                    Знайти
 			                               </button>

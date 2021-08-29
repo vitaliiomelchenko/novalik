@@ -17,3 +17,110 @@
 .account--button--wrapper
 	width: 100% !important
 	text-align: center
+.woocommerce-edit-account 
+	&.woocommerce-account .woocommerce .woocommerce-MyAccount-content .featured-box
+		margin-bottom: 135px 
+	.woocommerce 
+		.page_title_wrapper
+			display: flex 
+			justify-content: space-between
+			align-items: flex-start
+			.back_button 
+				font-size: 14px
+				font-weight: 400
+				display: block
+				line-height: 1.25
+				padding: 0 
+				margin: 0
+				margin-top: 6px
+				color: #242424
+				&:hover 
+					text-decoration: none
+			.edit_account_page_title 
+				font-size: 24px 
+				font-weight: 700
+				margin-bottom: 30px 
+				margin-top: 10px
+				line-height: 1.2
+		.featured-box 
+			.box-content 
+				form.woocommerce-EditAccountForm
+					padding: 33px 30px 32px 30px 
+					margin-left: 0
+					margin-right: 0
+					border-radius: 3px
+					.account--form--wrapper
+						&:first-child
+							padding-left: 0
+							padding-right: 16px 
+						&:nth-child(2)
+							padding-right: 0
+							padding-left: 16px
+					.account--button--wrapper
+						button 
+							margin-top: 15px 
+							font-weight: 400 
+							font-family: Rubik
+							padding: 12px 39px 12px 29px 
+							line-height: 1.25
+@media(max-width: 767px )
+	.woocommerce-edit-account 
+		&.woocommerce-account .woocommerce .woocommerce-MyAccount-content .featured-box
+			margin-bottom: 117px 
+		.woocommerce 
+			.page_title_wrapper
+				a.back_button
+					display: none
+				.edit_account_page_title
+					text-align: left
+			.page_title_wrapper
+				display: flex 
+				justify-content: space-between
+				align-items: flex-start
+				.back_button 
+					font-size: 14px
+					font-weight: 400
+					display: block
+					line-height: 1.25
+					padding: 0 
+					margin: 0
+					margin-top: 6px
+					color: #242424
+					&:hover 
+						text-decoration: none
+				.edit_account_page_title 
+					font-size: 24px 
+					font-weight: 700
+					margin-bottom: 30px 
+					margin-top: 10px
+					line-height: 1.2
+			.featured-box 
+				.box-content 
+					form.woocommerce-EditAccountForm
+						padding: 20px
+						.account--button--wrapper
+							text-align: left
+							button 
+								margin-top: 5px
+								margin-bottom: 10px
+						.account--form--wrapper
+							.account--form--title
+								text-align: left
+							&:nth-child(2)
+								padding-left: 0
+								margin-top: 13px
+					.mobile_back_button
+						font-size: 14px
+						font-weight: 400
+						display: block
+						line-height: 1.25
+						padding: 0 
+						margin: 0
+						margin-top: 16px
+						color: #242424
+						text-align: left
+						&:hover 
+							text-decoration: none
+@media(min-width: 768px)
+	.mobile_back_button
+		display: none
