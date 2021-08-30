@@ -27,7 +27,7 @@ Template Name: About Page
                 <?php if( $aboutBlocktitle ) : ?>
 	            <div class="col-xl-6">
 	                <div class="aboutBlock__text">
-	                    <h1>
+	                    <h1 class="title-s"> 
 	                        <?php echo $aboutBlocktitle ?>
 	                    </h1> 
 						<?php endif; ?>

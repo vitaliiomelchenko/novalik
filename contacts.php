@@ -9,7 +9,7 @@ Template Name: Contacts
 ?>
 <section class="contactsPage">
 	<div class="container">
-		<h1><?php the_title(); ?></h1>
+		<h1 class="title-s"><?php the_title(); ?></h1>
 
 		<div class="contactsPage__items">
 			<div class="row align-items-start justify-content-between">
