@@ -1,0 +1,70 @@
+.order_call_popup_wrapper
+    position: fixed 
+    box-shadow: 0px 2.09274px 10.4637px rgba(184, 214, 237, 0.5)
+    background: #fff 
+    padding: 37px 
+    border-radius: 10px
+    max-width: 594px 
+    left: 50% 
+    top: 50%
+    z-index: 111
+    transform: translateX(-50%) translateY(-20px)
+    opacity: 0
+    visibility: hidden
+    transition: .3s 
+    .close_popup
+        width: 13px 
+        height: 13px 
+        position: absolute
+        top: 30px 
+        right: 30px 
+        cursor: pointer
+        background-image: url('../assets/img/close_popup_icon.svg')
+    .order_call_popup
+        .popup_title 
+            font-size: 18px 
+            font-weight: 700
+            margin-bottom: 20px 
+            line-height: 1.2
+        .popup_text 
+            font-size: 14px 
+            margin-bottom: 20px 
+            line-height: 1.25
+        .popup_form
+            p
+                margin: 0
+                input:not([type="submit"])
+                    padding-left: 20px 
+                    padding-top: 13px 
+                    padding-bottom: 14px 
+                    height: 44px 
+                    margin-bottom: 15px 
+                    font-size: 14px 
+                    color: rgba( 36, 36, 36, .5 )
+                    border: 1px solid rgba(77, 77, 77, 0.1)
+                    border-radius: 5px
+                    &::placeholder 
+                        color: rgba( 36, 36, 36, .5 )
+            .wpcf7-submit
+                margin: 0 
+                margin-top: 5px 
+                color: #fff 
+                background-color: #1E3F6D
+                padding: 12px 30px 
+                border-radius: 3px 
+                text-transform: none
+                line-height: 1.25
+                margin-left: auto 
+                margin-right: auto 
+                width: auto 
+                display: block
+.order_call_popup
+    .overlay 
+        opacity: .5
+        visibility: visible
+    .order_call_popup_wrapper
+        opacity: 1 
+        visibility: visible
+        transform: translateX(-50%) translateY(-50%)
+
+        

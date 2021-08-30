@@ -95,7 +95,15 @@ jQuery(document).ready(function(){
     jQuery('.header .lang_switcher_title').click(function(){
         jQuery(this).parent().find('.menu-lang-switcher-container').toggleClass('opened');
     });
-    
+    jQuery('#order_call').click(function(){
+        jQuery('body').addClass('order_call_popup');
+    });
+    jQuery('.close_popup').click(function(){
+        jQuery('body').removeClass('order_call_popup');
+    });
+    jQuery('.overlay').click(function(){
+        jQuery('body').removeClass('order_call_popup');
+    });
 });
 
 jQuery('.homeText__content_wrapper .readMore').click(function(){

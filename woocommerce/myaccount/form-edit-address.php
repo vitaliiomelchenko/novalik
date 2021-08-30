@@ -40,7 +40,7 @@ $page_title   = __( 'Billing Address', 'woocommerce' );
 $load_address = 'shipping';
 $page_title   = __( 'Shipping Address', 'woocommerce' );
 ?>
-<form action="/my-account/edit-address/shipping/" class="edit-account" method="post">
+<form class="edit-account" method="post">
 
     <h2><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title ); ?></h2>
 
