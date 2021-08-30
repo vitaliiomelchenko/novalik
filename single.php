@@ -34,7 +34,8 @@ $options = json_encode( $options );
 						<h1>
 							<?php the_title(); ?>
 						</h1>
-						<?php the_content(); ?>
+						<div class="singlePostContent"><?php echo get_field('singlePostContent') ?></div>
+						
 					</div>
 				</div>
 				<div class="col-lg-4">

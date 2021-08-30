@@ -17,8 +17,8 @@ Template Name: Contacts
 				if( have_rows('contacts_repeater') ):
 
 				    while ( have_rows('contacts_repeater') ) : the_row();
-						$contacts_repeater_icon = the_sub_field('contacts_repeater_icon');
-						$contacts_repeater_text = the_sub_field('contacts_repeater_text');
+						$contacts_repeater_icon = get_sub_field('contacts_repeater_icon');
+						$contacts_repeater_text = get_sub_field('contacts_repeater_text');
 				        ?>
 				        	<div class="mb-3 mb-lg-0 сol-12 col-sm-6 col-md-4 col-lg-3">
 				        		<div class="item">
