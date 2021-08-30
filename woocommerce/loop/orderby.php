@@ -31,12 +31,28 @@ else{
 	$cateID = "/produkcziya";
 }
 ?>
-
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+	$sort_by_rating_label = 'Спочатку за рейтингом';
+	$sort_by_price_label = 'Спочатку від дешевих';
+	$sort_by_price_desc_label = 'Спочатку від дорогих';
+}
+if(qtranxf_getLanguage() == 'ru'){
+	$sort_by_rating_label = 'Сначала по рейтингу';
+	$sort_by_price_label = 'Сначала от дешевых';
+	$sort_by_price_desc_label = 'Сначала от дорогих';
+}
+if(qtranxf_getLanguage() == 'en'){
+	$sort_by_rating_label = 'From the most popular';
+	$sort_by_price_label = 'From the cheapest';
+	$sort_by_price_desc_label = 'From the most expensive';
+}
+?>
 <div class="product_orderby_wrapper">
-	<div class="orderby_title"><?php _e('Спочатку за рейтингом'); ?></div>
+	<div class="orderby_title"><?php echo $sort_by_rating_label; ?></div>
 	<ul class="product_orderby">
-		<li class="popularity"><a href="<?php echo get_home_url() . $cateID . '/'; ?>"><?php _e('Спочатку за рейтингом'); ?></a></li>
-		<li class="price"><a href="<?php echo get_home_url() . $cateID . '/?orderby=price&paged=1'; ?>"><?php _e('Спочатку від дешевих'); ?></a></li>
-		<li class="price-desc"><a href="<?php echo get_home_url() . $cateID . '/?orderby=price-desc&paged=1'; ?>"><?php _e('Спочатку від дорогих'); ?></a></li>
+		<li class="popularity"><a href="<?php echo get_home_url() . $cateID . '/'; ?>"><?php echo $sort_by_rating_label; ?></a></li>
+		<li class="price"><a href="<?php echo get_home_url() . $cateID . '/?orderby=price&paged=1'; ?>"><?php echo $sort_by_price_label; ?></a></li>
+		<li class="price-desc"><a href="<?php echo get_home_url() . $cateID . '/?orderby=price-desc&paged=1'; ?>"><?php echo $sort_by_price_desc_label; ?></a></li>
 	</ul>
 </div>

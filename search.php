@@ -1,4 +1,15 @@
 <?php get_header(); ?>
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+    $read_more_button_label = 'Читати далі';
+}
+if(qtranxf_getLanguage() == 'ru'){
+    $read_more_button_label = 'Читать дальше';
+}
+if(qtranxf_getLanguage() == 'en'){
+    $read_more_button_label = 'Read more';
+}
+?>
 <section class="search_res_wrapper">
     <div class="container">
         <div class="search_page_title"><?php the_search_query(); ?></div>
@@ -15,7 +26,7 @@
                     <div class="search_res_item">
                         <div class="item_image"><?php the_post_thumbnail(); ?></div>
                         <div class="item_title"><?php the_title(); ?></div>
-                        <a class="view_item_button" href="<?php the_permalink(  ); ?>">Читать дальше</a>
+                        <a class="view_item_button" href="<?php the_permalink(  ); ?>"><?php echo $read_more_button_label; ?></a>
                     </div>
                 </div>
                 <?php endwhile;

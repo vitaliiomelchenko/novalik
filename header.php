@@ -87,7 +87,35 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 
 	do_action( 'porto_before_wrapper' );
 ?>
-
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+	$home_page_title = 'Головна';
+	$account_button_label = 'Особистий кабінет';
+	$cart_button_label = 'Кошик';
+	$search_submit_from_button_label = 'Знайти';
+	$product_categories_button_label = 'Категорії товарів';
+	$search_placeholder = 'Пошук';
+	$lang_switcher_title = 'UA';
+}
+if(qtranxf_getLanguage() == 'ru'){
+	$home_page_title = 'Главная';
+	$account_button_label = 'Личный кабинет';
+	$cart_button_label = 'Корзина';
+	$search_submit_from_button_label = 'Найти';
+	$product_categories_button_label = 'Категории товаров';
+	$search_placeholder = 'Поиск';
+	$lang_switcher_title = 'RU';
+}
+if(qtranxf_getLanguage() == 'en'){
+	$home_page_title = 'Home';
+	$account_button_label = 'Account';
+	$cart_button_label = 'Cart';
+	$search_submit_from_button_label = 'Find';
+	$product_categories_button_label = 'Product categories';
+	$search_placeholder = 'Search';
+	$lang_switcher_title = 'ENG';
+}
+?>
 			<header class="header">
 			    <nav class="nav">
 			        <div class="container">
@@ -135,16 +163,13 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                <div class="col-lg-1 d-none d-lg-block">
 			                    <div class="lang-switcher">
 								<ul class="languages-list">
-			                <li>
-			                    <a href="#" class="languages_current">Укр<img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt=""></a>
-								<ul>
-									<li>
-			                    		<a href="#">Рус<img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt=""></a>
-			               		 	</li>
-			               			 <li>
-			                    		<a href="#">Eng<img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt=""></a>
-			                		</li>
-								</ul>
+			                <li class="lang_switcher_wrapper">
+								<div class="lang_switcher_title"><?php echo $lang_switcher_title; ?></div>
+								<?php 
+									wp_nav_menu( [
+										'theme_location'  => 'lang-switcher',
+									] );
+								?>
 			                </li>
 			            </ul>
 			                        
@@ -164,7 +189,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                    <div class="d-none d-lg-block col-lg-3">
 			                        <div class="header-categories">
 			                            <img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
-			                            КАТЕГОРІЇ ТОВАРІВ
+			            				<?php echo $product_categories_button_label; ?>
 			                            <div class="header-categories__list">
 											<?php dynamic_sidebar( 'woo-category-filter-sidebar' ); ?>
 			                            </div>
@@ -173,20 +198,10 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                    <div class="col-lg-5">
 			                        <div class="top-bar__search">
 										<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>"">
-											<?php 
-											if(qtranxf_getLanguage() == 'ua'){
-												$search_placeholder = 'Пошук';
-											}
-											if(qtranxf_getLanguage() == 'ru'){
-												$search_placeholder = 'Поиск';
-											}
-											if(qtranxf_getLanguage() == 'en'){
-												$search_placeholder = 'Search';
-											}
-											?>
+											
 				                            <input type="search" class="search-field top-bar__input" placeholder="<?php echo $search_placeholder; ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>">
 			                                <button type="submit" class="top-bar__btn">
-			                                    Знайти
+			                                    <?php echo $search_submit_from_button_label; ?>
 			                               </button>
 										</form>
 			                        </div>
@@ -195,11 +210,11 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			                        <div class="user-block">
 			                            <a href="<?php echo get_home_url( null, 'my-account/', 'https' ); ?>" class="user-item cart">
 			                                <img src="<?php echo get_template_directory_uri() ?>/images/user-icon.svg" alt="">
-			                                Особистий кабінет
+											<?php echo $account_button_label; ?>
 			                            </a>
 			                            <a href="<?php echo get_home_url( null, 'cart/', 'https' ); ?>" class="user-item cart">
 			                                <img src="<?php echo get_template_directory_uri() ?>/images/cart.svg" alt="">
-			                                Кошик
+											<?php echo $cart_button_label; ?>
 			                            </a>
 			                        </div>
 			                    </div>
@@ -219,17 +234,17 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			        <div class="user-block">
 			            <a href="<?php echo get_home_url( null, 'my-account/', 'https' ); ?>" class="user-item cart">
 			                <img src="<?php echo get_template_directory_uri() ?>/images/user-icon.svg" alt="">
-			                Особистий кабінет
+			                <?php echo $account_button_label; ?>
 			            </a>
 			            <a href="<?php echo get_home_url( null, 'cart/', 'https' ); ?>" class="user-item cart">
 			                <img src="<?php echo get_template_directory_uri() ?>/images/cart.svg" alt="">
-			                Кошик
+			                <?php echo $cart_button_label; ?>
 			            </a>
 			        </div>
 			        <div class="header-categories" style="pointer-events:all;">
 			            <div class="d-flex align-items-center justify-content-center" style="width: 100%;">
 			            	<img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
-			            	КАТЕГОРІЇ ТОВАРІВ
+			            	<?php echo $product_categories_button_label; ?>
 			            	<div class="arrow">
 			            	    <img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt="">
 			            	</div>
@@ -248,6 +263,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 										?>
 				</ul>
 			        <div class="languages">
+						
 			            <p>Мова</p>
 			            <ul class="languages-list">
 			                <li>
@@ -268,7 +284,7 @@ if ( ( is_front_page() && is_home() ) || is_front_page() ) {
 			    <div class="container">
 			        <ul class="breadcrumbs">
 			            <li>
-			                <a href="<?php echo home_url(); ?>">Головна</a>
+			                <a href="<?php echo home_url(); ?>"><?php echo $account_button_label; ?></a>
 			            </li>
 			            <li>
 			                <?php the_title(); ?>

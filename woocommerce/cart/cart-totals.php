@@ -10,6 +10,23 @@ $porto_woo_version = porto_get_woo_version_number();
 <?php
 global $woocommerce;
 ?>
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+	$cupon_label = 'Промокод';
+	$cupon_button_label = 'Застосувати';
+	$discount_label = 'Знижка';
+}
+if(qtranxf_getLanguage() == 'ru'){
+	$cupon_label = 'Промокод';
+	$cupon_button_label = 'Применить';
+	$discount_label = 'Скидка';
+}
+if(qtranxf_getLanguage() == 'en'){
+	$cupon_label = 'Promocode';
+	$cupon_button_label = 'Use';
+	$discount_label = 'Discount';
+}
+?>
 <div class="cart_totals<?php echo WC()->customer->has_calculated_shipping() ? ' calculated_shipping' : ''; ?>">
 	<div class="cart_totals_toggle">
 		<?php do_action( 'woocommerce_before_cart_totals' ); ?>
@@ -22,14 +39,30 @@ global $woocommerce;
 			<div id="panel-cart-total" class="accordion-body collapse show"><div class="card-body">
                 <div class="coupon_input_wrapper">
                     <div class="coupon">
-                        <div class="coupon_input_title"><?php _e( 'Промокод' ); ?></div>
-                        <input type="text" placeholder="Промокод">
-                        <div class="submit_button"><?php _e('Застосувати'); ?></div>
+                        <div class="coupon_input_title"><?php echo $cupon_label; ?></div>
+                        <input type="text" placeholder="<?php echo $cupon_label; ?>">
+                        <div class="submit_button"><?php echo $cupon_button_label; ?></div>
                     </div>
                 </div>
 				<table class="responsive cart-total" cellspacing="0">
 					<tr class="cart-subtotal">
-						<th><?php echo $woocommerce->cart->cart_contents_count; ?> <?php if($woocommerce->cart->cart_contents_count == 1){ _e('товар'); }elseif($woocommerce->cart->cart_contents_count >= 2 && $woocommerce->cart->cart_contents_count <= 4){ _e('товара'); }elseif( $woocommerce->cart->cart_contents_count > 4 ){ _e('товаров'); } ?></th>
+						<?php 
+							if(qtranxf_getLanguage() == 'ua'){
+								if($woocommerce->cart->cart_contents_count == 1){ $product_count_label = 'товар'; }
+								elseif($woocommerce->cart->cart_contents_count >= 2 && $woocommerce->cart->cart_contents_count <= 4){ $product_count_label = 'товара'; }
+								elseif( $woocommerce->cart->cart_contents_count > 4 ){ $product_count_label = 'товаров'; }
+							}
+							if(qtranxf_getLanguage() == 'ru'){
+								if($woocommerce->cart->cart_contents_count == 1){ $product_count_label = 'товар'; }
+								elseif($woocommerce->cart->cart_contents_count >= 2 && $woocommerce->cart->cart_contents_count <= 4){ $product_count_label = 'товара'; }
+								elseif( $woocommerce->cart->cart_contents_count > 4 ){ $product_count_label = 'товаров'; }
+							}
+							if(qtranxf_getLanguage() == 'en'){
+								if($woocommerce->cart->cart_contents_count > 1 ){ $product_count_label = 'products'; }
+								else{$product_count_label = 'product'; }
+							}
+						?>
+						<th><?php echo $woocommerce->cart->cart_contents_count . ' ' . $product_count_label; ?></th>
 						<td><?php wc_cart_totals_subtotal_html(); ?></td>
 					</tr>
 
@@ -38,7 +71,7 @@ global $woocommerce;
 					?>
 					<?php foreach ( $codes as $code => $coupon ) : ?>
 						<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
-							<th><?php _e( 'Знижка', 'woocommerce' ); ?></th>
+							<th><?php echo $discount_label; ?></th>
 							<td><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
 						</tr>
 					<?php endforeach; ?>

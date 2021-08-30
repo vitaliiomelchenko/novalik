@@ -21,6 +21,9 @@ if(qtranxf_getLanguage() == 'ua'){
     $subtotal_label = 'Підсумок';
     $shipping = 'Доставка';
     $page_title = 'Історія замовлень';
+    $order_label = 'Замовлення';
+    $customer_info_title = 'Інформація про замовника';
+    $repeat_order_button_text = 'Повторити замовлення';
 }
 if(qtranxf_getLanguage() == 'ru'){
     $completed = 'Выполнено';
@@ -30,6 +33,9 @@ if(qtranxf_getLanguage() == 'ru'){
     $subtotal_label = 'Подитог';
     $shipping = 'Доставка';
     $page_title = 'История заказов';
+    $order_label = 'Заказ';
+    $customer_info_title = 'Информация о заказчике';
+    $repeat_order_button_text = 'Повторить заказ';
 }
 if(qtranxf_getLanguage() == 'en'){
     $completed = 'Completed';
@@ -39,6 +45,9 @@ if(qtranxf_getLanguage() == 'en'){
     $subtotal_label = 'Subtotal';
     $shipping = 'Shipping';
     $page_title = 'Orders';
+    $order_label = 'Order';
+    $customer_info_title = 'Customer information';
+    $repeat_order_button_text = 'Repeat the order';
 }
 ?>
 <div class="container">
@@ -63,7 +72,7 @@ if(qtranxf_getLanguage() == 'en'){
                     ?>
                     <div class="woocommerce-orders-table__row woocommerce-orders-table__row--status-<?php echo esc_attr( $order->get_status() ); ?> order">
                         <div class="order_head">
-                            <div class="order_head_number order_head_time">Замовлення №<?php echo $order->get_order_number(); ?>, <time datetime="<?php echo esc_attr( $order->get_date_created()->date( 'c' ) ); ?>"><?php echo esc_html( wc_format_datetime( $order->get_date_created() ) ); ?></time></div>
+                            <div class="order_head_number order_head_time"><?php echo $order_label; ?> №<?php echo $order->get_order_number(); ?>, <time datetime="<?php echo esc_attr( $order->get_date_created()->date( 'c' ) ); ?>"><?php echo esc_html( wc_format_datetime( $order->get_date_created() ) ); ?></time></div>
                             <div class="order_status <?php echo $order->get_status(); ?>"><?php if($order->get_status() == "processing"){ echo $processing; }elseif($order->get_status() == 'completed'){ echo $completed; }elseif( $order->get_status() == "cancelled" ){ echo $cancelled; } ?></div>
                         </div>
                         <?php
@@ -89,7 +98,7 @@ if(qtranxf_getLanguage() == 'en'){
                         ?>
                         <div class="order_bottom">  
                             <div class="left_side">
-                                <div class="left_side_titla">Інформація про замовника</div>
+                                <div class="left_side_titla"><?php echo $customer_info_title; ?></div>
                                 <div class="address"><?php echo $shipping_address['address_1'] ?></div>
                                 <div class="payment_method"><?php echo $order->get_payment_method_title(); ?></div>
                                 <div class="name"><?php echo $shipping_address['first_name'] . $shipping_address['last_name']; ?></div>
@@ -102,7 +111,7 @@ if(qtranxf_getLanguage() == 'en'){
                                 <div class="total"><?php echo $total_label . ' ' . number_format($order->get_total(), 0, '.', ' ') . $currency_symbol; ?></div>
                             </div>
                         </div>
-                        <div class="repeat_order_button_wrapper"><a href="<?php echo wp_nonce_url( add_query_arg( 'order_again', $order->get_id(), wc_get_cart_url() ), 'woocommerce-order_again' ); ?>">Повторити замовлення</a></div>
+                        <div class="repeat_order_button_wrapper"><a href="<?php echo wp_nonce_url( add_query_arg( 'order_again', $order->get_id(), wc_get_cart_url() ), 'woocommerce-order_again' ); ?>"><?php echo $repeat_order_button_text; ?></a></div>
                     </div>
                     <?php $shipping_address = $order->get_address('billing'); ?>
                     

@@ -49,6 +49,7 @@ if ( 'default' == $porto_product_layout || 'sticky_info' == $porto_product_layou
 }
 ?>
 
+
 <div id="product-<?php the_ID(); ?>" class="<?php echo esc_attr( $post_class ); ?>" itemscope itemtype="http://schema.org/Product">
 
 	<div class="product-summary-wrap">
@@ -93,11 +94,25 @@ if ( 'default' == $porto_product_layout || 'sticky_info' == $porto_product_layou
 				<div class="product_title"><?php do_action('product_title'); ?></div>
 				<div class="product_rating"><?php do_action('product_rating'); ?></div>
 				<?php 
+					if(qtranxf_getLanguage() == 'ua'){
+						$in_stock_label = "В наявності";
+						$out_of_stock_label = 'Немає в наявності';
+					}
+					if(qtranxf_getLanguage() == 'ru'){
+						$in_stock_label = "В наличии";
+						$out_of_stock_label = 'Нет в наличии';
+					}
+					if(qtranxf_getLanguage() == 'en'){
+						$in_stock_label = "In stock";
+						$out_of_stock_label = 'Out of stock';
+					}
+				?>
+				<?php 
 					if($product->is_in_stock() == 1):
-						$stock_label = "В наявності";
+						$stock_label = $in_stock_label;
 						$stock_label_wrapper_class = "instock";
 					else: 
-						$stock_label = "Немає в наявності";
+						$stock_label = $out_of_stock_label;
 						$stock_label_wrapper_class = "outofstock";
 					endif;
 				?>
@@ -154,3 +169,19 @@ if ( 'default' == $porto_product_layout || 'sticky_info' == $porto_product_layou
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
 </div>
+<script>
+	jQuery(document).ready(function(){
+		jQuery('.tab-content p').each(function(){
+			var tab_content = jQuery(this).html();
+			if(tab_content == "&nbsp;"){
+				jQuery(this).css('display', 'none');
+			}
+		});
+		jQuery('.tab-content big').each(function(){
+			var tick = jQuery(this).html();
+			if(tick == "✓"){
+				jQuery(this).css('display', 'none');
+			}
+		});
+	});
+</script>

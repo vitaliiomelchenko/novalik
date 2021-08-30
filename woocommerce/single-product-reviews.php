@@ -26,10 +26,24 @@ if ( ! comments_open() ) {
 }
 
 ?>
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+	$form_title = 'Відгуки покупців:';
+	$star_rating_label = 'Оцінка';
+}
+if(qtranxf_getLanguage() == 'ru'){
+	$form_title = 'Отзывы покупателей:';
+	$star_rating_label = 'Оценка';
+}
+if(qtranxf_getLanguage() == 'en'){
+	$form_title = 'Customer reviews:';
+	$star_rating_label = 'Rating';
+}
+?>
 <div id="reviews" class="woocommerce-Reviews">
 	<div id="comments">
 		<h2 class="woocommerce-Reviews-title">
-			<?php _e('Відгуки покупців:') ?>
+			<?php echo $form_title; ?>
 		</h2>
 
 		<?php if ( have_comments() ) : ?>

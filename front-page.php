@@ -138,11 +138,25 @@ Template Name: Home Page
  	    </div>
  	</div>
 </section>
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+	$populaar_products_slider_title = 'Популярні товари';
+	$show_all_button_label = 'Показати всі';
+}
+if(qtranxf_getLanguage() == 'ru'){
+	$populaar_products_slider_title = 'Популярные товары';
+	$show_all_button_label = 'Показать все';
+}
+if(qtranxf_getLanguage() == 'en'){
+	$populaar_products_slider_title = 'Popular products';
+	$show_all_button_label = 'Show all';
+}
+?>
 <section class="popular_products_wrapper">
 	<div class="popular_products_container container">
 		<div class="popular_products_slider_title_wrapper">
-			<div class="popular_products_slider_title">ПОПУЛЯРНІ ТОВАРИ</div>
-			<a class="show_all" href="#">Показати всі</a>
+			<div class="popular_products_slider_title"><?php echo $populaar_products_slider_title; ?></div>
+			<a class="show_all" href="<?php echo get_home_url() ?>/produkcziya"><?php echo $show_all_button_label ?></a>
 		</div>
 		<div class="popular_products_slider">
 			<?php 

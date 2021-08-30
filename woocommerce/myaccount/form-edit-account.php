@@ -37,16 +37,41 @@ if ( version_compare( $porto_woo_version, '2.6', '<' ) ) :
 		<div class="box-content">
 <?php endif; ?>
 <?php do_action( 'woocommerce_before_edit_account_form' ); ?>
-
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+	$name_field_placeholder = "Ім'я";
+	$surname_field_placeholder = 'Прізвище';
+	$password_placeholder = 'Пароль';
+	$new_password_placeholder = 'Новий пароль';
+	$confirm_password_placeholder = 'Підтвердження пароля';
+	$left_form_title = 'Профіль';
+}
+if(qtranxf_getLanguage() == 'ru'){
+	$name_field_placeholder = "Имя";
+	$surname_field_placeholder = 'Фамилия';
+	$password_placeholder = 'Пароль';
+	$new_password_placeholder = 'Новый пароль';
+	$confirm_password_placeholder = 'Подтверждение пароля';
+	$left_form_title = 'Профиль';
+}
+if(qtranxf_getLanguage() == 'en'){
+	$name_field_placeholder = "Name";
+	$surname_field_placeholder = 'Surname';
+	$password_placeholder = 'Password';
+	$new_password_placeholder = 'New password';
+	$confirm_password_placeholder = 'Confirm your password';
+	$left_form_title = 'Profile';
+}
+?>
 <form action="" method="post" class="woocommerce-EditAccountForm edit-account  row account--form--row " <?php do_action( 'woocommerce_edit_account_form_tag' ); ?> >
 	<div class="col-lg-6 account--form--wrapper ">
-		<legend class="account--form--title"><?php echo" Профіль" ?></legend>
+		<legend class="account--form--title"><?php echo $left_form_title; ?></legend>
 	<?php do_action( 'woocommerce_edit_account_form_start' ); ?>
 	<p class="woocommerce-FormRow woocommerce-FormRow--first form-row form-row-first">
-		<input placeholder="Ім’я" type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" autocomplete="given-name" value="<?php echo esc_attr( $user->first_name ); ?>" />
+		<input placeholder="<?php echo $name_field_placeholder; ?>" type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" autocomplete="given-name" value="<?php echo esc_attr( $user->first_name ); ?>" />
 	</p>
 	<p class="woocommerce-FormRow woocommerce-FormRow--last form-row form-row-last">
-		<input placeholder="Прізвище" type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_last_name" id="account_last_name" autocomplete="family-name" value="<?php echo esc_attr( $user->last_name ); ?>" />
+		<input placeholder="<?php echo $surname_field_placeholder; ?>" type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_last_name" id="account_last_name" autocomplete="family-name" value="<?php echo esc_attr( $user->last_name ); ?>" />
 	</p>
 	<p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide form-row_email-input">
 		<input placeholder="E-mail *" type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $user->user_email ); ?>" />
@@ -57,15 +82,15 @@ if ( version_compare( $porto_woo_version, '2.6', '<' ) ) :
 		<legend class="account--form--title"><?php esc_html_e( 'Password change', 'woocommerce' ); ?></legend>
 	
 		<p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-			<input  placeholder="Пароль" type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_current" id="password_current" autocomplete="off" />
+			<input  placeholder="<?php echo $password_placeholder; ?>" type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_current" id="password_current" autocomplete="off" />
 		</p>
 
 		<p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-			<input placeholder="Новий пароль" type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_1" id="password_1" autocomplete="off" />
+			<input placeholder="<?php echo $new_password_placeholder; ?>" type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_1" id="password_1" autocomplete="off" />
 		</p>
 
 		<p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-			<input placeholder="Підтвердження пароля" type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2" autocomplete="off" />
+			<input placeholder="<?php echo $confirm_password_placeholder; ?>" type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2" autocomplete="off" />
 		</p>
 		</div>
 	</fieldset>

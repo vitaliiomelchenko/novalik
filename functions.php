@@ -28,7 +28,6 @@ function woocommerce_clear_cart_url() {
 add_action( 'wp_enqueue_scripts', 'novalik_child_scripts' );
 function novalik_child_scripts(){
 	wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
-	wp_enqueue_script( 'load-more-js', get_stylesheet_directory_uri() . '/assets/js/myloadmore.js');
   wp_enqueue_script( 'slick-main_script', get_stylesheet_directory_uri() . '/assets/js/slick.min.js');
   wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
 }
@@ -53,10 +52,17 @@ function sb_woo_move_description_tab($tabs) {
 
 
 add_filter( 'woocommerce_product_tabs', 'misha_rename_additional_info_tab' );
-
 function misha_rename_additional_info_tab( $tabs ) {
-
-	$tabs['reviews']['title'] = 'Відгуки';
+	if(qtranxf_getLanguage() == 'ua'){
+		$review_tab_title = 'Відгуки';
+	}
+	if(qtranxf_getLanguage() == 'ru'){
+		$review_tab_title = 'Отзывы';
+	}
+	if(qtranxf_getLanguage() == 'en'){
+		$review_tab_title = 'Reviews';
+	}
+	$tabs['reviews']['title'] = $review_tab_title;
 
 	return $tabs;
 
@@ -148,4 +154,64 @@ add_filter('woocommerce_save_account_details_required_fields', 'remove_required_
 function remove_required_fields( $required_fields ) {
 	unset($required_fields['account_display_name']);
 	return $required_fields;
+}
+
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
+
+
+// Add phone number field
+
+function add_review_phone_field_on_comment_form() {
+	if(qtranxf_getLanguage() == 'ua'){
+		$name_field_placeholder = "Ім'я";
+	}
+	if(qtranxf_getLanguage() == 'ru'){
+		$name_field_placeholder = 'Имя';
+	}
+	if(qtranxf_getLanguage() == 'en'){
+		$name_field_placeholder = 'Name';
+	}
+    echo '<p class="comment-form-name uk-margin-top"><input class="uk-input uk-width-large uk-display-block" type="text" placeholder="' . $name_field_placeholder . '" name="name" id="name"/></p>';
+    echo '<p class="comment-form-email uk-margin-top"><input class="uk-input uk-width-large uk-display-block" type="email" placeholder="Email" name="email" id="email"/></p>';
+}
+add_action( 'comment_form_logged_in_after', 'add_review_phone_field_on_comment_form' );
+add_action( 'comment_form_after_fields', 'add_review_phone_field_on_comment_form' );
+
+
+// Save phone number
+add_action( 'comment_post', 'save_comment_review_phone_field' );
+function save_comment_review_phone_field( $comment_id ){
+    if( isset( $_POST['name'] ) )
+      update_comment_meta( $comment_id, 'name', esc_attr( $_POST['name'] ) );
+	if( isset( $_POST['email'] ) )
+      update_comment_meta( $comment_id, 'email', esc_attr( $_POST['email'] ) );
+}
+
+function print_review_email( $id ) {
+    $val = get_comment_meta( $id, "email", true );
+    $title = $val ? '<strong class="review-email">' . $val . '</strong>' : '';
+    return $title;
+}
+function print_review_name( $id ) {
+    $val = get_comment_meta( $id, "name", true );
+    $title = $val ? '<strong class="review-name">' . $val . '</strong>' : '';
+    return $title;
+}
+
+
+// Print fields data - remove if not needed to show in front end
+/*
+add_action('woocommerce_review_before_comment_meta', 'get_comment_email' );
+function get_comment_email($comment){
+    echo print_review_email($comment->comment_ID);
+}*/
+add_action('woocommerce_review_meta', 'get_comment_name' );
+function get_comment_name($comment){
+    echo print_review_name($comment->comment_ID);
+};
+
+
+add_action( 'after_setup_theme', 'theme_register_nav_menu' );
+function theme_register_nav_menu() {
+	register_nav_menu( 'lang-switcher', 'Language Switcher' );
 }

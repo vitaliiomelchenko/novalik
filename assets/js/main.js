@@ -92,6 +92,9 @@ jQuery(document).ready(function(){
             nav: false,
         });
         jQuery('.slick-active button').text('12');
+    jQuery('.header .lang_switcher_title').click(function(){
+        jQuery(this).parent().find('.menu-lang-switcher-container').toggleClass('opened');
+    });
     
 });
 

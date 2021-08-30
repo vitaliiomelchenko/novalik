@@ -4,6 +4,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $porto_woo_version = porto_get_woo_version_number();
 ?>
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+	$clen_cart_button = 'Очистити кошик';
+}
+if(qtranxf_getLanguage() == 'ru'){
+	$clen_cart_button = 'Очистить корзину';
+}
+if(qtranxf_getLanguage() == 'en'){
+	$clen_cart_button = 'Clean the cart';
+}
+?>
 <div class="cart_container">
 	<h2 class="heading-primary font-weight-normal clearfix">
 		<span><?php esc_html_e( 'Cart', 'woocommerce' ); ?></span>
@@ -149,7 +160,7 @@ $porto_woo_version = porto_get_woo_version_number();
 							<a class="btn btn-default" href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>"><span>←</span><?php esc_html_e( 'Continue shopping', 'woocommerce' ); ?></a>
 							<button type="submit" class="btn btn-default pt-right" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_attr_e( 'Update cart', 'woocommerce' ); ?></button>
 							<?php do_action( 'woocommerce_cart_actions' ); ?>
-                            <form class="clear-cart" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post"><button type="submit" onclick='javascript:if(!confirm("Удалить все товары из корзины?")) {return false;}' class="button" name="clear-cart">Очистить корзину</button></form>
+                            <form class="clear-cart" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post"><button type="submit" class="button" name="clear-cart"><?php echo $clen_cart_button; ?></button></form>
 						</div>
 						<div class="clear"></div>
 						<?php do_action( 'woocommerce_after_cart_table' ); ?>

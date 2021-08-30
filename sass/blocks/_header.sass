@@ -384,7 +384,61 @@
         font-weight: 400
         color: #242424
         text-transform: uppercase
-
+.header 
+  .lang-switcher
+    justify-content: center
+  .lang_switcher_wrapper
+    position: relative
+    .lang_switcher_title
+      position: relative
+      color: #1E3F6D
+      font-size: 16px 
+      cursor: pointer
+      font-weight: 700
+      &::before 
+        content: ""
+        position: absolute
+        width: 12px 
+        height: 6px
+        top: 50% 
+        transform: translateY(-50%)
+        right: -17px 
+        background-image: url('../assets/img/lang_switcher_arrow.svg')
+        background-size: contain 
+        background-repeat: no-repeat
+    .menu-lang-switcher-container
+      position: absolute
+      background: #fff 
+      border-radius: 10px 
+      padding: 12px 18px  
+      left: -50%
+      top: 24px 
+      z-index: 10
+      opacity: 0
+      visibility: hidden
+      transition: .3s
+      &.opened
+        opacity: 1
+        visibility: visible
+      .menu 
+        .qtranxs-lang-menu
+          & > a 
+            display: none 
+          .sub-menu 
+            li 
+              margin-right: 0
+              margin-bottom: 12px 
+              &:last-child
+                margin-bottom: 0
+              &.current-menu-item
+                display: none
+              a 
+                &::after 
+                  content: none  
+                &:hover 
+                  text-decoration: none
+                img 
+                  display: none
 @media only screen and (min-width: 320px) and (max-width: 1100px)
   .header .logo
     width: 60px

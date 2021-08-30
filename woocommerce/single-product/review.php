@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="comment_meta_wrapper">
 			<?php 
 			do_action( 'woocommerce_review_before_comment_meta', $comment );
-
+			do_action( 'comment_name', $comment );
 			do_action( 'woocommerce_review_meta', $comment );?>
 			</div>
 			<?php

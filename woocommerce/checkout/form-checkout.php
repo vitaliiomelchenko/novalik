@@ -199,10 +199,10 @@ $get_checkout_url = version_compare( $porto_woo_version, '2.5', '<' ) ? apply_fi
         $textareaPlaceholder = 'Примітки до замовлення';
     }
     elseif(qtranxf_getLanguage() == 'ru'){
-        $textareaPlaceholder = 'Примітки до замовлення';
+        $textareaPlaceholder = 'Примечания к заказу';
     }
     elseif(qtranxf_getLanguage() == 'en'){
-        $textareaPlaceholder = 'Примітки до замовлення';
+        $textareaPlaceholder = 'Notes to the order';
     }
 ?>
 <script>

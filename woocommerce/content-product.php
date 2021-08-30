@@ -1,3 +1,14 @@
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+	$buy_button_label = 'Купить';
+}
+if(qtranxf_getLanguage() == 'ru'){
+	$buy_button_label = 'Купить';
+}
+if(qtranxf_getLanguage() == 'en'){
+	$buy_button_label = 'Buy';
+}
+?>
 <div class="product">
 	<div class="product-image">
 		<?php the_post_thumbnail(); ?>
@@ -8,6 +19,6 @@
 		<div class="product_price">
 			<?php do_action('product_price'); ?>
 		</div>
-		<div class="product_buy_button"><a href="<?php the_permalink(  ) ?>">Купить</a></div>
+		<div class="product_buy_button"><a href="<?php the_permalink(  ) ?>"><?php echo $buy_button_label; ?></a></div>
 	</div>
 </div>

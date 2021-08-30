@@ -86,7 +86,18 @@ if ( $porto_settings['category-ajax'] ) {
 		<?php woocommerce_product_loop_end(); ?>
 
 	</div>
-	<div class="misha_loadmore"><span><?php _e('Показати ще товари'); ?></span></div>
+	<?php 
+		if(qtranxf_getLanguage() == 'ua'){
+			$load_more_button_label = 'Показати ще товари';
+		}
+		if(qtranxf_getLanguage() == 'ru'){
+			$load_more_button_label = 'Показать еще товары';
+		}
+		if(qtranxf_getLanguage() == 'en'){
+			$load_more_button_label = 'Load more products';
+		}
+	?>
+	<div class="misha_loadmore"><span><?php echo $load_more_button_label; ?></span></div>
 	<?php
 		/**
 		 * Hook: woocommerce_after_shop_loop.
