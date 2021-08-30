@@ -86,7 +86,7 @@ Template Name: Home Page
 						<?php endif; ?>								
  	                    <div class="text">
 							<?php if( $homeFeaturesTitle ): ?>
-								<h3>
+								<h3 class="title-s">
 									<?php echo $homeFeaturesTitle ?>
 								</h3>
 							<?php endif; ?>
@@ -110,7 +110,7 @@ Template Name: Home Page
  	<div class="container">
 		 <?php if( $homeStockTitle ): ?>
  	        <div class="head">
-				<h2>
+				<h2 class="title-s">
 					<?php echo $homeStockTitle ?>
 				</h2>
 			<?php endif; ?>
