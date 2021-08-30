@@ -2,12 +2,15 @@
 <?php 
 if(qtranxf_getLanguage() == 'ua'){
     $read_more_button_label = 'Читати далі';
+    $noResultMessage = 'На жаль пошук не дав результатів';
 }
 if(qtranxf_getLanguage() == 'ru'){
     $read_more_button_label = 'Читать дальше';
+    $noResultMessage = 'К сожалению поиск не дал результатов';
 }
 if(qtranxf_getLanguage() == 'en'){
     $read_more_button_label = 'Read more';
+    $noResultMessage = 'Unfortunately no search results';
 }
 ?>
 <section class="search_res_wrapper">
@@ -30,6 +33,7 @@ if(qtranxf_getLanguage() == 'en'){
                     </div>
                 </div>
                 <?php endwhile;
+                else : echo $noResultMessage;
             endif; ?>
         </div>
     </div>
