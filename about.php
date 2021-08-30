@@ -223,7 +223,7 @@ Template Name: About Page
 				$aboutCertificatesItem = get_sub_field('aboutCertificatesItem');
 			?>
 			<?php if( !empty( $aboutCertificatesItem ) ): ?>
-				<div class="col-lg-4 aboutCertificatesItemWrapper">
+				<a href="<?php echo esc_url($aboutCertificatesItem['url']); ?>" class="col-lg-4 aboutCertificatesItemWrapper">
 					<div class="aboutCertificatesItemInner">
 					<img src="<?php echo esc_url($aboutCertificatesItem['url']); ?>" alt="<?php echo esc_attr($aboutCertificatesItem['alt']); ?>" />
 				</div>
@@ -233,7 +233,7 @@ Template Name: About Page
 								<path d="M31 31L26.65 26.65M29 21C29 25.4183 25.4183 29 21 29C16.5817 29 13 25.4183 13 21C13 16.5817 16.5817 13 21 13C25.4183 13 29 16.5817 29 21Z" stroke="#1E3F6D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
 							</div>
-				</div>
+				</a>
 			<?php endif; ?>
 			<?php endwhile; ?>
 	        </div>
