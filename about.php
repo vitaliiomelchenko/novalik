@@ -103,6 +103,7 @@ Template Name: About Page
                                     </div>
                                 <?php endif; ?>
                             </div>
+							  
 							 </div>
                         <?php endwhile; ?>	
 							</div>
@@ -226,6 +227,12 @@ Template Name: About Page
 					<div class="aboutCertificatesItemInner">
 					<img src="<?php echo esc_url($aboutCertificatesItem['url']); ?>" alt="<?php echo esc_attr($aboutCertificatesItem['alt']); ?>" />
 				</div>
+					<div class="zoom--icon">
+							<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="22" cy="22" r="22" fill="#B8D6ED"/>
+								<path d="M31 31L26.65 26.65M29 21C29 25.4183 25.4183 29 21 29C16.5817 29 13 25.4183 13 21C13 16.5817 16.5817 13 21 13C25.4183 13 29 16.5817 29 21Z" stroke="#1E3F6D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
 				</div>
 			<?php endif; ?>
 			<?php endwhile; ?>
