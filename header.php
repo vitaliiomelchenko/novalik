@@ -151,7 +151,7 @@ if(qtranxf_getLanguage() == 'en'){
 			                <div class="d-none d-lg-block col-lg-3">
 			                    <div class="phone">
 			                        <a href="tel:<?php echo $headerPhone ?>" class="phone-number"><?php echo $headerPhone ?></a>
-			                        <a class="call-me" id="order_call"><?php echo $headerQ ?></a>
+			                        <a class="call-me" id="order_call">sss<?php echo $headerQ ?></a>
 			                    </div>
 			                </div>
 			                <div class="d-block d-lg-none">
@@ -303,3 +303,6 @@ if(qtranxf_getLanguage() == 'en'){
 				</div>
 				<div class="close_popup"></div>
 			</div>
+<script>
+
+</script>
