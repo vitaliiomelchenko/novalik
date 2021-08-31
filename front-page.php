@@ -19,38 +19,35 @@ Template Name: Home Page
  	                    </div>
  	                </div>
  	            </div>
+				<?php if( have_rows('homeOffer__slider') ): ?>
  	            <div class="col-md-9 slider-col">
  	                <div class="homeOffer__slider">
- 	                    <div class="homeOffer__slide" style="background-image: url('<?php echo get_stylesheet_directory_uri() . '/assets/img/devi_01 1.svg' ?>');">
- 	                        <div class="text">
- 	                            <div class="pre">
- 	                                Новинка
- 	                            </div>
- 	                            <h2>
- 	                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- 	                            </h2>
- 	                            <p>
- 	                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- 	                            </p>
- 	                            <a href="#">Детальніше</a>
- 	                        </div>
- 	                    </div>
- 	                    <div class="homeOffer__slide" style="background-image: url('<?php echo get_stylesheet_directory_uri() . '/assets/img/devi_01 1.svg' ?>');">
- 	                        <div class="text">
- 	                            <div class="pre">
- 	                                Новинка
- 	                            </div>
- 	                            <h2>
- 	                                slide 2
- 	                            </h2>
- 	                            <p>
- 	                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- 	                            </p>
- 	                            <a href="#">Детальніше</a>
- 	                        </div>
- 	                    </div>
+    					<?php while( have_rows('homeOffer__slider') ) : the_row();
+							$bannerTag = get_sub_field('bannerTag');
+							$bannerTitle = get_sub_field('bannerTitle');
+							$bannerBackground = get_sub_field('bannerBackground');
+							$bannerContent = get_sub_field('bannerContent');
+							$bannerLink = get_sub_field('bannerLink');
+						
+						?>
+							<div class="homeOffer__slide" style="background-image: url(<?php echo esc_url($bannerBackground['url']); ?>);">
+								<div class="text">
+									<div class="pre">
+										<?php echo $bannerTag; ?>
+									</div>
+									<h2>
+										<?php echo $bannerTitle; ?> 
+									</h2>
+									<p>
+										<?php echo $bannerContent;?>
+									</p>
+									<a href="<?php echo esc_url( $bannerLink['url'] ); ?>"><?php echo esc_html( $bannerLink['title'] );?></a>
+								</div>
+							</div>
+						<?php endwhile; ?>
  	                </div>
  	            </div>
+				<?php endif; ?>
  	        </div>
  	    </div>
  	</section>
