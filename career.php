@@ -35,3 +35,27 @@ Template Name: Карьера
         </div>
     </section>
 <?php get_footer();?>
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+    $buttonText = 'Прикріпіть';
+}
+if(qtranxf_getLanguage() == 'ru'){
+    $buttonText = 'Прикрепить';
+}
+if(qtranxf_getLanguage() == 'en'){
+    $buttonText = 'Connect';
+}
+?>
+<script>
+    jQuery('.career__form input[type="file"]').on('change', function(event){
+		var fileName = event.target.files[0];
+        console.log('123');
+		if(fileName){
+			jQuery('.chose_file_text').html(fileName.name);
+    		console.log(fileName.name);
+		}
+		else{
+			jQuery('.chose_file_text').html('<?php echo $buttonText; ?>');
+		}
+	});
+</script>

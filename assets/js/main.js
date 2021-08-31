@@ -104,6 +104,9 @@ jQuery(document).ready(function(){
     jQuery('.overlay').click(function(){
         jQuery('body').removeClass('order_call_popup');
     });
+    /*jQuery('#review_form #submit').click(function(event){
+        event.preventDefault();
+    });*/
 });
 
 jQuery('.homeText__content_wrapper .readMore').click(function(){
@@ -151,3 +154,4 @@ $(document).ready(function(){
         }
     });
 });
+
