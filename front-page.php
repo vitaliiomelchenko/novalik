@@ -27,7 +27,7 @@ Template Name: Home Page
 							$bannerLink = get_sub_field('bannerLink');
 						?>
 							<a href="<?php echo esc_url( $bannerLink ); ?>" class="homeOffer__slide" style="position: relative">
-								<img style="position: absolute; top: 0; left: 0;  width: 100%; z-index: -2; height: auto;" src="<?php echo esc_url($bannerBackground['url']); ?>" alt="">
+								<img class="bannerImageHome"style="position: absolute; top: 0; left: 0;  width: 100%; z-index: -2; height: auto;" src="<?php echo esc_url($bannerBackground['url']); ?>" alt="">
 							</a>
 						<?php endwhile; ?>
  	                </div>
