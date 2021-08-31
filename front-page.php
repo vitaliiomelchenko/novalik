@@ -23,27 +23,11 @@ Template Name: Home Page
  	            <div class="col-md-9 slider-col">
  	                <div class="homeOffer__slider">
     					<?php while( have_rows('homeOffer__slider') ) : the_row();
-							$bannerTag = get_sub_field('bannerTag');
-							$bannerTitle = get_sub_field('bannerTitle');
 							$bannerBackground = get_sub_field('bannerBackground');
-							$bannerContent = get_sub_field('bannerContent');
 							$bannerLink = get_sub_field('bannerLink');
-						
 						?>
-							<div class="homeOffer__slide" style="background-image: url(<?php echo esc_url($bannerBackground['url']); ?>);">
-								<div class="text">
-									<div class="pre">
-										<?php echo $bannerTag; ?>
-									</div>
-									<h2>
-										<?php echo $bannerTitle; ?> 
-									</h2>
-									<p>
-										<?php echo $bannerContent;?>
-									</p>
-									<a href="<?php echo esc_url( $bannerLink['url'] ); ?>">детальніше</a>
-								</div>
-							</div>
+							<a href="<?php echo esc_url( $bannerLink ); ?>" class="homeOffer__slide" style="background-image: url(<?php echo esc_url($bannerBackground['url']); ?>);">
+							</a>
 						<?php endwhile; ?>
  	                </div>
  	            </div>
