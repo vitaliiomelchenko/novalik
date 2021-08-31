@@ -102,6 +102,9 @@ jQuery(document).ready(function(){
             slidesToShow: 1,
             dots: true,
             nav: false,
+            infinite: true,
+            slidesToScroll: 1,
+            speed: 700
         });
         jQuery('.slick-active button').text('12');
     jQuery('.header .lang_switcher_title').click(function(){
