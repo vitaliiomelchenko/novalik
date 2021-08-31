@@ -143,6 +143,9 @@ foreach($cats as $cat) {
 <?php 
 };
 ?>
+<?php 
+global $woocommerce;
+?>
 			<header class="header">
 			    <nav class="nav">
 			        <div class="container">
@@ -241,7 +244,7 @@ foreach($cats as $cat) {
 			                            </a>
 			                            <a href="<?php echo get_home_url( null, 'cart/', 'https' ); ?>" class="user-item cart">
 			                                <img src="<?php echo get_template_directory_uri() ?>/images/cart.svg" alt="">
-											<?php echo $cart_button_label; ?>
+											<?php echo $cart_button_label; ?>(<?php echo $woocommerce->cart->cart_contents_count; ?>)
 			                            </a>
 			                        </div>
 			                    </div>
