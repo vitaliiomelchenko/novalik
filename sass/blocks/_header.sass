@@ -68,7 +68,10 @@
 
     img
       margin-right: 15px
-
+#mobileMenu .header-categories__list
+  background: transparent
+  padding-top: 24px
+  padding-bottom: 0
 .nav-list
   display: -webkit-box
   display: -ms-flexbox
@@ -256,7 +259,7 @@
 
 .mobile-menu
   padding: 10px 0px
-  position: fixed
+  position: absolute
   left: 0
   top: 0
   width: 100%
@@ -470,6 +473,77 @@
       -webkit-transform: translateY(-50%)
       -ms-transform: translateY(-50%)
       transform: translateY(-50%)
+  .header 
+    .mobile-menu
+      .nav-list 
+        margin-bottom: 0
+        .menu-item 
+          padding-left: 0
+          &:empty
+            margin: 0
+      .languages
+        padding-top: 12px 
+        padding-bottom: 12px 
+        .menu-lang-switcher-container
+          & > .menu 
+            margin-bottom: 0
+            & > li 
+              padding-left: 0
+        .qtranxs-lang-menu 
+          & > a 
+            display: none 
+          .sub-menu 
+            display: flex 
+            li 
+              padding-left: 0
+              margin-bottom: 0
+              padding: 0 10px 
+              position: relative
+              &::after 
+                content: ""
+                display: block
+                position: absolute
+                right: 0px
+                width: 1px
+                height: 100%
+                background-color: #b8d6ed
+                top: 50%
+                -webkit-transform: translateY(-50%)
+                transform: translateY(-50%)
+              &:first-child
+                padding-left: 0
+              &:last-child
+                padding-right: 0
+                &::after 
+                  content: none
+              a 
+                padding: 6px 
+                display: block
+                img 
+                  display: none
+              &.current_page_item
+                a 
+                  border: 1px solid #B8D6ED
+                  border-radius: 3px 
+                  border-bottom: 1px solid #b8d6ed !important
+        & > ul.languages-list
+          margin-bottom: 0
+          & > li
+            display: flex 
+            align-items: center
+            & > a 
+              margin-right: 10px 
+              position: relative
+            ul
+              display: flex 
+              align-items: center
+              li 
+                margin-right: 0
+                padding: 0 10px
+                a
+                  display: block
+                &::after 
+                  right: 0
 header .menu.nav-list .menu-item 
   flex: none !important
   a 

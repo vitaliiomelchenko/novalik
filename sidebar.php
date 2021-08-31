@@ -22,33 +22,7 @@ endif;
 do_action( 'porto_after_content_inner_bottom' );
 ?>
 
-<?php 
 
-$args = array(
-    'taxonomy' 		=> 'product_cat',
-    'orderby' 		=> 'name',
-    'order'   		=> 'ASC',
-    'number'		=>	30,
-    'hide_empty' 	=> false,
-);
-
-$cats = get_categories($args);?>
-<?php
-foreach($cats as $cat) {
-    ?>
-    <?php 
-        $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
-        // get the image URL
-        $image = wp_get_attachment_url( $thumbnail_id ); 
-        // print the IMG HTML
-    ?>
-    <?php 
-    echo '
-        <style>.cat-item-' . $cat->term_id .  '::before{background-image: url("' . $image . '");}</style>';
-    ?>
-<?php 
-};
-?>
 <?php
 $mobile_sidebar = porto_get_meta_value( 'mobile_sidebar' );
 if ( 'yes' == $mobile_sidebar ) {

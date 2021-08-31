@@ -116,6 +116,33 @@ if(qtranxf_getLanguage() == 'en'){
 	$lang_switcher_title = 'ENG';
 }
 ?>
+<?php 
+
+$args = array(
+    'taxonomy' 		=> 'product_cat',
+    'orderby' 		=> 'name',
+    'order'   		=> 'ASC',
+    'number'		=>	30,
+    'hide_empty' 	=> false,
+);
+
+$cats = get_categories($args);?>
+<?php
+foreach($cats as $cat) {
+    ?>
+    <?php 
+        $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
+        // get the image URL
+        $image = wp_get_attachment_url( $thumbnail_id ); 
+        // print the IMG HTML
+    ?>
+    <?php 
+    echo '
+        <style>.cat-item-' . $cat->term_id .  '::before{background-image: url("' . $image . '");}</style>';
+    ?>
+<?php 
+};
+?>
 			<header class="header">
 			    <nav class="nav">
 			        <div class="container">
@@ -151,7 +178,7 @@ if(qtranxf_getLanguage() == 'en'){
 			                <div class="d-none d-lg-block col-lg-3">
 			                    <div class="phone">
 			                        <a href="tel:<?php echo $headerPhone ?>" class="phone-number"><?php echo $headerPhone ?></a>
-			                        <a class="call-me" id="order_call">sss<?php echo $headerQ ?></a>
+			                        <a class="call-me" id="order_call"><?php echo $headerQ ?></a>
 			                    </div>
 			                </div>
 			                <div class="d-block d-lg-none">
@@ -223,6 +250,7 @@ if(qtranxf_getLanguage() == 'en'){
 			        </div>
 			    </nav>
 			    <div class="mobile-menu" id="mobileMenu">
+					<div class="header_height">
 			        <div class="mobile-menu__top">
 			            <div class="logo">
 			                <img src="<?php echo get_template_directory_uri() ?>/images/logo.svg" alt="">
@@ -242,43 +270,39 @@ if(qtranxf_getLanguage() == 'en'){
 			            </a>
 			        </div>
 			        <div class="header-categories" style="pointer-events:all;">
-			            <div class="d-flex align-items-center justify-content-center" style="width: 100%;">
+			            <div class="d-flex align-items-center justify-content-center categories_list_open_button" style="width: 100%;">
 			            	<img src="<?php echo get_template_directory_uri() ?>/images/categories.svg" alt="">
 			            	<?php echo $product_categories_button_label; ?>
 			            	<div class="arrow">
 			            	    <img src="<?php echo get_template_directory_uri() ?>/images/down.svg" alt="">
 			            	</div>
+							
+			            </div>
+						<div class="header-categories__list">
+							<?php dynamic_sidebar( 'woo-category-filter-sidebar' ); ?>
 			            </div>
 			        </div>
 					<ul class="menu nav-list nav-list-mobile">
-					<?php wp_nav_menu( [
-											'theme_location'  => 'Main Menu',
-											'menu'            => 'main-menu',
-											'container'       => false,
-											'menu_class'      => 'menu nav-list',
-											'echo'            => true,
-											'fallback_cb'     => 'wp_page_menu',
-											'items_wrap'      => '<li  class="menu-item" >%3$s</li>'
-										] );
-										?>
-				</ul>
+						<?php wp_nav_menu( [
+												'theme_location'  => 'Main Menu',
+												'menu'            => 'main-menu',
+												'container'       => false,
+												'menu_class'      => 'menu nav-list',
+												'echo'            => true,
+												'fallback_cb'     => 'wp_page_menu',
+												'items_wrap'      => '<li  class="menu-item" >%3$s</li>'
+											] );
+											?>
+					</ul>
 			        <div class="languages">
-						
 			            <p>Мова</p>
-			            <ul class="languages-list">
-			                <li>
-			                    <a href="#" class="languages_current">Укр</a>
-								<ul>
-									<li>
-			                    		<a href="#">Рус</a>
-			               		 	</li>
-			               			 <li>
-			                    		<a href="#">Eng</a>
-			                		</li>
-								</ul>
-			                </li>
-			            </ul>
+			            <?php 
+							wp_nav_menu( [
+								'theme_location'  => 'lang-switcher',
+							] );
+						?>
 			        </div>
+					</div>
 			    </div>
 				<?php if(!is_front_page()): ?>
 			    <div class="container">
@@ -303,6 +327,3 @@ if(qtranxf_getLanguage() == 'en'){
 				</div>
 				<div class="close_popup"></div>
 			</div>
-<script>
-
-</script>
