@@ -41,7 +41,7 @@ Template Name: Home Page
 									<p>
 										<?php echo $bannerContent;?>
 									</p>
-									<a href="<?php echo esc_url( $bannerLink['url'] ); ?>"><?php echo esc_html( $bannerLink['title'] );?></a>
+									<a href="<?php echo esc_url( $bannerLink['url'] ); ?>">детальніше</a>
 								</div>
 							</div>
 						<?php endwhile; ?>
