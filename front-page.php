@@ -26,7 +26,8 @@ Template Name: Home Page
 							$bannerBackground = get_sub_field('bannerBackground');
 							$bannerLink = get_sub_field('bannerLink');
 						?>
-							<a href="<?php echo esc_url( $bannerLink ); ?>" class="homeOffer__slide" style="background-image: url(<?php echo esc_url($bannerBackground['url']); ?>);">
+							<a href="<?php echo esc_url( $bannerLink ); ?>" class="homeOffer__slide" style="position: relative">
+								<img style="position: absolute; top: 0; left: 0;" src="<?php echo esc_url($bannerBackground['url']); ?>" alt="">
 							</a>
 						<?php endwhile; ?>
  	                </div>
