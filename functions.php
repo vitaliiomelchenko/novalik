@@ -215,3 +215,54 @@ add_action( 'after_setup_theme', 'theme_register_nav_menu' );
 function theme_register_nav_menu() {
 	register_nav_menu( 'lang-switcher', 'Language Switcher' );
 }
+
+//add placeholders to woo fields
+
+add_filter('woocommerce_default_address_fields', 'override_default_address_checkout_fields', 20, 1);
+function override_default_address_checkout_fields( $address_fields ) {
+	if(qtranxf_getLanguage() == 'ua'){
+		$first_name = "Ім’я *";
+		$last_name = "Прізвище *";
+		$street_address = "Назва вулиці та номер будинку *";
+		$city = "Місто / село *";
+		$zipcode = "Поштовий код / ZIP *";
+	}
+	if(qtranxf_getLanguage() == 'ru'){
+		$first_name = "Имя *";
+		$last_name = "Фамилия *";
+		$street_address = "Название улицы и номер дома *";
+		$city = "Город / село *";
+		$zipcode = "Почтовый код / ZIP *";
+	}
+	if(qtranxf_getLanguage() == 'en'){
+		$first_name = "First Name *";
+		$last_name = "Last Name *";
+		$street_address = "Street Address *";
+		$city = "City *";
+		$zipcode = "Zipcode *";
+	}
+    $address_fields['first_name']['placeholder'] =  $first_name;
+    $address_fields['last_name']['placeholder'] = $last_name;
+    $address_fields['address_1']['placeholder'] = $street_address;
+    $address_fields['postcode']['placeholder'] = $zipcode;
+    $address_fields['city']['placeholder'] = $city;
+	return $address_fields;
+}
+add_filter( 'woocommerce_billing_fields' , 'override_billing_fields' );
+function override_billing_fields( $fields ) {
+	if(qtranxf_getLanguage() == 'ua'){
+		$phone_number = "Телофон";
+		$email = "E-mail *";
+	}
+	if(qtranxf_getLanguage() == 'ru'){
+		$phone_number = "Номер телефона *";
+		$email = "E-mail *";
+	}
+	if(qtranxf_getLanguage() == 'en'){
+		$phone_number = "Phone Number *";
+		$email = "E-mail *";
+	}
+    $fields['billing_phone']['placeholder'] = $phone_number;
+    $fields['billing_email']['placeholder'] = $email;
+    return $fields;
+}

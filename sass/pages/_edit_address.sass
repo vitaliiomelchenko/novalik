@@ -1,0 +1,71 @@
+.woocommerce-edit-address
+    .featured-box
+        .box-content 
+            .container 
+                .page_title
+                    font-size: 24px 
+                    color: #242424
+                    font-weight: 700
+                    margin-bottom: 30px
+                    line-height: 1.2
+                    margin-top: 10px 
+                .forms_wrapper
+                    background-color: #fff 
+                    border-radius: 3px 
+                    padding: 33px 30px 40px 
+                    .row 
+                        .form_wrapper 
+                            &:first-child
+                                padding-right: 16px 
+                            &:last-child
+                                padding-left: 16px 
+                            form 
+                                padding: 0
+                                background: transparent
+                                display: flex 
+                                flex-direction: column
+                                h2 
+                                    font-size: 16px 
+                                    margin-top: 0
+                                    font-weight: 700
+                                    color: #242424
+                                    margin-bottom: 20px
+                                #shipping_address_2_field,
+                                #shipping_state_field
+                                    display: none
+                                #billing_email_field
+                                    order: 1
+                                #billing_address_1_field
+                                    order: 2
+                                p:last-child
+                                    order: 3
+                                    display: none
+                .save_form_button_wrapper
+                    text-align: center
+                    width: 100%
+                    margin-top: 17px 
+                    input[type="submit"]
+                        background: #0088CC
+                        line-height: 1.25
+                        border-radius: 3px
+                        color: #fff 
+                        font-size: 14px 
+                        padding: 12px 39px 12px 29px 
+                        text-transform: none
+@media(max-width: 767px)
+    .woocommerce-edit-address
+        .featured-box
+            .box-content 
+                .container 
+                    .forms_wrapper
+                        padding: 20px 
+                        padding-bottom: 30px
+                        form 
+                            h2 
+                                text-align: left
+                            &:last-child
+                                h2 
+                                    margin-top: 15px 
+                    .save_form_button_wrapper
+                        margin-top: 5px 
+                                

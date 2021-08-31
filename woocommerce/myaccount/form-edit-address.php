@@ -13,6 +13,11 @@ $shipping_fields = $countries->get_address_fields( '', 'shipping_' );
 $load_address = 'billing';
 $page_title   = __( 'Billing Address', 'woocommerce' );
 ?>
+<div class="container">
+    <div class="page_title">Адреси доставки</div>
+    <div class="forms_wrapper">
+    <div class="row">
+<div class="col-md-6 col-12 form_wrapper">
 <form action="/my-account/edit-address/billing/" class="edit-account" method="post">
 
     <h2><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title ); ?></h2>
@@ -34,12 +39,13 @@ $page_title   = __( 'Billing Address', 'woocommerce' );
     </p>
 
 </form>
-
+</div>
 <!-- shipping form -->
 <?php
 $load_address = 'shipping';
 $page_title   = __( 'Shipping Address', 'woocommerce' );
 ?>
+<div class="col-md-6 col-12 form_wrapper">
 <form class="edit-account" method="post">
 
     <h2><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title ); ?></h2>
@@ -61,3 +67,27 @@ $page_title   = __( 'Shipping Address', 'woocommerce' );
     </p>
 
 </form>
+</div>
+<?php 
+if(qtranxf_getLanguage() == 'ua'){
+    $save_button_label = 'Зберегти';
+}
+if(qtranxf_getLanguage() == 'ru'){
+    $save_button_label = 'Сохранить';
+}
+if(qtranxf_getLanguage() == 'en'){
+    $save_button_label = 'Save';
+}
+?>
+<div class="save_form_button_wrapper">
+<input type="submit" value="<?php echo $save_button_label; ?>" id="save_form_button">
+</div>
+
+</div>
+</div>
+</div>
+<script>
+    jQuery('#save_form_button').click(function(){
+        location.reload();
+    });
+</script>
