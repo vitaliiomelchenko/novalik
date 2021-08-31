@@ -110,7 +110,7 @@ if(qtranxf_getLanguage() == 'en'){
 	$home_page_title = 'Home';
 	$account_button_label = 'Account';
 	$cart_button_label = 'Cart';
-	$search_submit_from_button_label = 'Find';
+	$search_submit_from_button_label = 'Search';
 	$product_categories_button_label = 'Product categories';
 	$search_placeholder = 'Search';
 	$lang_switcher_title = 'ENG';
