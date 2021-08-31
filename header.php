@@ -110,7 +110,7 @@ if(qtranxf_getLanguage() == 'en'){
 	$home_page_title = 'Home';
 	$account_button_label = 'Account';
 	$cart_button_label = 'Cart';
-	$search_submit_from_button_label = 'Find';
+	$search_submit_from_button_label = 'Search';
 	$product_categories_button_label = 'Product categories';
 	$search_placeholder = 'Search';
 	$lang_switcher_title = 'ENG';
@@ -142,6 +142,9 @@ foreach($cats as $cat) {
     ?>
 <?php 
 };
+?>
+<?php 
+global $woocommerce;
 ?>
 			<header class="header">
 			    <nav class="nav">
@@ -241,7 +244,7 @@ foreach($cats as $cat) {
 			                            </a>
 			                            <a href="<?php echo get_home_url( null, 'cart/', 'https' ); ?>" class="user-item cart">
 			                                <img src="<?php echo get_template_directory_uri() ?>/images/cart.svg" alt="">
-											<?php echo $cart_button_label; ?>
+											<?php echo $cart_button_label; ?>(<?php echo $woocommerce->cart->cart_contents_count; ?>)
 			                            </a>
 			                        </div>
 			                    </div>
